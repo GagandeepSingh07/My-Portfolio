@@ -279,7 +279,7 @@ nav svg {
   top: 5px;
   left: 5px;
 }
-.ing-container{
+.img-container{
   /* background-color: #ffffff; */
   position: absolute;
   width: 400px;
@@ -397,4 +397,66 @@ scale: 90%;
   transition: .5s;
   font-family: var(--heading-font);
   left: -61px;
+}
+@media(max-width: 820px){
+  .box{
+    width: 77%;
+    margin-left: 11.5%;
+    height: 601px;
+    scale: 75%;
+  }
+  .hero-section {
+    position: fixed;
+    width: 74%;
+    height: 500px;
+    top: -120px;
+    left: 0;
+    margin-left: 13%;
+  }
+  .img-container{
+    position: absolute;
+    width: 400px;
+    height: 450px;
+    top: -10px;
+    right: -180px;
+    flex-grow: 1 0 120px;
+    scale: 85%;
+  }
+  .content-holder-2{
+    position: absolute;
+    width: 480px;
+    height: 450px;
+    top: 0;
+    left: -160px;
+    flex-grow: 1 0 140px;
+    scale: 90%;
+  }
+}
+@media(max-width: 485px){
+  .hero-section {
+    position: fixed;
+    width: 80%;
+    height: 500px;
+    top: -20%;
+    left: 25px;
+    margin-left: 13%;
+  }
+  .img-container{
+    position: absolute;
+    width: 400px;
+    height: 450px;
+    top: 410px;
+    right: 0;
+    flex-grow: 1 0 120px;
+    scale: 90%;
+  }
+  .content-holder-2{
+    position: absolute;
+    width: 480px;
+    height: 450px;
+    top: 0;
+    left: -80px;
+    flex-grow: 1 0 140px;
+    scale: 90%;
+  }
 }
