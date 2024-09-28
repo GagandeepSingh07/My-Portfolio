@@ -260,8 +260,35 @@ nav svg {
 .overlap {
   background-color: #ff0000;
   position: relative;
+  width: 910px;
+  height: 460px;
+  margin-left: 4.5%;
+  margin-top: 25px;
+}
+.content-holder{
+  background-color: #030C44;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
   width: 900px;
   height: 450px;
-  margin-left: 5%;
-  margin-top: 25px;
+  top: 5px;
+  left: 5px;
+}
+.ing-container{
+  background-color: #ffffff;
+  position: absolute;
+  width: 400px;
+  height: 450px;
+  top: 0;
+  left: 252px;
+  flex-grow: 1 0 140px;
+}
+.content-holder-2{
+  background-color: #908FDB;
+  position: absolute;
+  width: 653px;
+  height: 595px;
+  top: 0;
+  left: 10%;
 }
