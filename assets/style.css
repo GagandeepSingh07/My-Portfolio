@@ -479,7 +479,7 @@ scale: 90%;
     right: 0; /* Prevents overflow */
     flex-grow: 1 0 120px;
     scale: 50%;
-    padding-right: 145px;
+    padding-right: 120px;
   }
 
   .content-holder-2 {
