@@ -138,6 +138,7 @@ nav svg {
         position: absolute;
         top: -5px;
         right: 0;
+        /* right: 35px; */
     }
 
     #sidebar-action:checked ~ #overlay {
@@ -432,12 +433,12 @@ scale: 90%;
     scale: 90%;
   }
 }
-@media(max-width: 485px){
+/* @media(max-width: 485px){
   .hero-section {
     position: fixed;
     width: 80%;
     height: 500px;
-    top: -20%;
+    top: -56%;
     left: 25px;
     margin-left: 13%;
   }
@@ -445,18 +446,49 @@ scale: 90%;
     position: absolute;
     width: 400px;
     height: 450px;
-    top: 410px;
-    right: 0;
+    top: 120px;
+    right: 50px;
     flex-grow: 1 0 120px;
-    scale: 90%;
+    scale: 50%;
   }
   .content-holder-2{
     position: absolute;
     width: 480px;
     height: 450px;
-    top: 0;
+    top: 480px;
     left: -80px;
     flex-grow: 1 0 140px;
     scale: 90%;
+  }
+} */
+@media (max-width: 485px) {
+  .hero-section {
+    position: fixed;
+    width: 80%;
+    height: 500px;
+    top: -56%;
+    left: -30px;
+    margin-left: 10%;
+  }
+
+  .img-container {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 220px;
+    right: 0; /* Prevents overflow */
+    flex-grow: 1 0 120px;
+    scale: 50%;
+    padding-right: 145px;
+  }
+
+  .content-holder-2 {
+    position: absolute;
+    width: 100%; /* Changed to fit within the viewport */
+    height: auto; /* Adjusted height automatically */
+    top: 480px;
+    left: 0; /* Prevents negative positioning */
+    flex-grow: 1 0 140px;
+    scale: 80%;
   }
 }
