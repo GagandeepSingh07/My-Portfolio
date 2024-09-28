@@ -12,7 +12,9 @@ body {
   background-color: var(--bg-color);
 }
 
+/* -------------- */
 /* Navbar Section */
+/* -------------- */
 
 nav {
     height: 60px;
@@ -64,7 +66,9 @@ nav svg {
     display: none;
 }
 
+/* ------------------------- */
 /* Background Design Section */
+/* ------------------------- */
 
 /* .box {
   position: relative;
@@ -154,7 +158,9 @@ nav svg {
   filter: blur(300px);
 } */
 
+/* ------------ */
 /* hero-section */
+/* ------------ */
 
 .box{
   /* width: 1216px; */
@@ -251,7 +257,7 @@ nav svg {
 position: absolute;
 width: 373px;
 top: 315px;
-left: -90px;
+left: -70px;
 font-family: var(--body-text-font-family);
 font-weight: var(--body-text-font-weight);
 color: #ffffff;
@@ -259,7 +265,6 @@ font-size: var(--body-text-font-size);
 letter-spacing: var(--body-text-letter-spacing);
 font-style: var(--body-text-font-style);
 line-height: 23px;
-scale: 90%;
 }
 .btn-box{
   display: flex;
@@ -312,26 +317,27 @@ scale: 90%;
   font-family: var(--heading-font);
   left: -61px;
 }
-
+/* ------------- */
 /* Intro Section */
+/* ------------- */
 
 .box-2{
   width: 100%;
   height: 400px;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
 }
 
 .intro-content-container{
-  background-color: #ff0000;
+  /* background-color: #ff0000; */
   position: relative;
   width: 78%;
   height: 400px;
   top: 0;
-  left: 11%;
+  left: 14%;
 }
 
 .intro-text-container{
-  background-color: #bb4545;
+  /* background-color: #bb4545; */
   position: absolute;
   width: 600px;
   height: 270px;
@@ -341,7 +347,7 @@ scale: 90%;
 }
 
 .about-me-img-container {
-  background-color: #0c4469;
+  /* background-color: #0c4469; */
   position: absolute;
   width: 400px;
   height: 400px;
@@ -352,7 +358,7 @@ scale: 90%;
   align-items: center;
 }
 .img-holder-about-section{
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   width: 350px;
   height: 360px;
   border-radius: 30px;
@@ -401,6 +407,7 @@ scale: 90%;
   letter-spacing: var(--body-text-letter-spacing);
   line-height: var(--body-text-line-height);
   font-style: var(--body-text-font-style);
+  /* scale: 90%; */
 }
 
 .btn-box-2{
@@ -413,19 +420,24 @@ scale: 90%;
 }
 
 .about-img {
-  scale: 20%;
+  display: flex;
+  position: absolute;
+  scale: 50%;
+  top: -160px;
+  left: -150px;
+  border-radius: 50px;
 }
 
-/* .ellipse {
+.ellipse {
   position: absolute;
   width: 70px;
   height: 70px;
-  top: 121px;
-  left: 0;
+  top: 100px;
+  left: -15px;
   background-color: #aad9d9;
   border-radius: 50px;
   opacity: 70%;
-} */
+}
 
 /* ---------------------- */
 /* Responsiveness Section */
@@ -465,6 +477,7 @@ scale: 90%;
     scale: 90%;
   }
 }
+
 @media (max-width: 485px) {
 
   /* Navbar Section */
