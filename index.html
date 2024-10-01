@@ -1,84 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="/assets/globleStyle.css">
-    <link rel="stylesheet" href="/assets/style.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="/assets/globleStyle.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
     <!-- Navbar-section -->
-
-    <nav>
-        <input type="checkbox" id="sidebar-action">
+    <div id="parent">
+      <nav>
+        <input type="checkbox" id="sidebar-action" />
         <label for="sidebar-action" class="open-sidebar-button">
-            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000">
-                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
-            </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="32px"
+            viewBox="0 -960 960 960"
+            width="32px"
+            fill="#000000"
+          >
+            <path
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+            />
+          </svg>
         </label>
 
-        <label id="overlay" for="sidebar-action"></label> <!-- this label is used for closing the sidebar from left empty space :) -->
+        <label id="overlay" for="sidebar-action"></label>
+        <!-- this label is used for closing the sidebar from left empty space :) -->
         <div class="links-container">
-            <label for="sidebar-action" class="close-sidebar-button">
-                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000">
-                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
-                </svg>
-            </label>
+          <label for="sidebar-action" class="close-sidebar-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="32px"
+              viewBox="0 -960 960 960"
+              width="32px"
+              fill="#000000"
+            >
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
+          </label>
 
-            <a class="home-link" href="#">Portfolio.</a>
-            <a href="#">about</a>
-            <a href="#">resume</a>
-            <a href="#">portfolio</a>
-            <a href="#">contact</a>
+          <a class="home-link" href="#">Portfolio.</a>
+          <a href="#">about</a>
+          <a href="#">resume</a>
+          <a href="#">portfolio</a>
+          <a href="#">contact</a>
         </div>
-    </nav>
-
-    <!-- Background Design -->
-
-    <!-- <div class="box"></div>
-      <div class="BG-circles">
-        <div class="ellipse"></div>
-        <div class="div"></div>
-        <div class="overlap-group">
-          <div class="ellipse-2"></div>
-          <div class="ellipse-3"></div>
+      </nav>
+      <!-- hero section -->
+      <header>
+        <div id="name">
+          <p id="greet">
+            Hi,I'm<br />
+            Gagandeep<br />
+            singh
+          </p>
+          <p id="passion">
+            A GRAPHIC DESIGNER AND<br />
+            VISUAL STORYTELLER
+          </p>
+          <p id="idea">
+            passionate in creating visually captivating<br />
+            design that make a difference
+          </p>
+          <div id="explore">
+            <button id="my-work">EXPLORE MY WORK</button>
+            <button id="touch">GET IN TOUCH</button>
+          </div>
         </div>
-        <div class="ellipse-4"></div>
-        <div class="ellipse-5"></div>
+        <div id="logo">
+          <img src="/assets/Images/Other 07.png" alt="logo" />
+        </div>
+      </header>
+      <main>
+        <div id="left">
+          <div id="image">
+            <img src="/assets/Images/IMG_9772.JPG" alt="" />
+          </div>
+          <div id="eclipse"></div>
+        </div>
+        <div id="right">
+          <p id="about-me">ABOUT ME</p>
+          <h2>Who I am</h2>
+          <p id="description">
+            I'm Gagandeep Singh, a fresher graphic designer with a strong
+            foundation in various creative fields, including video editing,<br />
+            motion graphics, and animation. I love transforming ideas into<br />
+            beautiful visuals that leave a lasting impression.
+          </p>
+          <button>VIEW RESUME</button>
+        </div>
+      </main>
+      <div id="quote-container">
+        <div class="quote-card">
+          <p class="quote-text">
+            "I Believe That Design Is Not Just About Making Things Look Good But
+            Also About Solving Problems Creatively. I Am Eager To Collaborate,
+            Learn, And Grow In This Ever-Evolving Field."
+          </p>
+          <button class="btn-work">VIEW WORK</button>
+        </div>
       </div>
-    </div> -->
+      <h2 class="skill-header">MY SKILLS</h2>
+      <h1 id="Software">Software I</h1>
+      <h2 id="use">USE-TO</h2>
+      <div id="skills">
+        <div id="skills-showcase">
+          <div class="skill-card">
+              <div class="png">
+                <img src="/assets/icons/Photoshop.png" alt="">
+              </div>
+              <h2 class="software-name">PHOTOSHOP</h2>
+              <p class="software-info">Expertly retouch and manipulate images for creative and professional projects.</p>
+          </div>
+          <div class="skill-card">
+              <div class="png">
+                <img src="/assets/icons/Maya.png" alt="">
+              </div>
+              <h2 class="software-name">AUTO DESK MAYA</h2>
+              <p class="software-info">Craft intricate 3D models, animations, and simulations for various media.</p>
+          </div>
+          <div class="skill-card">
+              <div class="png">
+                <img src="/assets/icons/After effects.png" alt="">
+              </div>
+              <h2 class="software-name">AFTER EFFECTS</h2>
+              <p class="software-info">Create stunning motion graphics and visual effects for videos and animations.</p>
+          </div>
+          <div class="skill-card">
+              <div class="png">
+                <img src="/assets/icons/Coreldraw.png " alt="">
+              </div>
+              <h2 class="software-name">CORELDRAW</h2>
+              <p class="software-info">Create stunning motion graphics and visual effects for videos and animations.</p>
+          </div>
+          <div class="skill-card">
+              <div class="png">
+                <img src="/assets/icons/Illustrator.png" alt="">
+              </div>
+              <h2 class="software-name">ILLUSTRATOR</h2>
+              <p class="software-info">Create stunning motion graphics and visual effects for videos and animations.</p>
+          </div>
+          <div class="skill-card">
+              <div class="png">
+                <img src="/assets/icons/premiere pro.png" alt="">
+              </div>
+              <h2 class="software-name">PREMIERE PRO</h2>
+              <p class="software-info">Create stunning motion graphics and visual effects for videos and animations.</p>
+          </div>
+        </div>
+      </div>
+      <h2 class="skill-header">Beginner</h2>
+    </div>
+  </body>
+</html>
 
-    <!-- Hero-Section -->
-     
-     <div class="box">
+<!-- <div class="box"></div>
       <div class="hero-section">
         <div class="overlap">
           <div class="content-holder">
             <div class="img-container">
-              <img class="img" src="/assets/Images/Other 07.png"/>
+              <img class="img" src="/assets/Images/Other 07.png" />
             </div>
             <div class="content-holder-2">
               <div class="text-container">
-                <div class="hi-i-m-gagandeep">Hi, I&#39;m Gagandeep Singh
-                </div>
-                <p class="a-graphic-designer">A GRAPHIC DESIGNER AND VISUAL STORYTELLER!</p>
-                <p class="text-wrapper">passionate in creating visually captivating designs that make a difference.</p>
+                <div class="hi-i-m-gagandeep">Hi, I&#39;m Gagandeep Singh</div>
+                <p class="a-graphic-designer">
+                  A GRAPHIC DESIGNER AND VISUAL STORYTELLER!
+                </p>
+                <p class="text-wrapper">
+                  passionate in creating visually captivating designs that make
+                  a difference.
+                </p>
                 <div class="btn-box">
                   <a href="#" class="btn-style-1">EXPLORE MY WORK</a>
                   <a href="#" class="btn-style-2">GET IN TOUCH</a>
-              </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-     </div>
+    </div> -->
+<!-- 
 
-     <!-- Intro Section -->
-    
-     <div class="box-2">
+
+     <div class="box-2"></div>
       <div class="intro-content-container">
         <div class="intro-text-container">
           <div class="text-wrapper-im-section">ABOUT ME</div>
@@ -86,30 +196,20 @@
             <div class="who-i-m">Who I&#39;m</div>
           </div>
           <p class="i-m">
-          I&#39;m Gagandeep Singh, a fresher graphic designer with a strong foundation in various creative fields,
-          including video editing, motion graphics, and animation. I love transforming ideas into beautiful visuals that
-          leave a lasting impression.
-        </p>
-        <div class="btn-box-2">
-          <a href="#" class="btn-style-1">VIEW RESUME</a>
-        </div>
+            I&#39;m Gagandeep Singh, a fresher graphic designer with a strong
+            foundation in various creative fields, including video editing,
+            motion graphics, and animation. I love transforming ideas into
+            beautiful visuals that leave a lasting impression.
+          </p>
+          <div class="btn-box-2">
+            <a href="#" class="btn-style-1">VIEW RESUME</a>
+          </div>
         </div>
         <div class="about-me-img-container">
           <div class="img-holder-about-section">
             <img class="about-img" src="/assets/Images/IMG_9772.JPG" />
           </div>
-          <div class="ellipse">
-          </div>
+          <div class="ellipse"></div>
         </div>
       </div>
-     </div>
-
-     <!-- Thought Section -->
-
-     <div class="thought-box">
-      <div class="thought-container">
-        
-      </div>
-     </div>
-</body>
-</html>
+    </div> -->
