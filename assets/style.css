@@ -344,13 +344,21 @@ nav svg {
   justify-content: end;
 }
 
-#img-1 img {
+#img-hover-ani {
   max-width: 100%;
   object-fit: contain;
   scale: 110%;
   margin-bottom: 2rem;
   padding-left: 15rem;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
+
+#img-hover-ani:hover {
+  opacity: .7;
+  transform: scale(1.05);
+}
+
 
 /* ------------- */
 /* Intro Section */
@@ -495,7 +503,7 @@ main {
   border-radius: 12px;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
   /* padding: 2rem; */
-  padding: 2rem 2rem 1rem 2rem;
+  padding: 2rem 2rem .5rem 2rem;
   max-width: 75%;
   height: auto;
   text-align: center;
@@ -514,7 +522,7 @@ main {
 .thought-text-container {
   /* background-color: #908FDB; */
   width: auto;
-  height: 200px;
+  height: 16.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -536,6 +544,7 @@ main {
   font-weight: 150;
   font-size: 28px;
   transform: translateY(-10px);
+  letter-spacing: 2px;
 }
 
 .thought-text {
@@ -551,7 +560,8 @@ main {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 60px;
+  height: 50px;
+  transform: translateY(.7rem);
 }
 
 #view-work {
@@ -586,7 +596,7 @@ main {
 /* ----------------------- */
 
 .skill-header-container {
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   width: 100%;
   height: auto;
   margin-top: 2rem;
@@ -604,12 +614,163 @@ main {
 }
 
 #Software {
-  font-size: 4rem;
+  font-size: var(--h2-font-size);
   text-align: center;
-  color: white;
-  letter-spacing: 1px;
+  color: #ffffff;
+  font-family: var(--h2-font-family);
+  font-weight: var(--h2-font-weight);
+  transform: translateY(-.2rem);
 }
-#skills {
+
+#use {
+  transform: translateY(-1rem);
+}
+
+.card-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* margin-top: 1rem; */
+}
+.card{
+  width: 325px;
+  /* background-color: #f0f0f0; */
+  border-radius: 10px;
+  overflow: hidden;
+  /* box-shadow: 0px 2px 4px rgba(0, 0, 0, .2); */
+  margin: 20px;
+  /* background: #e0e0e0; */
+  /* box-shadow:  8px 8px 19px #07070750,
+              -8px -8px 19px #ffffff; */
+  transition: transform .15s ease-in-out; /* Add this line for smooth transition */
+  padding-bottom: 1rem;
+}
+.card:hover{
+  transform: scale(1.05); /* Smooth scaling effect */
+}
+.card-bg-holder {
+  /* background-color: #ff0000; */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: start;
+  transform: translateY(-8.4rem);
+  z-index: -3;
+}
+.card-bg {
+  background-color: var(--card-bg-color);
+  opacity: .65;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: .15s ease-in-out; /* Add this line for smooth transition */
+}
+
+.image-container{
+  /* background-color: cadetblue; */
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  /* transform: translateY(-3rem); */
+  z-index: 1;
+}
+.card img{
+  width: 28%;
+  height: 28%;
+}
+.card-content{
+  padding: 16px;
+}
+.card-title-holder {
+  /* background-color: #ff0000; */
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(.7rem);
+}
+#card-title {
+  font-size: var(--sub-heading-font-size);
+  font-weight: var(--sub-heading-font-weight);
+  font-family: var(--sub-heading-font-family);
+  letter-spacing: var(--sub-heading-letter-spacing);
+  color:var(--accent-color);
+  transform: translateY(-.4rem);
+}
+.card-description{
+  color: var(--text-color);
+  font-family: var(--body-text-font-family);
+  font-size: var(--body-text-font-size);
+  line-height: 1.3;
+  text-align: center;
+  /* transform: translateY(1rem); */
+}
+.card-content .btn{
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 16px;
+  color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, .2);
+  box-shadow:  0px 2px 4px #868686,
+              0px -2px 4px #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #skills {
   width: 100%;
   height: 100%;
   display: flex;
@@ -627,8 +788,8 @@ main {
   gap: 3rem;
 }
 .skill-card {
-  height: 40%;
-  width: 23rem;
+  height: 30%;
+  width: 20rem;
   background-color: rgba(255, 255, 255, 0.05);
   display: flex;
   flex-direction: column;
@@ -643,7 +804,7 @@ main {
   text-align: center;
 }
 .png {
-  /* background-color: yellow; */
+  background-color: yellow;
   width: 6rem;
   width: 6rem;
   margin-top: -5rem;
@@ -660,7 +821,7 @@ main {
 .software-info {
   color: white;
   letter-spacing: 1px;
-}
+} */
 
 
 
