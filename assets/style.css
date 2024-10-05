@@ -352,7 +352,7 @@ nav svg {
   margin-bottom: 2rem;
   padding-left: 15rem;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: .15s ease-in-out;
 }
 
 #img-hover-ani:hover {
@@ -395,7 +395,8 @@ main {
   float: right;
   scale: .9;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: transform .15s ease-in-out;
+  transition: .15s ease-in-out;
 }
 
 #image:hover {
@@ -850,7 +851,8 @@ main {
   margin-top: 7.5rem;
   padding-left: 15rem;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: transform .15s ease-in-out;
+  transition: .15s ease-in-out;
 }
 
 #img-hover-ani-2:hover {
