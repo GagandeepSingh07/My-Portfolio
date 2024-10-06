@@ -893,7 +893,117 @@ main {
 /* footer Section */
 /* -------------- */
 
-footer {
+
+
+.footer-div {
+  background-color: #680606;
+    width: 100%;
+    height: 87px;
+}
+
+.footer-div .footer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.footer-div .rectangle {
+    width: 100%;
+    height: 10px;
+    top: 77px;
+    background: rgb(58,58,190);
+    background: linear-gradient(140deg, rgba(58,58,190,1) 21%, rgba(137,209,209,1) 88%);
+    position: relative;
+}
+
+.footer-div .group {
+    width: 100%;
+    position: absolute;
+    height: 55px;
+    top: 0;
+}
+
+.footer-text-wrapper {
+    position: relative;
+    font-family: "Outfit-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.footer-div .overlap-group-wrapper {
+    width: 386px;
+    left: 841px;
+    position: absolute;
+    height: 55px;
+    top: 0;
+}
+
+.footer-div .overlap-group {
+    position: relative;
+    width: 384px;
+    height: 55px;
+    border-radius: 50px;
+}
+
+.footer-div .div {
+    width: 384px;
+    height: 55px;
+    top: 0;
+    background-color: #1c1853;
+    border-radius: 50px;
+    opacity: 0.65;
+    position: absolute;
+    left: 0;
+}
+
+.footer-div .text-wrapper-2 {
+    position: absolute;
+    width: 126px;
+    top: 10px;
+    left: 21px;
+    opacity: 0.45;
+    font-family: "Outfit-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 31px;
+    white-space: nowrap;
+}
+
+.footer-div .frame {
+    display: flex;
+    width: 128px;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 28px 72px;
+    position: absolute;
+    top: 11px;
+    left: 244px;
+    background-color: #908fdb;
+    border-radius: 100px;
+}
+
+.footer-div .submit {
+    position: relative;
+    width: fit-content;
+    margin-top: -25.5px;
+    margin-bottom: -23.5px;
+    margin-left: -34.64px;
+    margin-right: -34.64px;
+    font-family: "Outfit-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+/* footer {
   background-color: #0d1b4c;
   padding: 20px;
   text-align: center;
@@ -956,7 +1066,7 @@ height: 10rem;
       width: 100%;
       margin: 5px 0;
   }
-}
+} */
 
 
 /* ---------------------- */
