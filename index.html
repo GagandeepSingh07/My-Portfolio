@@ -29,8 +29,8 @@
           </label>
 
           <a class="home-link" href="#">Portfolio.</a>
-          <a href="#">about</a>
-          <a href="#">resume</a>
+          <a href="#main-about-section">about</a>
+          <a href="https://drive.google.com/file/d/1XO6Ukhhe_jHUMQn9xJH2OtfZT7CGUUGc/view?usp=drivesdk" target="_blank">resume</a>
           <a href="#">portfolio</a>
           <a href="#">contact</a>
       </div>
@@ -68,6 +68,7 @@
           design that make a difference
         </p>
         <div id="explore">
+          <!-- <a href="#explore-redirect-link"></a> -->
           <button id="my-work">EXPLORE MY WORK</button>
           <button id="touch">GET IN TOUCH</button>
         </div>
@@ -80,7 +81,7 @@
 
    <!-- Intro Section -->
   
-   <main>
+   <main id="main-about-section">
     <div id="left">
       <div id="image">
         <img src="/assets/Images/IMG_9772.JPG" alt="Its Me.....if you don't see me😁" />
@@ -96,7 +97,9 @@
         motion graphics, and animation. I love transforming ideas into
         beautiful visuals that leave a lasting impression.
       </p>
-      <button>VIEW RESUME</button>
+      <a href="https://drive.google.com/file/d/1XO6Ukhhe_jHUMQn9xJH2OtfZT7CGUUGc/view?usp=drivesdk" target="_blank">
+        <button>VIEW RESUME</button>
+      </a>
     </div>
   </main>
 
@@ -124,7 +127,7 @@
 
   <div class="skill-header-container">
     <p class="skill-header">MY SKILLS</p>
-    <p id="Software">Software I</p>
+    <p id="Software" class="software-ope-ani">Software I</p>
     <p id="use">USE-TO</p>
   </div>
 
@@ -283,7 +286,7 @@
 
   <!-- Portfolio-Section -->
    
-  <div class="portfolio-section-container">
+  <div id="explore-redirect-link" class="portfolio-section-container">
     <div class="portfolio-section">
       <div id="intro-to">
         <p id="intro-title">Introduction To</p>
@@ -304,6 +307,40 @@
   </div>
 
 
+  <!-- Footer Section -->
+
+  <footer>
+    <div class="footer-container">
+        <p>Give me your Feedback!</p>
+        <form class="feedback-form">
+            <input type="email" placeholder="Email Address" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="footer-line-holder"></div>
+</footer>
+
   </div>
+
+  
+  <script>
+    document.getElementById('my-work').addEventListener('click', function() {
+        document.getElementById('explore-redirect-link').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+
+    document.getElementById('view-work').addEventListener('click', function() {
+        document.getElementById('explore-redirect-link').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+
+    document.getElementById('touch').addEventListener('click', function() {
+        document.getElementById('explore-redirect-link').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+    </script>
 </body>
 </html>

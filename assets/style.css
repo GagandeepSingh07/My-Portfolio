@@ -48,6 +48,7 @@
 
 html {
   font-size: 12pt;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -249,6 +250,12 @@ nav svg {
   line-height: var(--main-heading-line-height);
   font-style: var(--main-heading-font-style);
   padding-top: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#greet:hover {
+  opacity: .7;
 }
 
 #passion {
@@ -451,7 +458,13 @@ main {
   letter-spacing: var(--h2-letter-spacing);
   line-height: var(--h2-line-height);
   font-style: var(--h2-font-style);
-  top: -10px;
+  /* top: -5px; */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#right h2:hover{
+  opacity: .7;
 }
 
 #description {
@@ -637,6 +650,15 @@ main {
   transform: translateY(-.2rem);
 }
 
+.software-ope-ani {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.software-ope-ani:hover {
+  opacity: .7;
+}
+
 #use {
   transform: translateY(-1rem);
 }
@@ -752,7 +774,8 @@ main {
   height: 300px;
   top: 10%;
   left: 0;
-  padding-left: 5%;
+  margin-bottom: 10rem;
+  /* padding-left: 5%; */
 }
 
 .portfolio-section {
@@ -761,7 +784,7 @@ main {
   height: 300px;
   display: flex;
   flex-wrap: wrap;
-  transform: translateX(1rem);
+  transform: translateX(4.5rem);
 }
 
 #intro-to {
@@ -790,6 +813,12 @@ main {
   line-height: var(--main-heading-line-height);
   font-style: var(--main-heading-font-style);
   padding-top: 6px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#portfolio-title:hover {
+  opacity: .7;
 }
 
 #Port-summary {
@@ -851,13 +880,82 @@ main {
   margin-top: 7.5rem;
   padding-left: 15rem;
   cursor: pointer;
-  transition: transform .15s ease-in-out;
   transition: .15s ease-in-out;
+  /* transition: .15s ease; */
 }
 
 #img-hover-ani-2:hover {
   opacity: .7;
   transform: scale(1.05);
+}
+
+/* -------------- */
+/* footer Section */
+/* -------------- */
+
+footer {
+  background-color: #0d1b4c;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: white;
+}
+
+.footer-container p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.feedback-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedback-form input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  width: 250px;
+}
+
+.feedback-form button {
+  padding: 10px 20px;
+  background-color: #7367F0;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.feedback-form button:hover {
+  background-color: #5a4dcc;
+}
+
+.footer-line-holder {
+background-color: beige;
+width: 100%;
+height: 10rem;
+}
+
+@media (max-width: 768px) {
+  .feedback-form {
+      flex-direction: column;
+  }
+
+  .feedback-form input[type="email"],
+  .feedback-form button {
+      border-radius: 20px;
+      width: 100%;
+      margin: 5px 0;
+  }
 }
 
 
