@@ -364,7 +364,7 @@ nav svg {
 
 #img-hover-ani:hover {
   opacity: .7;
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
 }
 
 
@@ -524,8 +524,7 @@ main {
   /* background-color: #fff; */
   border-radius: 12px;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
-  /* padding: 2rem; */
-  padding: 2rem 2rem .5rem 2rem;
+  padding: 2rem 2rem 0.5rem 2rem;
   max-width: 75%;
   height: auto;
   text-align: center;
@@ -886,7 +885,7 @@ main {
 
 #img-hover-ani-2:hover {
   opacity: .7;
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
 }
 
 /* -------------- */
@@ -895,7 +894,7 @@ main {
 
 
 
-.footer-div {
+/* .footer-div {
   background-color: #680606;
     width: 100%;
     height: 87px;
@@ -906,6 +905,7 @@ main {
     width: 100%;
     height: 100%;
     background-color: transparent;
+    overflow: hidden;
 }
 
 .footer-div .rectangle {
@@ -918,27 +918,32 @@ main {
 }
 
 .footer-div .group {
+  background-color: beige;
     width: 100%;
-    position: absolute;
-    height: 55px;
+    position: relative;
+    height: auto;
     top: 0;
+    overflow: hidden;
 }
 
 .footer-text-wrapper {
     position: relative;
-    font-family: "Outfit-SemiBold", Helvetica;
+    font-family: var(--heading-font);
     font-weight: 600;
     color: #ffffff;
     font-size: 22px;
     letter-spacing: 0;
     line-height: normal;
+    margin-top: 1rem;
+    transform: translateX(5rem);
 }
 
 .footer-div .overlap-group-wrapper {
-    width: 386px;
+  background-color: #680606;
+    width: 100%;
     left: 841px;
-    position: absolute;
-    height: 55px;
+    position: relative;
+    height: auto;
     top: 0;
 }
 
@@ -956,7 +961,7 @@ main {
     background-color: #1c1853;
     border-radius: 50px;
     opacity: 0.65;
-    position: absolute;
+    position: relative;
     left: 0;
 }
 
@@ -975,17 +980,24 @@ main {
     white-space: nowrap;
 }
 
+#input-box {
+  text-decoration: none;
+  width: 165%;
+  background-color: #1c1853;
+  outline: none;
+}
+
 .footer-div .frame {
     display: flex;
     width: 128px;
-    height: 35px;
+    height: 30px;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 28px 72px;
+    padding: 5px;
     position: absolute;
-    top: 11px;
-    left: 244px;
+    top: 8px;
+    left: 236px;
     background-color: #908fdb;
     border-radius: 100px;
 }
@@ -993,7 +1005,7 @@ main {
 .footer-div .submit {
     position: relative;
     width: fit-content;
-    margin-top: -25.5px;
+    margin-top: -23px;
     margin-bottom: -23.5px;
     margin-left: -34.64px;
     margin-right: -34.64px;
@@ -1001,7 +1013,8 @@ main {
     font-weight: 700;
     color: #ffffff;
     font-size: 12px;
-}
+    letter-spacing: 1.47px;
+} */
 
 /* footer {
   background-color: #0d1b4c;
