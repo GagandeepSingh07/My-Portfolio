@@ -1129,6 +1129,13 @@ ul{
 .greet {
     height: 28%;
 }
+.btn-box {
+  gap: 10px;
+}
+#my-work {
+  padding-left: 6px;
+  padding-right: 6px;
+}
 }
 
 @media(max-width:360px){
