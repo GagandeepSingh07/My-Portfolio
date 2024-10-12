@@ -573,81 +573,66 @@ transition: 0.3s ease;
 /* --------------- */
 
 .thought-box {
+  /* border: 8px solid red; */
+  height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto;
 }
 
 .thought-container {
-  /* background-color: #fff; */
-  border-radius: 12px;
-  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
-  padding: 2rem 2rem 0.5rem 2rem;
-  max-width: 75%;
-  height: auto;
-  text-align: center;
+  width: 78%;
+  height: 330px;
+  display: flex;
   background: rgb(58,58,190);
   background: linear-gradient(140deg, rgba(58,58,190,1) 21%, rgba(137,209,209,1) 88%);
+  border-radius: 25px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  padding: 1rem 1rem 0.5rem 1rem;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.dash-container, .thought-text-holder, .work-btn {
+  width: 100%;
 }
 
 .dash-container {
-  /* background-color: antiquewhite; */
-  height: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  height: 10%;
+  /* background-color: #352424; */
 
-.thought-text-container {
-  /* background-color: #908FDB; */
-  width: auto;
-  height: 16.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 
 .thought-text-holder {
-  /* background-color: blueviolet; */
+  height: 50%;
+  /* background-color: #4f4f4f; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-direction: column; */
+  /* padding-bottom: 2rem; */
+  /* padding-top: 10px; */
+  /* gap: 15px; */
+}
+
+#work-btn {
+  height: 14%;
+  /* background-color: #babaff; */
+
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 75%;
-  height: 150px;
-  scale: 1.1;
 }
 
 .dash {
   color: #ffffff;
   font-weight: 150;
   font-size: 28px;
-  transform: translateY(-10px);
   letter-spacing: 2px;
-}
-
-.thought-text {
-  font-size: 1.6rem;
-  letter-spacing: .5px;
-  font-weight: var(--h2-font-weight);
-  font-family: var(--h2-font-family);
-  color: #ffffff;
-  cursor: pointer;
-  transition: 0.3s ease;
-  /* transform: translateY(5px); */
-}
-
-.thought-text:hover {
-  opacity: .7;
-}
-
-#work-btn {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 50px;
-  transform: translateY(.7rem);
 }
 
 #view-work {
@@ -675,6 +660,21 @@ transition: 0.3s ease;
 #view-work:hover {
   background-color: #ffffff;
   color: var(--color-1);
+}
+
+
+.thought-text {
+  font-size: 2rem;
+  letter-spacing: .5px;
+  font-weight: var(--h2-font-weight);
+  font-family: var(--h2-font-family);
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.thought-text:hover {
+  opacity: .7;
 }
 
 /* ----------------------- */
@@ -1241,29 +1241,47 @@ ul{
 
 /* Thought Section */
 
-/* Solution: Add media query for smaller screens (1040px or less) */
-@media (max-width: 1040px) {
+@media(max-width:945px){
+  .thought-box {
+    height: 450px;
+    margin-top: 2rem;
+  }
   .thought-container {
-    padding: 1.5rem 1rem; /* Reduce padding */
-    max-width: 90%; /* Increase the max-width */
-    margin-top: 3rem;
+    height: 450px;
   }
-
-  .thought-text {
-    font-size: 1.3rem; /* Reduce font size for smaller screens */
-    letter-spacing: 0.4px; /* Adjust letter-spacing */
-  }
-
   .thought-text-holder {
-    width: 85%; /* Allow more width for text container */
+    height: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
-
-  .thought-text-container {
-    height: auto; /* Allow height to be flexible */
+}
+@media(max-width:540px){
+  .thought-text {
+  font-size: 1.9rem;
+  letter-spacing: .5px;
+}
+#work-btn {
+  height: 3.5rem;
+}
+}
+@media(max-width:440px){
+  .thought-box {
+    height: 580px;
   }
-
-  #work-btn {
-    transform: translateY(0.5rem); /* Adjust button position */
+  .thought-container {
+    height: 530px;
+  }
+  .thought-text-holder {
+    height: auto;
+    padding-top: 0;
+    padding-bottom: 1rem;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-bottom: 1.3rem;
+  }
+  .thought-text {
+    font-size: 1.7rem;
+    letter-spacing: .5px;
   }
 }
 
