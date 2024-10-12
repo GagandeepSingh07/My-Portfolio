@@ -1207,6 +1207,7 @@ ul{
 @media(max-width:945px){
   .main-section-container {
     flex-direction: column;
+    margin-bottom: 5rem;
     /* gap: 0px; */
   }
   .main-left, .main-right {
@@ -1224,7 +1225,6 @@ ul{
 }
 .btn-box-2 button {
   height: 4rem;
-  margin-bottom: 4rem;
   }
 }
 
@@ -1232,6 +1232,11 @@ ul{
     .WI {
         font-size: 50px;
       }
+}
+@media(max-width:324){
+  .main-right {
+    height: auto;
+}
 }
 
 /* Thought Section */
@@ -1241,6 +1246,7 @@ ul{
   .thought-container {
     padding: 1.5rem 1rem; /* Reduce padding */
     max-width: 90%; /* Increase the max-width */
+    margin-top: 3rem;
   }
 
   .thought-text {
