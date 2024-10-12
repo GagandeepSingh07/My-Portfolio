@@ -1355,6 +1355,11 @@ ul{
     scale: 110%;
   }
 }
+@media(max-width:410px){
+  .intro-to-left {
+    height: 450px;
+  }
+}
 @media(max-width:330px){
   #portfolio-title {
     font-size: 55px;
