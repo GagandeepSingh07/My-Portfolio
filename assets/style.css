@@ -512,6 +512,8 @@ transition: 0.3s ease;
   max-width: 100%;
   object-fit: contain;
   border-radius: 2rem;
+  box-shadow:  8px 8px 19px #07070750,
+              -8px -8px 19px #ffffff00;
 }
 
 /* #img-ellipse { */
