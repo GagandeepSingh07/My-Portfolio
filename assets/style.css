@@ -223,7 +223,6 @@ nav svg {
 /* ------------ */
 
 .hero-section-container {
-  transform: translateY(-3rem);
   min-height: 580px;
   height: auto;
   display: flex;
@@ -1176,6 +1175,9 @@ ul{
 }
 /* --------------------------------- */
 @media(max-width:465px){
+  .hero-section-container {
+  transform: translateY(-3rem);
+  }
     #my-greet {
         font-size: 60px;
 }
