@@ -48,6 +48,15 @@ To run this project locally, follow these steps:
    ```bash
    git clone https://github.com/GagandeepSingh07/My-Portfolio.git
 
+2. **Navigate to the project directory**:
+   
+   cd My-Portfolio
+
+3. **Open the index.html file in your browser**:
+
+   Simply open the index.html file in a web browser to view the website. Alternatively, you can serve the site using a simple local server (e.g., with Live Server in VSCode).
+
+   
 ## 📜 License
 
 This project is licensed under the MIT License - see the [LICENSE](./Other%20files/LICENSE) file for details.
