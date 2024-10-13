@@ -2,6 +2,14 @@
 
 :root {
 
+  /* temp */
+
+  --Cmaincolor: #ffffff;
+  --Ccolor1: #f77c73;
+  --Ccolor2: #6cbdff;
+  --Ccolor3: #71ff76;
+  --Ccolor4: #ffd65d;
+
   /* Color Palette Section */
 
   --color-1: #0f1016;
@@ -145,6 +153,7 @@ nav svg {
   /* border: 8px solid red; */
   overflow: hidden;
 }
+
 .loader {
   background-color: #1c185370;
   border-radius: 20px;
@@ -155,10 +164,12 @@ nav svg {
   height: 80px;
   box-shadow: 8px 8px 19px #07070717,
     -8px -8px 19px #ffffff00;
-    overflow: hidden;
+  overflow: hidden;
   padding-left: 2rem;
 }
-.loader pre, span {
+
+.loader pre,
+span {
   color: var(--text-color);
   font-family: var(--h2-font-family);
   font-weight: var(--h2-font-weight);
@@ -174,6 +185,7 @@ nav svg {
   overflow: hidden;
   position: relative;
 }
+
 .words::after {
   content: "";
   position: absolute;
@@ -216,9 +228,85 @@ nav svg {
   }
 }
 
-/* -------------- */
-/* Navbar Section */
-/* -------------- */
+/* ----------------- */
+/* Work Card Section */
+/* ----------------- */
+
+.dis-cards-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
+
+.dis-cards {
+  /* background-color: #ffffff; */
+  width: 78%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+#size-controler {
+  width: 525px;
+  height: 300px;
+  overflow: hidden;
+  /* background-color: aqua; */
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card1 {
+  background-color: var(--Ccolor1);
+}
+
+.card2 {
+  background-color: var(--Ccolor2);
+}
+
+.card3 {
+  background-color: var(--Ccolor3);
+}
+
+.card4 {
+  background-color: var(--Ccolor4);
+}
+
+.card {
+  flex: 1;
+  height: 100%;
+  transition: flex .5s ease;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover {
+  flex: 3;
+}
+
+.textstyle {
+  font-family: "Outfit", sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: var(--Cmaincolor);
+  transition: transform 0.5s ease;
+}
+
+.card:hover .textstyle {
+  transform: scale(1.5);
+  transition: transform 0.5s ease;
+}
 
 /* ---------------------- */
 /* Responsiveness Section */
@@ -302,7 +390,9 @@ nav svg {
     display: flex;
     padding-left: 5rem;
   }
-  .loader pre, span {
+
+  .loader pre,
+  span {
     font-size: 40px;
   }
 }
@@ -311,6 +401,7 @@ nav svg {
   .word-card {
     display: none;
   }
+
   .work-section-container {
     min-height: 15px;
     height: auto;
@@ -332,7 +423,7 @@ nav svg {
     justify-content: center;
     align-items: center;
     box-shadow: 4px 4px 9.5px #07070717,
-    -4px -4px 9.5px #ffffff00;
+      -4px -4px 9.5px #ffffff00;
   }
 
   .work-section p {
@@ -342,4 +433,25 @@ nav svg {
     letter-spacing: var(--h2-letter-spacing);
     color: var(--text-color);
   }
+}
+
+/* ------------------- */
+/* Work cards section  */
+/* ------------------- */
+
+@media(max-width: 780px) {
+  .dis-cards {
+  gap: 1rem;
+  padding-top: 1rem;
+}
+}
+
+@media(max-width: 525px) {
+  .dis-cards {
+    flex-direction: column;
+  }
+  #size-controler {
+  width: 100%;
+  height: 300px;
+}
 }
