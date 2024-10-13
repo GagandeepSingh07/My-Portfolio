@@ -64,10 +64,10 @@ This project is licensed under the MIT License - see the [LICENSE](./Other%20fil
 
 ## 📞 Contact
 
-If you'd like to get in touch, you can reach me via:
+I welcome any inquiries or collaboration opportunities. You can reach me through the following channels:
 
-- **Email**: [my email](singhgagan40951@gmail.com)
-- **Portfolio**: [visit site](https://singhgagan-portfolio.vercel.app/)
-- **Instagram**: [my instagram profile](https://www.instagram.com/_singh_gagan__?utm_source=qr&igsh=OTh0eG8wMHdiZnE1)
-- **GitHub**: [my GitHub](https://github.com/GagandeepSingh07)
-- **Youtube**: [my youtube](https://youtube.com/@5ilence01?si=RKAOC_-i5Esn--bn)
+- **Email**: [my email](mailto:singhgagan40951@gmail.com)
+- **Portfolio**: [View my portfolio](https://singhgagan-portfolio.vercel.app/)
+- **Instagram**: [Connect with me on Instagram](https://www.instagram.com/_singh_gagan__?utm_source=qr&igsh=OTh0eG8wMHdiZnE1)
+- **GitHub**: [Explore my GitHub profile](https://github.com/GagandeepSingh07)
+- **YouTube**: [Check out my YouTube channel](https://youtube.com/@5ilence01?si=RKAOC_-i5Esn--bn)
