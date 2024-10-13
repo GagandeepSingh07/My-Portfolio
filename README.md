@@ -10,6 +10,7 @@
   - [🚀 Features](#-features)
   - [🛠 Installation](#-installation)
   - [📜 License](#-license)
+  - [📞 Contact](#-contact)
 
 ## 🔍 About
 
@@ -60,3 +61,13 @@ To run this project locally, follow these steps:
 ## 📜 License
 
 This project is licensed under the MIT License - see the [LICENSE](./Other%20files/LICENSE) file for details.
+
+## 📞 Contact
+
+If you'd like to get in touch, you can reach me via:
+
+- **Email**: [my email](singhgagan40951@gmail.com)
+- **Portfolio**: [visit site](https://singhgagan-portfolio.vercel.app/)
+- **Instagram**: [my instagram profile](https://www.instagram.com/_singh_gagan__?utm_source=qr&igsh=OTh0eG8wMHdiZnE1)
+- **GitHub**: [my GitHub](https://github.com/GagandeepSingh07)
+- **Youtube**: [my youtube](https://youtube.com/@5ilence01?si=RKAOC_-i5Esn--bn)
