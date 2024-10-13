@@ -72,6 +72,8 @@ nav {
     justify-content: flex-end;
     align-items: center;
     font-family: var(--heading-font);
+
+    z-index: 1000;
 }
 
 .links-container {
@@ -80,10 +82,16 @@ nav {
     display: flex;
     align-items: center;
     padding-right: 10%;
+
+    z-index: 1001;
 }
 
 nav {
     font-weight: bold;
+}
+
+#overlay {
+  z-index: 1000; /* Ensure overlay is above the rest */
 }
 
 nav a {
@@ -115,6 +123,7 @@ nav svg {
 
 .open-sidebar-button, .close-sidebar-button {
     display: none;
+    z-index: 1002;
 }
 
 /* ------------------------- */
@@ -214,6 +223,7 @@ nav svg {
 /* ------------ */
 
 .hero-section-container {
+  transform: translateY(-3rem);
   min-height: 580px;
   height: auto;
   display: flex;
@@ -338,6 +348,10 @@ transition: 0.3s ease;
 background-color: var(--accent-color);
 color: var(--bg-color);
 border: none;
+}
+
+#my-work-mobile {
+  display: none;
 }
 
 #touch {
@@ -920,7 +934,7 @@ transition: 0.3s ease;
   background: var(--accent-color-2);
   border: 2px solid var(--accent-color-2);
   border-radius: 50px;
-  font-size: 12.5px;
+  font-size: 14px;
   color: var(--bg-color);
   text-decoration: none;
   font-weight: 550;
@@ -1106,6 +1120,11 @@ ul{
       right: 0;
   }
 
+  #sidebar-action:checked ~ .open-sidebar-button {
+    z-index: 1;
+    display: none;
+}
+
   .close-sidebar-button {
       position: absolute;
       top: -5px;
@@ -1179,7 +1198,7 @@ ul{
 
 @media(max-width:433px){
     #my-greet {
-        font-size: 50px;
+        font-size: 55px;
 }
 .greet {
     height: 28%;
@@ -1188,9 +1207,34 @@ ul{
   gap: 10px;
 }
 #my-work {
-  padding-left: 6px;
-  padding-right: 6px;
+  display: none;
 }
+#my-work-mobile {
+  display: block;
+  align-items: center;
+  width: 165px;
+  height: 100%;
+  background: var(--accent-color-2);
+  border: 2px solid var(--accent-color-2);
+  border-radius: 50px;
+  font-size: 12px;
+  color: var(--bg-color);
+  text-decoration: none;
+  font-weight: 550;
+  letter-spacing: 1px;
+  overflow: hidden;
+  transition: .5s;
+  font-family: var(--heading-font);
+  left: -71px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  }
+  
+  #my-work-mobile:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border: none;
+  }
 }
 
 @media(max-width:360px){
@@ -1243,11 +1287,10 @@ ul{
   height: 3rem;
   }
 }
-
-@media(max-width:340){
-    .WI {
-        font-size: 50px;
-      }
+@media(max-width:410){
+  .WI {
+      font-size: 25px;
+    }
 }
 @media(max-width:324){
   .main-right {
@@ -1376,6 +1419,11 @@ ul{
 }
 @media(max-width: 574px){
   .footer-col{
-    width: 100%;
+    width: 32%;
+    margin-bottom: 10px;
+    margin-bottom: 1rem;
+}
+.row{
+  padding-left: 0;
 }
 }

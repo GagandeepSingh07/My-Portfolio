@@ -31,7 +31,7 @@
           <a class="home-link" href="#">Portfolio.</a>
           <a href="#main-about-section">about</a>
           <a href="https://drive.google.com/file/d/1XO6Ukhhe_jHUMQn9xJH2OtfZT7CGUUGc/view?usp=sharing" target="_blank">resume</a>
-          <a href="#">portfolio</a>
+          <a href="#">my work</a>
           <a href="#social-links">contact</a>
       </div>
   </nav>
@@ -72,6 +72,7 @@
         </div>
         <div class="btn-box hero-text-content">
             <button id="my-work">EXPLORE MY WORK</button>
+            <button id="my-work-mobile">MY WORK</button>
             <button id="touch">GET IN TOUCH</button>
         </div>
     </div>
@@ -380,6 +381,12 @@
   
   <script>
     document.getElementById('my-work').addEventListener('click', function() {
+        document.getElementById('explore-redirect-link').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+
+    document.getElementById('my-work-mobile').addEventListener('click', function() {
         document.getElementById('explore-redirect-link').scrollIntoView({
             behavior: 'smooth'
         });
