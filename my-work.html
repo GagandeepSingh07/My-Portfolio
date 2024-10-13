@@ -1,50 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Work</title>
-    <link rel="stylesheet" href="/assets-2/style-2.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/assets-2/style-2.css" />
+  </head>
+  <body>
     <main id="parent">
+      <!-- Nav Bar -->
 
-        <!-- Nav Bar -->
+      <nav>
+        <input type="checkbox" id="sidebar-action" />
+        <label for="sidebar-action" class="open-sidebar-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="32px"
+            viewBox="0 -960 960 960"
+            width="32px"
+            fill="#000000">
+            <path
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+          </svg>
+        </label>
 
-        <nav>
-            <input type="checkbox" id="sidebar-action">
-            <label for="sidebar-action" class="open-sidebar-button">
-                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000">
-                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
-                </svg>
-            </label>
-      
-            <label id="overlay" for="sidebar-action"></label> <!-- this label is used for closing the sidebar from left empty space :) -->
-            <div class="links-container">
-                <label for="sidebar-action" class="close-sidebar-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000">
-                        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
-                    </svg>
-                </label>
-      
-                <a class="work-page-link" href="#">My_Work.</a>
-                <a href="#">about me</a>
-                <a href="https://drive.google.com/file/d/1XO6Ukhhe_jHUMQn9xJH2OtfZT7CGUUGc/view?usp=sharing" target="_blank">resume</a>
-                <a href="#social-links">contact</a>
-            </div>
-        </nav>
+        <label id="overlay" for="sidebar-action"></label>
+        <!-- this label is used for closing the sidebar from left empty space :) -->
+        <div class="links-container">
+          <label for="sidebar-action" class="close-sidebar-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="32px"
+              viewBox="0 -960 960 960"
+              width="32px"
+              fill="#000000">
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+          </label>
+
+          <a class="work-page-link" href="#">My_Work.</a>
+          <a href="#">about me</a>
+          <a
+            href="https://drive.google.com/file/d/1XO6Ukhhe_jHUMQn9xJH2OtfZT7CGUUGc/view?usp=sharing"
+            target="_blank"
+            >resume</a
+          >
+          <a href="#social-links">contact</a>
+        </div>
+      </nav>
+
+      <!-- Work Title -->
+
+      <header class="work-section-container">
+        <div class="work-section">
+          <p>MY WORK</p>
+        </div>
+      </header>
 
 
-        <!-- Work Title -->
+      <div class="word-card">
+        <div class="loader">
+          <pre>MY </pre>
+          <div class="words">
+            <span class="word">WORK</span>
+            <span class="word">POSTER</span>
+            <span class="word">ONLINE POSTS</span>
+            <span class="word">3D RENDERS</span>
+            <span class="word">WORK</span>
+          </div>
+        </div>
+      </div>
 
-        <header class="work-section-container">
-            <div class="work-section">
-                <p>MY WORK</p>
-            </div>
-          </header>
+      <!-- <div class="card">
+        <div class="loader">
+          <p>loading</p>
+          <div class="words">
+            <span class="word">buttons</span>
+            <span class="word">forms</span>
+            <span class="word">switches</span>
+            <span class="word">cards</span>
+            <span class="word">buttons</span>
+          </div>
+        </div>
+      </div> -->
 
-        <!-- Work Title -->
-
+      <!-- Work Title -->
     </main>
-</body>
+  </body>
 </html>
