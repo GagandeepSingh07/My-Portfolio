@@ -1429,3 +1429,23 @@ ul{
   padding-left: 0;
 }
 }
+
+
+/* ---------------- */
+/* Scroll Animation */
+/* ---------------- */
+
+.autoShow {
+  animation: autoShowAnimation both;
+  animation-timeline: view(70% 30%);
+}
+@keyframes autoShowAnimation {
+  from{
+    opacity: 0;
+    transform: translateY(200px) scale(.3);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
