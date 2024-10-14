@@ -1449,3 +1449,20 @@ ul{
     transform: translateY(0) scale(1);
   }
 }
+
+
+#my-greet::after {
+  content: "";
+  animation: my-greet-animation 1s ease both;
+}
+
+@keyframes my-greet-animation {
+from{
+  opacity: 0;
+  transform: translate(-60%);
+}
+to{
+  opacity: 1;
+  transform: translate(-50%);
+}
+}
