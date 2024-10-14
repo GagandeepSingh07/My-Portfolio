@@ -10,6 +10,21 @@
 <body>
   <div id="Parent">
 
+      <!-- Background Design -->
+
+  <!-- <div class="BG-circle-box">
+    <div class="BG-circles">
+      <div class="ellipse"></div>
+      <div class="div"></div>
+      <div class="overlap-group">
+        <div class="ellipse-2"></div>
+        <div class="ellipse-3"></div>
+      </div>
+      <div class="ellipse-4"></div>
+      <div class="ellipse-5"></div>
+    </div>
+  </div> -->
+
     <!-- Navbar-section -->
 
     <nav>
@@ -36,25 +51,10 @@
       </div>
   </nav>
 
-  <!-- Background Design -->
-
-  <!-- <div class="box"></div>
-    <div class="BG-circles">
-      <div class="ellipse"></div>
-      <div class="div"></div>
-      <div class="overlap-group">
-        <div class="ellipse-2"></div>
-        <div class="ellipse-3"></div>
-      </div>
-      <div class="ellipse-4"></div>
-      <div class="ellipse-5"></div>
-    </div>
-  </div> -->
-
   <!-- Hero-Section -->
    
   <header class="hero-section-container">
-    <div class="hero-left">
+    <div class="hero-left fade-in">
         <div class="title hero-text-content">
             <p id="my-greet">
                 Hi,I'm<br>Gagandeep<br>Singh
@@ -76,7 +76,7 @@
             <button id="touch">GET IN TOUCH</button>
         </div>
     </div>
-    <div class="hero-right">
+    <div class="hero-right fade-in-img">
         <div id="img-1">
             <img id="img-hover-ani" src="/assets/Images/Other 07.png" alt="hero-section-img" />
           </div>
@@ -85,14 +85,14 @@
 
    <!-- Intro Section -->
   
-   <main class="main-section-container autoShow" id="main-about-section">
-    <div class="main-left">
+   <main class="main-section-container" id="main-about-section">
+    <div class="main-left autoShow">
       <div id="main-image">
         <img src="/assets/Images/IMG_9772.JPG" alt="Its Me.....if you don't see😁" />
         <!-- <div id="img-ellipse"></div> -->
       </div>
     </div>
-    <div class="main-right">
+    <div class="main-right autoShow">
       <div class="main-about main-text-content">
         <p id="about-me">ABOUT ME</p>
         <p class="WI">Who I am</p>
@@ -291,9 +291,9 @@
 
 
   <!-- Portfolio-Section -->
-   
-  <div id="explore-redirect-link" class="portfolio-section-container autoShow">
-    <div class="intro-to-left">
+                                                 <!--autoShow-->
+  <div id="explore-redirect-link" class="portfolio-section-container">
+    <div class="intro-to-left autoShow">
         <div class="portfolio-text-content">
           <p id="intro-title">Introduction To</p>
           <p id="portfolio-title">My Portfolio.</p>
@@ -306,7 +306,8 @@
             </a>
         </div>
     </div>
-    <div class="intro-img-right">
+               <!-- fadeSlide-in -->
+    <div class="intro-img-right autoShow">
       <img id="img-hover-ani-2" src="/assets/Images/Other 12.png" alt="portfolio-section-img" />
     </div>
   </div>
@@ -403,6 +404,21 @@
             behavior: 'smooth'
         });
     });
+
+
+    window.addEventListener('load', function() {
+      document.querySelector('.hero-left').classList.add('visible');
+    });
+    window.addEventListener('load', function() {
+      document.querySelector('.hero-right').classList.add('visible');
+    });
+    window.addEventListener('load', function() {
+      document.querySelector('.intro-to-left').classList.add('visible');
+    });
+    window.addEventListener('load', function() {
+      document.querySelector('.intro-img-right').classList.add('visible');
+    });
+
     </script>
 </body>
 </html>

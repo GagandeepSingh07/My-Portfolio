@@ -61,6 +61,100 @@ body {
   height: 100vh;
 }
 
+/* ------------------------- */
+/* Background Design Section */
+/* ------------------------- */
+
+/* .BG-circle-box {
+  position: absolute;
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.BG-circle-box .BG-circles {
+  position: fixed;
+  width: 1766px;
+  height: 3445px;
+  top: 0;
+  left: 0;
+} */
+
+/* .BG-circle-box .ellipse {
+  width: 669px;
+  height: 669px;
+  top: 841px;
+  left: 1097px;
+  background-color: #aad9d991;
+  border-radius: 334.5px;
+  position: absolute;
+  filter: blur(300px);
+} */
+
+/* .BG-circle-box .div {
+  width: 255px;
+  height: 255px;
+  top: 3190px;
+  left: 35px;
+  background-color: #aad9d991;
+  border-radius: 127.5px;
+  position: absolute;
+  filter: blur(300px);
+} */
+
+/* .BG-circle-box .overlap-group {
+  position: absolute;
+  width: 633px;
+  height: 558px;
+  top: 2099px;
+  left: 499px;
+} */
+
+/* .BG-circle-box .ellipse-2 {
+  width: 317px;
+  height: 317px;
+  top: 241px;
+  left: 316px;
+  background-color: #aad9d991;
+  border-radius: 158.5px;
+  position: absolute;
+  filter: blur(300px);
+} */
+
+/* .BG-circle-box .ellipse-3 {
+  width: 376px;
+  height: 376px;
+  top: 0;
+  left: 0;
+  background-color: #8080d7d4;
+  border-radius: 188px;
+  position: absolute;
+  filter: blur(300px);
+} */
+
+/* .BG-circle-box .ellipse-4 {
+  width: 718px;
+  height: 718px;
+  top: 0;
+  left: 184px;
+  background-color: #8080d7d4;
+  border-radius: 359px;
+  position: absolute;
+  filter: blur(300px);
+} */
+
+/* .BG-circle-box .ellipse-5 {
+  width: 376px;
+  height: 376px;
+  top: 1428px;
+  left: 0;
+  background-color: #8080d7d4;
+  border-radius: 188px;
+  position: absolute;
+  filter: blur(300px);
+} */
+
 /* -------------- */
 /* Navbar Section */
 /* -------------- */
@@ -126,98 +220,6 @@ nav svg {
     z-index: 1002;
 }
 
-/* ------------------------- */
-/* Background Design Section */
-/* ------------------------- */
-
-/* .box {
-  position: relative;
-  width: 1766px;
-  height: 3445px;
-}
-
-.box .BG-circles {
-  position: fixed;
-  width: 1766px;
-  height: 3445px;
-  top: 0;
-  left: 0;
-}
-
-.box .ellipse {
-  width: 669px;
-  height: 669px;
-  top: 841px;
-  left: 1097px;
-  background-color: #aad9d991;
-  border-radius: 334.5px;
-  position: absolute;
-  filter: blur(300px);
-}
-
-.box .div {
-  width: 255px;
-  height: 255px;
-  top: 3190px;
-  left: 35px;
-  background-color: #aad9d991;
-  border-radius: 127.5px;
-  position: absolute;
-  filter: blur(300px);
-}
-
-.box .overlap-group {
-  position: absolute;
-  width: 633px;
-  height: 558px;
-  top: 2099px;
-  left: 499px;
-}
-
-.box .ellipse-2 {
-  width: 317px;
-  height: 317px;
-  top: 241px;
-  left: 316px;
-  background-color: #aad9d991;
-  border-radius: 158.5px;
-  position: absolute;
-  filter: blur(300px);
-}
-
-.box .ellipse-3 {
-  width: 376px;
-  height: 376px;
-  top: 0;
-  left: 0;
-  background-color: #8080d7d4;
-  border-radius: 188px;
-  position: absolute;
-  filter: blur(300px);
-}
-
-.box .ellipse-4 {
-  width: 718px;
-  height: 718px;
-  top: 0;
-  left: 184px;
-  background-color: #8080d7d4;
-  border-radius: 359px;
-  position: absolute;
-  filter: blur(300px);
-}
-
-.box .ellipse-5 {
-  width: 376px;
-  height: 376px;
-  top: 1428px;
-  left: 0;
-  background-color: #8080d7d4;
-  border-radius: 188px;
-  position: absolute;
-  filter: blur(300px);
-} */
-
 /* ------------ */
 /* hero-section */
 /* ------------ */
@@ -228,6 +230,7 @@ nav svg {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   /* border: 8px solid red;
   width: 100%;
   justify-content: space-evenly; */
@@ -1450,8 +1453,49 @@ ul{
   }
 }
 
+/* .fadeSlide-in {
+  animation: fadeSlideInAnimation both;
+  animation-timeline: view(70% 30%);
+}
 
-#my-greet::after {
+@keyframes fadeSlideInAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: 1.2s ease-in-out;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+} */
+
+/* from left to right */
+.fade-in {
+  /* before */
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: 1.2s ease-in-out;
+}
+
+/* from right to left */
+.fade-in-img {
+  /* before */
+  opacity: 0;
+  transform: translateX(100%);
+  transition: 1.2s ease-in-out;
+}
+
+.visible {
+  /* after for both */
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+/* This code is not working right now :( */
+/* This code is for hero section */
+
+/* #my-greet::after {
   content: "";
   animation: my-greet-animation 1s ease both;
 }
@@ -1465,4 +1509,4 @@ to{
   opacity: 1;
   transform: translate(-50%);
 }
-}
+} */
