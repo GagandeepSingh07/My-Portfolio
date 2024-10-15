@@ -1073,6 +1073,12 @@ ul{
 
 /* Navigation Section */
 
+@media(max-width: 960px) {
+  .BG-circle-box {
+    height: 300%;
+  }
+}
+
 @media(max-width: 485px) {
   .links-container {
       flex-direction: column;
