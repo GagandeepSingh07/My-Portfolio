@@ -1067,6 +1067,91 @@ ul{
   background: linear-gradient(140deg, rgba(58,58,190,1) 21%, rgba(137,209,209,1) 88%);
 }
 
+
+.email-container {
+  z-index: 10;
+  /* background-color: #1c185370; */
+  width: 100%;
+  height: 3rem auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.email-container p {
+  display: flex;
+  margin-left: 2rem;
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 500;
+  font-family: var(--sub-heading-font-family);
+  letter-spacing: var(--sub-heading-letter-spacing);
+  transform: translateY(5px);
+  cursor: pointer;
+  transition: opacity .3s ease-in-out;
+}
+
+.email-container p:hover {
+  opacity: .7;
+}
+
+.email-container .emailButton {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  margin-right: 2rem;
+  width: auto;
+  /* background-color: red; */
+}
+
+.email-container input {
+  height: 40px;
+  border-radius: 50px;
+  background-color: #1c185370;
+  width: 20rem;
+  outline: none;
+  border: none;
+  color: var(--text-color);
+  /* border: 2px solid var(--accent-color) ; */
+  padding-left: 30px;
+  /* cursor: pointer;
+  transition: .3s ease-in-out; */
+}
+
+/* .email-container input:hover {
+  border: 2px solid var(--accent-color-2) ;
+} */
+
+.email-container input::placeholder {
+  color: #ffffff71;
+  padding-bottom: .3rem;
+}
+
+.email-container form button {
+  position: absolute;
+  top: 6px;
+  right: 7px;
+  
+  background: var(--accent-color-2);
+  font-family: var(--sub-heading-font-family);
+  font-weight: var(--sub-heading-font-weight);
+  color: var(--bg-color);
+  font-size: 12px;
+  letter-spacing: 1px;
+  outline: none;
+  border: none;
+  padding: 8px 26px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: opacity .3s ease-in-out;
+}
+
+.email-container form button:hover {
+  opacity: .7;
+}
+
 /* ---------------------- */
 /* Responsiveness Section */
 /* ---------------------- */
@@ -1425,6 +1510,40 @@ ul{
   padding-left: 0;
 }
 }
+
+@media (max-width: 768px) {
+  .email-container .emailButton {
+    display: block;
+  }
+
+  .email-container form , p {
+    scale: .7;
+  }
+}
+
+@media (max-width: 768px) {
+  .email-container {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+  .email-container .emailButton {
+    display: block;
+  }
+
+  .email-container form , p {
+    scale: .6;
+  }
+
+  .email-container p {
+    margin-left: 1rem;
+    font-size: 15px;
+    transform: translateY(0);
+  }
+  .email-container .emailButton {
+    margin-right: .2rem;
+  }
+}
+
 
 
 /* ---------------- */
