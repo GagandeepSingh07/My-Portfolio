@@ -1458,18 +1458,17 @@ ul{
 } */
 
 /* from top to bottom */
-.fade-in-nav {
-  /* before */
+/* before */
+/* .fade-in-nav {
   opacity: 0;
   transform: translateY(-100%);
   transition: 1.2s ease-in-out;
-}
-
-.visible-2 {
-  /* after for nav */
+} */
+/* after for nav */
+/* .visible-2 {
   opacity: 1;
   transform: translateY(0%);
-}
+} */
 
 /* from left to right */
 .fade-in {
