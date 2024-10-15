@@ -10,24 +10,22 @@
 <body>
   <div id="Parent">
 
-      <!-- Background Design -->
+  <!-- Background Design -->
 
-  <!-- <div class="BG-circle-box">
+  <div class="BG-circle-box">
     <div class="BG-circles">
-      <div class="ellipse"></div>
-      <div class="div"></div>
-      <div class="overlap-group">
-        <div class="ellipse-2"></div>
-        <div class="ellipse-3"></div>
-      </div>
-      <div class="ellipse-4"></div>
-      <div class="ellipse-5"></div>
+      <div class="circle circle-1"></div>
+      <div class="circle circle-2"></div>
+      <div class="circle circle-3"></div>
+      <div class="circle circle-4"></div>
+      <div class="circle circle-5"></div>
+      <div class="circle circle-6"></div>
     </div>
-  </div> -->
+  </div>
 
-    <!-- Navbar-section -->
+  <!-- Navbar-section -->
 
-    <nav>
+    <nav id="nav-load-animation" class="fade-in-nav">
       <input type="checkbox" id="sidebar-action">
       <label for="sidebar-action" class="open-sidebar-button">
           <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000">
@@ -46,7 +44,7 @@
           <a class="home-link" href="/index.html">Portfolio.</a>
           <a href="#main-about-section">about</a>
           <a href="https://drive.google.com/file/d/1XO6Ukhhe_jHUMQn9xJH2OtfZT7CGUUGc/view?usp=sharing" target="_blank">resume</a>
-          <a href="/my-work.html" target="_blank">my work</a>
+          <a href="/my-work.html" target="_blank">work</a>
           <a href="#social-links">contact</a>
       </div>
   </nav>
@@ -405,6 +403,10 @@
         });
     });
 
+
+    window.addEventListener('load', function() {
+    document.querySelector('#nav-load-animation').classList.add('visible-2');
+    });
 
     window.addEventListener('load', function() {
       document.querySelector('.hero-left').classList.add('visible');
