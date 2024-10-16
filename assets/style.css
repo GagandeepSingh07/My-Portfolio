@@ -1516,12 +1516,12 @@ ul{
     display: block;
   }
 
-  .email-container form , p {
+  .email-container form , .email-container p {
     scale: .7;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 560px) {
   .email-container {
     padding-top: .5rem;
     padding-bottom: .5rem;
@@ -1530,7 +1530,7 @@ ul{
     display: block;
   }
 
-  .email-container form , p {
+  .email-container form , .email-container p {
     scale: .6;
   }
 
@@ -1541,6 +1541,18 @@ ul{
   }
   .email-container .emailButton {
     margin-right: .2rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .email-container p {
+    margin-left: 0;
+  }
+  .email-container form , .email-container p {
+    scale: .5;
+  }
+  .email-container p {
+    font-size: 10px;
   }
 }
 
