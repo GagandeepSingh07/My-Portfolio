@@ -238,6 +238,150 @@ span {
   }
 }
 
+
+
+/* ------------------------ */
+/* Work flip cards section  */
+/* ------------------------ */
+
+
+.dis-flip-cards-container {
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
+
+.flip-card-holder {
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  width: 78%;
+  height: auto;
+  gap: 2rem;
+}
+
+.flip-card-container {
+  /* background-color: #908FDB; */
+	width: 477px;
+	height: 252px;
+  padding: 1rem;
+  margin-top: 2.3rem;
+}
+
+.flip-card-container:hover > .card{
+	cursor: pointer;
+	transform: rotateY(180deg);
+}
+
+.flip-card-container .card {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	transition: transform 500ms;
+	transform-style: preserve-3d;
+}
+
+
+.flip-card-container .front, .flip-card-container .back {
+	height: 100%;
+	width: 100%;
+	border-radius: 1.8rem;
+	box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.025);
+	position: absolute;
+	backface-visibility: hidden;
+}
+
+.flip-card-container .front {
+	background-image: url(https://images.unsplash.com/photo-1512850183-6d7990f42385?q=350&w=500);
+	padding: 1rem;
+	color: rgb(211, 211, 211);
+}
+
+.flip-card-container .back {
+	/* background-color: rgba(255, 255, 255, 0.74); */
+  background-color: #1c185370;
+	transform: rotateY(180deg);
+	padding: 1rem;
+}
+
+.flip-card-container .title {
+	position: absolute;
+  color: var(--text-color);
+	bottom: 1.5rem;
+	left: 3rem;
+	width: 60%;
+	font-weight: bold;
+	font-size: 1.7rem;
+	line-height: 2.3rem;
+	transition: bottom 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.flip-card-container .title-back {
+  text-decoration: underline;
+  text-decoration-color: var(--accent-color);
+  text-decoration-thickness: 2px;
+  text-underline-offset: .4rem;
+}
+
+/* .flip-card-container .arrow-front {
+	position: absolute;
+	bottom: 5rem;
+	right: 3rem;
+	color: #19ABFE;
+	font-size: 1.4rem !important;
+	border-radius: 50%;
+	border: solid 1px #19ABFE;
+	padding: 0.8rem;
+} */
+
+/* .flip-card-container .bottom-container{
+	position: absolute;
+	bottom: 4rem;
+	right: 3rem;
+	display: flex;
+	align-items: center;
+} */
+
+/* .flip-card-container .read-more {
+	color: #19ABFE;
+	font-size: 1rem;
+	margin-right: 2rem;
+} */
+
+/* .flip-card-container .arrow {
+	margin-left: auto;
+	margin-right: auto;
+	color: #19ABFE;
+	font-size: 1.4rem !important;
+	border-radius: 50%;
+	border: solid 1px #19ABFE;
+	padding: 0.8rem;
+} */
+
+.flip-card-container:hover>.card .title {
+	bottom: 55%;
+}
+
+/* .flip-card-container .map {
+	position: absolute;
+	top: 18%;
+	color: #6BBE51;
+	font-size: 5rem !important;
+} */
+
+.flip-card-container .description {
+	position: absolute;
+	bottom: 27%;
+	color: #6C7994;
+  margin-left: 2rem;
+	margin-right: 2rem;
+	font-size: 0.85rem;
+	/* margin-bottom: 8rem; */
+}
+
+
 /* ----------------- */
 /* Work Card Section */
 /* ----------------- */
@@ -286,6 +430,7 @@ span {
 /* cards */
 
 .dis-cards-container {
+  /* background-color: red; */
   display: flex;
   justify-content: center;
   width: 100%;
@@ -490,6 +635,37 @@ span {
 
   .work-section p:hover {
     color: var(--accent-color);
+  }
+}
+
+/* ------------------------ */
+/* Work flip cards section  */
+/* ------------------------ */
+
+@media(max-width: 780px) {
+  .flip-card-holder {
+    gap: 1rem;
+  }
+  .flip-card-container {
+    margin-top: .5rem;
+  }
+  .flip-card-container:hover>.card .title {
+    bottom: 75%;
+  }
+  .flip-card-container .description {
+    bottom: 14%;
+  }
+}
+
+@media(max-width: 525px) {
+  .flip-card-holder {
+    flex-direction: column;
+  }
+  .flip-card-container {
+    width: 362px;
+    height: 182px;
+    padding: .5rem;
+    margin-top: 1.5rem;
   }
 }
 
