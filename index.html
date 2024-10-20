@@ -378,10 +378,14 @@
 
   <div class="email-container">
     <p>Give me your feedback!</p>
-    <form class="emailButton" action="#">
+    <!-- <form class="emailButton" action="#">
       <input type="email" placeholder="your-email@gmail.com" required>
       <a href="mailto:singhgagan40951@gmail.com" target="_blank">
         <button type="submit">SUBMIT</button></a>
+    </form> -->
+    <form class="emailButton" id="emailForm">
+      <input type="email" id="emailInput" placeholder="your-email@gmail.com" required>
+      <button type="submit">SUBMIT</button>
     </form>
   </div>
 
@@ -440,6 +444,20 @@
       document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
       }, false);
+
+
+      document.getElementById('emailForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+
+        const userEmail = document.getElementById('emailInput').value;
+        const mailToLink = `https://mail.google.com/mail/?view=cm&fs=1&to=singhgagan40951@gmail.com&su=New%20Submission&body=Email%20From:%20${userEmail}`;
+
+        // Open Gmail compose page in a new tab
+        window.open(mailToLink, '_blank');
+        
+        // Clear the input field
+        document.getElementById('emailForm').reset();
+      });
 </script>
 
 </body>

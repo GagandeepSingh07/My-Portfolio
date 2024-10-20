@@ -1131,8 +1131,8 @@ ul{
 
 .email-container form button {
   position: absolute;
-  top: 6px;
-  right: 7px;
+  top: 4.5px;
+  right: 6.5px;
   
   background: var(--accent-color-2);
   font-family: var(--sub-heading-font-family);
