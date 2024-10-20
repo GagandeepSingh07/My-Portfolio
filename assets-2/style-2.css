@@ -642,12 +642,21 @@ span {
 /* Work flip cards section  */
 /* ------------------------ */
 
+@media(max-width: 1188px) {
+  .flip-card-container:hover>.card .title {
+    bottom: 75%;
+  }
+  .flip-card-container .description {
+    bottom: 14%;
+  }
+}
+
 @media(max-width: 780px) {
   .flip-card-holder {
     gap: 1rem;
   }
   .flip-card-container {
-    margin-top: .5rem;
+    margin-top: 2rem;
   }
   .flip-card-container:hover>.card .title {
     bottom: 75%;
@@ -657,14 +666,22 @@ span {
   }
 }
 
+@media(max-width: 695px) {
+  .flip-card-container .description {
+	font-size: 0.65rem;
+}
+}
+
 @media(max-width: 525px) {
+  .flip-card-container .description {
+	font-size: 0.85rem;
+}
   .flip-card-holder {
     flex-direction: column;
+    gap: 0rem;
   }
   .flip-card-container {
-    width: 362px;
-    height: 182px;
-    padding: .5rem;
+    width: 88%;
     margin-top: 1.5rem;
   }
 }
