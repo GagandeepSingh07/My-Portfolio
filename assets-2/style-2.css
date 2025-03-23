@@ -449,7 +449,7 @@ span {
 
 #size-controler {
   width: 525px;
-  height: 300px;
+  height: 525px;
   overflow: hidden;
   /* background-color: aqua; */
 }
@@ -486,7 +486,8 @@ span {
   cursor: pointer;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: left;
+  contain: content;
 }
 
 .card:hover {
@@ -494,11 +495,13 @@ span {
 }
 
 .textstyle {
-  font-family: "Outfit", sans-serif;
+  /* font-family: "Outfit", sans-serif;
   font-size: 50px;
   font-weight: bold;
-  color: var(--Cmaincolor);
+  color: var(--Cmaincolor); */
   transition: transform 0.5s ease;
+  /* transform: scale(.5); */
+  translate: .5;
 }
 
 .card:hover .textstyle {
