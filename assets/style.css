@@ -69,8 +69,8 @@ body {
   position: absolute;
   /* background-color: #f0f0f0; */
   width: 100%;
-  /* height: 493%; */
-  height: 438%;
+  /* height: auto; */
+  height: 380%;
   z-index: -10;
   overflow: hidden;
 }
