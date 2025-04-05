@@ -330,6 +330,12 @@ span {
 .portfolio-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+
+}
+
+.portfolio-card:hover .card-content {
+  transform: translateY(80px);
+  pointer-events: auto;
 }
 
 .card-img {
@@ -352,6 +358,8 @@ span {
 .card-content {
   padding: 15px;
   background-color: #030c44a6;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  pointer-events: none; 
 }
 
 .card-title {
