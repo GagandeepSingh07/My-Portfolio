@@ -374,7 +374,8 @@ span {
 .card-category {
   color: var(--text-color);
   font-family: var(--body-text-font-family);
-  font-size: var(--body-text-font-size);
+  opacity: .7;
+  font-size: 12px;
 }
 
 
