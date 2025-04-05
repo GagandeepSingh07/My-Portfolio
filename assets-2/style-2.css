@@ -333,10 +333,10 @@ span {
 
 }
 
-.portfolio-card:hover .card-content {
+/* .portfolio-card:hover .card-content {
   transform: translateY(80px);
   pointer-events: auto;
-}
+} */
 
 .card-img {
   width: 100%;
