@@ -769,9 +769,9 @@ span {
 
 @media (max-width:444px) {
   .emailButton #emailInput, #emailsubmitbutton {
-    transform: translateX(-3rem);
+    transform: translateX(-5rem);
   }
   .scrolltotopsvg {
-    transform: translateX(-5rem);
+    transform: translateX(-7rem);
   }
 }
