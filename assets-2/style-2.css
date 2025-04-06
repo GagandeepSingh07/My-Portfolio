@@ -489,6 +489,10 @@ span {
   transition: transform 0.3s ease;
 }
 
+.scrolltotopsvg {
+  display: none;
+}
+
 /* .scrolltotop:hover {
   transform: translateY(-6px);
 } */
@@ -741,5 +745,33 @@ span {
   }
   .email-container p {
     font-size: 10px;
+  }
+}
+
+/* -scroll to top- */
+
+@media (max-width:832px) {
+  .scrolltotop {
+    display: none;
+  }
+  .scrolltotopsvg {
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    color: white;
+    transition: transform 0.3s ease;
+    transform: translateX(-3rem);
+  }
+}
+
+
+@media (max-width:444px) {
+  .emailButton #emailInput, #emailsubmitbutton {
+    transform: translateX(-3rem);
+  }
+  .scrolltotopsvg {
+    transform: translateX(-5rem);
   }
 }
