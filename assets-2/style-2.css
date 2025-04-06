@@ -58,6 +58,7 @@
 html {
   font-size: 12pt;
   scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
 }
 
 body {
@@ -474,6 +475,34 @@ span {
 .email-container form button:hover {
   opacity: .7;
 }
+
+/* --------------- */
+/* -scroll to top- */
+/* --------------- */
+
+.scrolltotop {
+  display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 0;
+  color: transparent;
+}
+
+.scrolltotop .scroll {
+	display: flex;
+	flex-direction: row;
+	gap: 6px;
+	align-items: center;
+  font-size: 15px;
+}
+
+.scrolltotop p {
+  text-decoration: none;
+}
+
+/* ------------------------- */
+/* -scroll to top ends here- */
+/* ------------------------- */
 
 /* ---------------------- */
 /* Responsiveness Section */

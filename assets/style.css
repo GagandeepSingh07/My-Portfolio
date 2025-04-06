@@ -49,6 +49,7 @@
 html {
   font-size: 12pt;
   scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
 }
 
 body {
@@ -1068,6 +1069,33 @@ ul{
   background: linear-gradient(140deg, rgba(58,58,190,1) 21%, rgba(137,209,209,1) 88%);
 }
 
+/* --------------- */
+/* -scroll to top- */
+/* --------------- */
+
+.scrolltotop {
+  display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 0;
+  color: transparent;
+}
+
+.scrolltotop .scroll {
+	display: flex;
+	flex-direction: row;
+	gap: 6px;
+	align-items: center;
+  font-size: 15px;
+}
+
+.scrolltotop p {
+  text-decoration: none;
+}
+
+/* ------------------------- */
+/* -scroll to top ends here- */
+/* ------------------------- */
 
 .email-container {
   z-index: 10;
