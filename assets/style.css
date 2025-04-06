@@ -1079,6 +1079,37 @@ ul{
 	justify-content: center;
 	line-height: 0;
   color: transparent;
+  transition: transform 0.3s ease;
+}
+
+/* .scrolltotop:hover {
+  transform: translateY(-6px);
+} */
+
+.scrolltotop:hover {
+  animation: popup 0.8s ease-out;
+}
+
+.scrolltotop:hover p {
+  color: var(--accent-color);
+}
+
+@keyframes popup {
+  0% {
+    transform: translateY(0px);
+  }  
+  25% {
+    transform: translateY(-6px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+  75% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .scrolltotop .scroll {
