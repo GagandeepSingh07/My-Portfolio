@@ -1315,7 +1315,6 @@ ul{
     height: auto;
 }
 }
-/* --------------------------------- */
 @media(max-width:465px){
   .BG-circle-box {
     display: none;
@@ -1323,17 +1322,17 @@ ul{
   .hero-section-container {
   transform: translateY(-3rem);
   }
-    #my-greet {
-        font-size: 60px;
-}
-.title {
+  #my-greet {
+    font-size: 60px;
+  }
+  .title {
     height: 45%;
-}
-.greet {
+  }
+  .greet {
     height: 30%;
-}
-#passion {
-  font-size: 18px;
+  }
+  #passion {
+  font-size: 16px;
   line-height: 20px;
   padding-top: 0px;
 }
@@ -1344,9 +1343,9 @@ ul{
 }
 
 @media(max-width:433px){
-    #my-greet {
-        font-size: 55px;
-}
+  #my-greet {
+    font-size: 55px;
+  }
 .greet {
     height: 28%;
 }
@@ -1385,28 +1384,44 @@ ul{
 }
 
 @media(max-width:360px){
-    #my-greet {
-        font-size: 40px;
+  #my-greet {
+    font-size: 40px;
 }
 .greet {
-    height: 25%;
+    height: 20%;
 }
 }
 @media(max-width:360px){
     .hero-text-content {
-    width: 70%;
+    width: 100%;
     display: flex;
     align-items: center;
 }
+#passion {
+  transform: translateY(-2rem);
+}
 #idea {
-  font-size: 10px;
-  line-height: 9px;
+  font-size: 15px;
+  line-height: 20px;
+  transform: translateY(-2rem);
 }
 #left {
   height: 25rem;
   margin-top: 3rem;
   padding: 1rem 3rem;
 }
+}
+@media (max-width:320px) {
+  .hero-section-container {
+    transform: translateY(-8rem);
+  }
+  .idea-br, .passion-br {
+    display: none;
+  }
+  .hero-left {
+    width: 95%;
+    height: 450px;
+  }
 }
 
 /* About Section */
@@ -1442,7 +1457,10 @@ ul{
 @media(max-width:324){
   .main-right {
     height: auto;
-}
+  }
+  .main-right {
+    gap: 5px;
+  }
 }
 
 /* Thought Section */
@@ -1488,6 +1506,11 @@ ul{
   .thought-text {
     font-size: 1.7rem;
     letter-spacing: .5px;
+  }
+}
+@media(max-width:320px) {
+  #work-btn {
+    transform: translateY(-1rem);
   }
 }
 
