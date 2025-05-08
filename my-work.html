@@ -428,7 +428,7 @@
 
             <div class="portfolio-card" data-category="others">
                 <div class="card-img">
-                    <img src="/api/placeholder/300/180" alt="Experimental project">
+                    <img  src="/api/placeholder/300/180" alt="Experimental project">
                 </div>
                 <div class="card-content">
                     <h3 class="card-title">AR Experiment</h3>
@@ -438,6 +438,16 @@
         </div>
     </div>
 
+    <!-- Full Screen Model -->
+
+<!-- Fullscreen Modal Viewer -->
+<div id="fullscreenModal" class="modal">
+    <button class="close-btn" onclick="closeFullscreen()">&times;</button>
+    <button class="arrow-btn left" onclick="showPrevImage()">&#10094;</button>
+    <img id="modalImage" src="" alt="Fullscreen Image">
+    <button class="arrow-btn right" onclick="showNextImage()">&#10095;</button>
+  </div>
+  
   <!-- Footer Email Section -->
 
   <div class="email-container">
@@ -541,6 +551,47 @@
       // Clear the input field
       document.getElementById('emailForm').reset();
     });
+
+    const modal = document.getElementById("fullscreenModal");
+  const modalImg = document.getElementById("modalImage");
+  const imageElements = document.querySelectorAll(".portfolio-card .card-img img");
+
+  let currentIndex = 0;
+
+  // Show image in modal
+  function showImage(index) {
+    if (index >= 0 && index < imageElements.length) {
+      currentIndex = index;
+      modalImg.src = imageElements[currentIndex].src;
+      modal.style.display = "flex";
+    }
+  }
+
+  // Open modal on image click
+  imageElements.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      showImage(index);
+    });
+  });
+
+  // Navigation
+  function showNextImage() {
+    currentIndex = (currentIndex + 1) % imageElements.length;
+    showImage(currentIndex);
+  }
+
+  function showPrevImage() {
+    currentIndex = (currentIndex - 1 + imageElements.length) % imageElements.length;
+    showImage(currentIndex);
+  }
+
+  function closeFullscreen() {
+    modal.style.display = "none";
+  }
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeFullscreen();
+  });
 </script>
 
   </body>
