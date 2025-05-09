@@ -384,23 +384,35 @@ span {
 /* ---------------- */
 
 .modal {
-  display: none;
   position: fixed;
   z-index: 9999;
-  top: 0;
+  top: 0; 
   left: 0;
-  width: 100vw;
+  width: 100vw; 
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
   justify-content: center;
   align-items: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.05);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
 }
 
 .modal img {
   max-width: 90%;
   max-height: 80%;
-  /* border-radius: 10px; */
+  transition: transform 0.3s ease;
 }
+
 
 .close-btn {
   position: absolute;
