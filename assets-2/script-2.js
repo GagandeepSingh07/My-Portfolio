@@ -1,8 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Filter functionality with event delegation
-  const filterContainer = document.querySelector('.filter-btns');
+  const filterContainer = document.querySelector('.filter-container');
   const filterButtons = document.querySelectorAll('.filter-btn');
   const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+  if (!filterContainer) {
+  console.warn('Filter container not found');
+  return;
+}
 
   if (filterContainer) {
     filterContainer.addEventListener('click', function (e) {

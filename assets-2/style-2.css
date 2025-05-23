@@ -306,12 +306,12 @@ span {
 
 .filter-btn:hover, .filter-btn.active {
   background-color: rgba(255, 255, 255, 0.1);
-  color: var(--accent-color);
+  /* color: var(--accent-color); */
 }
 
 .filter-btn.active {
-  color: white;
-  font-weight: bold;
+  color: var(--accent-color);
+  /* font-weight: bold; */
 }
 
 .portfolio-grid {
@@ -321,6 +321,7 @@ span {
 }
 
 .portfolio-card {
+  display: block;
   background-color: var(--card-bg-color);
   border-radius: 12px;
   overflow: hidden;
