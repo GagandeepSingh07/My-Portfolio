@@ -1672,6 +1672,13 @@ ul{
 
 
 /* Interactive cards */
+
+@media (max-width:944px) {
+  .cf-wrapper {
+    transform: translateX(0px) scale(1.2);
+}
+}
+
 @media (max-width:580px) {
   .cf-wrapper {
     transform: translateX(0px) scale(.8);
