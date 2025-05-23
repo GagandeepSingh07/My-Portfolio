@@ -1673,6 +1673,9 @@ ul{
 
 /* Interactive cards */
 @media (max-width:580px) {
+  .cf-wrapper {
+    transform: translateX(0px) scale(.8);
+}
 }
 
 /* Footer Section */
