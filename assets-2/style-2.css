@@ -65,11 +65,11 @@ body {
   background-color: var(--bg-color);
 }
 
-#Parent {
+/* #parent {
   z-index: -1;
   width: 100%;
   height: 100vh;
-}
+} */
 
 /* -------------- */
 /* Navbar Section */
@@ -462,6 +462,7 @@ span {
 /* -------------------- */
 
 .rectangle {
+  /* transform: translateY(150rem); */
   width: 100%;
   height: 8px;
   background: rgb(58,58,190);
@@ -473,7 +474,7 @@ span {
   z-index: 10;
   /* background-color: #1c185370; */
   width: 100%;
-  height: 3rem auto;
+  height: auto;
   padding-top: 1rem;
   padding-bottom: 1rem;
   display: flex;
@@ -786,7 +787,7 @@ span {
   }
 
   .email-container form , .email-container p {
-    scale: .7;
+    transform: scale(.7);
   }
 }
 
@@ -800,7 +801,7 @@ span {
   }
 
   .email-container form , .email-container p {
-    scale: .6;
+    transform: scale(.6);
   }
 
   .email-container p {
@@ -818,7 +819,7 @@ span {
     margin-left: 0;
   }
   .email-container form , .email-container p {
-    scale: .5;
+    transform: scale(.5);
   }
   .email-container p {
     font-size: 10px;
