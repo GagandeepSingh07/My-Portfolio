@@ -440,13 +440,9 @@
   
   <script src="assets/script.js"></script>
 
-  <script>
-    window.addEventListener('load', () => {
-      if (typeof window.speedInsights === 'function') {
-        window.speedInsights();
-      }
-    });
+  <script type="module">
+    import { injectSpeedInsights } from '@vercel/speed-insights';
+    injectSpeedInsights();
   </script>
-  <script defer src="https://cdn.vercel-insights.com/script.js"></script>
 </body>
 </html>
