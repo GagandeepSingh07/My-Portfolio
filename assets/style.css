@@ -1658,6 +1658,11 @@ transition: 0.3s ease;
 }
 
 @media(max-width: 525px) {
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 1002;
+  }
   .links-container {
       flex-direction: column;
       align-items: flex-start;
@@ -2129,11 +2134,23 @@ transition: 0.3s ease;
 
 
 @media (max-width:444px) {
+  .email-container {
+    justify-content: flex-start;
+    transform: translateX(-.3rem);
+  }
+  .emailButton {
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+  }
   .emailButton #emailInput, #emailsubmitbutton {
-    transform: translateX(-5rem);
+    transform: none;
+    margin-left: -5rem;
   }
   .scrolltotopsvg {
-    transform: translateX(-7rem);
+    transform: translateX(-3rem);
   }
 }
 
