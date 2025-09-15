@@ -295,21 +295,22 @@ body {
 /* Media Queries for Timeline */
 @media screen and (max-width: 768px) {
   .timeline-line {
-    left: 40px;
+    left: 24px;
   }
-  
+
   .timeline-item:nth-child(odd),
   .timeline-item:nth-child(even) {
-    padding-left: 80px;
+    padding-left: 48px;
     padding-right: 0;
     text-align: left;
   }
-  
+
   .timeline-dot {
-    left: 40px;
+    transform: scale(0.8);
+    left: 12px;
     margin-left: 0;
   }
-  
+
   .timeline-item:nth-child(odd) .timeline-content:before {
     left: -10px;
     right: auto;
