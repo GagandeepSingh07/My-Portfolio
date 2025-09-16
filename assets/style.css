@@ -332,13 +332,17 @@ body {
   padding: 30px;
   transition: transform 0.3s ease;
   margin-bottom: 2rem;
+
+  animation: timeline-fade-in both;
+  animation-timeline: view(70% 30%);
 }
 
+/* Apply timeline card hover animation to education and experience cards */
 .education-item:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 10px 24px 0 rgba(137, 209, 209, 0.18), 0 1.5px 6px 0 rgba(144, 143, 219, 0.10);
-  border: 1.5px solid var(--accent-color-2);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
 
 .education-year {
   font-family: var(--body-text-font-family);
