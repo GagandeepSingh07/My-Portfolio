@@ -335,7 +335,9 @@ body {
 }
 
 .education-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 24px 0 rgba(137, 209, 209, 0.18), 0 1.5px 6px 0 rgba(144, 143, 219, 0.10);
+  border: 1.5px solid var(--accent-color-2);
 }
 
 .education-year {
@@ -727,6 +729,25 @@ transition: .15s ease-in-out;
 #img-hover-ani:hover {
 opacity: .7;
 /* transform: scale(1.05); */
+}
+
+/* ------------------- */
+/* Other Links Section */
+/* ------------------- */
+
+.social-link_others {
+  color: var(--accent-color-2);
+  font-family: var(--body-text-font-family);
+  /* font-weight: 200; */
+  /* text-decoration: none; */
+  transition: all 0.3s ease;
+  /* padding: 0.5rem 1rem; */
+  /* margin-top: 10px; */
+}
+
+.social-link_others:hover {
+  color: var(--accent-color);
+  opacity: .7;
 }
 
 
