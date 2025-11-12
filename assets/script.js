@@ -47,6 +47,8 @@ window.addEventListener('load', function() {
   
   // Initialize education section style toggle
   initEducationStyleToggle();
+  // Initialize resume link wiring (reads canonical URL from meta)
+  initResumeLinks();
 });
 
 // Function to handle education section style toggle
@@ -73,6 +75,41 @@ function initEducationStyleToggle() {
       cardBtn.classList.add('active');
       timelineBtn.classList.remove('active');
     });
+  }
+}
+
+// Wire up resume links to a single canonical URL defined in a <meta name="resume-url"> tag.
+function initResumeLinks() {
+  try {
+    const meta = document.querySelector('meta[name="resume-url"]');
+    const canonical = meta ? meta.getAttribute('content') : null;
+    if (!canonical) return;
+
+    // 1) Update anchors with explicit class or data attribute
+    document.querySelectorAll('a.resume-link, a[data-resume]').forEach(a => {
+      a.setAttribute('href', canonical);
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener noreferrer');
+    });
+
+    // 2) Update anchors that already point to a Drive file (covers existing hard-coded links)
+    document.querySelectorAll('a[href*="drive.google.com/file/d/"]').forEach(a => {
+      a.setAttribute('href', canonical);
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener noreferrer');
+    });
+
+    // 3) Update anchors whose visible text is 'Resume' (case-insensitive)
+    document.querySelectorAll('a').forEach(a => {
+      if (a.textContent && a.textContent.trim().toLowerCase() === 'resume') {
+        a.setAttribute('href', canonical);
+        a.setAttribute('target', '_blank');
+        a.setAttribute('rel', 'noopener noreferrer');
+      }
+    });
+  } catch (e) {
+    // fail silently in older browsers
+    console.error('initResumeLinks error', e);
   }
 }
 
