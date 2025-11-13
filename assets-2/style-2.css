@@ -314,10 +314,32 @@ span {
   /* font-weight: bold; */
 }
 
+/* small count badge on filter buttons */
+.filter-count {
+  display: inline-block;
+  background: rgba(255,255,255,0.08);
+  color: var(--Cmaincolor);
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* summary text showing how many items are visible */
+.results-summary {
+  margin-top: 6px;
+  color: var(--Cmaincolor);
+  font-size: 14px;
+  opacity: 0.9;
+  font-family: var(--body-text-font-family);
+}
+
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
+  margin-bottom: 2rem;
 }
 
 .portfolio-card {
@@ -333,6 +355,37 @@ span {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   /* border: 1px solid var(--accent-color); */
+}
+
+/* keyboard focus visible */
+.portfolio-card:focus {
+  outline: 3px solid rgba(137,143,219,0.25);
+  outline-offset: 4px;
+  transform: translateY(-3px);
+}
+
+/* Fade helpers for filtering transitions */
+.fade-in {
+  animation: fadeIn 260ms ease forwards;
+}
+
+.fade-out {
+  animation: fadeOut 260ms ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px) scale(.995); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(6px) scale(.995); }
+}
+
+/* When hidden from filter, remove pointer events for accessibility */
+.is-hidden {
+  pointer-events: none;
 }
 
 /* .portfolio-card:hover .card-content {

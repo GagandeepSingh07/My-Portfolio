@@ -82,24 +82,26 @@
       <div class="work-card-main-container">
         <div class="portfolio-header">
             <div class="portfolio-title">Portfolio</div>
+            <!-- <div id="resultsSummary" class="results-summary" aria-live="polite"></div> -->
         </div>
 
-        <div class="filter-container">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="social-media">Social Media Post</button>
-            <button class="filter-btn" data-filter="3d-work">3D Work</button>
-            <button class="filter-btn" data-filter="logos">Logos</button>
-            <button class="filter-btn" data-filter="animation">Animation</button>
-            <button class="filter-btn" data-filter="videos">Videos</button>
-            <button class="filter-btn" data-filter="gaming">Gaming</button>
-            <button class="filter-btn" data-filter="certificates">Certificates</button>
+        <div class="filter-container" role="tablist" aria-label="Portfolio filters">
+            <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter-btn" data-filter="social-media" aria-pressed="false">Social Media Post</button>
+            <button class="filter-btn" data-filter="3d-work" aria-pressed="false">3D Work</button>
+            <button class="filter-btn" data-filter="logos" aria-pressed="false">Logos</button>
+            <button class="filter-btn" data-filter="animation" aria-pressed="false">Animation</button>
+            <button class="filter-btn" data-filter="videos" aria-pressed="false">Videos</button>
+            <button class="filter-btn" data-filter="reels" aria-pressed="false">Reels</button>
+            <button class="filter-btn" data-filter="gaming" aria-pressed="false">Gaming</button>
+            <button class="filter-btn" data-filter="certificates" aria-pressed="false">Certificates</button>
             <!-- <button class="filter-btn" data-filter="web-design">Web Design</button> -->
             <!-- <button class="filter-btn" data-filter="others">Others</button> -->
         </div>
 
         <div class="portfolio-grid">
 
-            <!-- Social Media Cards - 4 cards -->
+            <!-- Social Media Cards -->
             <div class="portfolio-card" data-category="social-media">
                 <div class="card-img">
                     <img src="assets-2/my-work/posts/1.jpg" alt="CarryOn Faucets" loading="lazy" decoding="async" width="300" height="180">
@@ -140,7 +142,7 @@
                 </div>
             </div>
 
-            <!-- 3D Work Cards - 5 cards -->
+            <!-- 3D Work Cards -->
             <div class="portfolio-card" data-category="3d-work">
                 <div class="card-img">
                     <img src="assets-2/my-work/3d/3d 1.png" alt="Table Model" loading="lazy" decoding="async" width="300" height="180">
@@ -191,7 +193,7 @@
                 </div>
             </div>
 
-            <!-- Logos Cards - 5 cards -->
+            <!-- Logos Cards -->
             <div class="portfolio-card" data-category="logos">
                 <div class="card-img">
                     <img src="assets-2/my-work/logos/1.png" alt="Abstract logo design Competition 1" loading="lazy" decoding="async" width="300" height="180">
@@ -242,7 +244,7 @@
                 </div>
             </div>
 
-            <!-- Animation Cards - 4 cards -->
+            <!-- Animation Cards -->
             <div class="portfolio-card" data-category="animation">
                 <div class="card-img">
                     <!-- <img src="/api/placeholder/300/180" alt="2D character animation"> -->
@@ -287,26 +289,15 @@
                 </div>
             </div>
 
-            <!-- Videos Cards - 5 cards -->
-
+            <!-- Videos Cards -->
+            
             <div class="portfolio-card" data-category="videos">
                 <div class="card-img">
                     <!-- <img src="/api/placeholder/300/180" alt="Commercial video"> -->
-                     <iframe width="100%" height="100%" src="https://www.instagram.com/p/DMM8P6STL4b/embed" title="Instagram video" frameborder="0" loading="lazy" allowtransparency="true" allowfullscreen scrolling="no" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/GWXdfl7S4AE?si=duP_-oO7aXGpRBHv" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Nexus Launch</h3>
-                    <p class="card-category">Video</p>
-                </div>
-            </div>
-
-            <div class="portfolio-card" data-category="videos">
-                <div class="card-img">
-                    <!-- <img src="/api/placeholder/300/180" alt="Commercial video"> -->
-                     <iframe width="100%" height="100%" src="https://www.instagram.com/p/DMHygkFztDb/embed" title="Instagram video" frameborder="0" loading="lazy" allowtransparency="true" allowfullscreen scrolling="no" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Nexus Promotion</h3>
+                    <h3 class="card-title">The Loop - Short Film</h3>
                     <p class="card-category">Video</p>
                 </div>
             </div>
@@ -344,18 +335,75 @@
                 </div>
             </div>
 
-            <!-- <div class="portfolio-card" data-category="videos">
-                <div class="card-img"> -->
-                    <!-- <img src="/api/placeholder/300/180" alt="Documentary style video"> -->
-                     <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TpFFaNVIm7M?si=RvoQyPZjx2v10Avz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <!-- Reels Cards -->
+
+            <div class="portfolio-card" data-category="reels">
+                <div class="card-img">
+                    <!-- <img src="/api/placeholder/300/180" alt="Commercial video"> -->
+                     <iframe width="100%" height="100%" src="https://www.instagram.com/p/DMM8P6STL4b/embed" title="Instagram video" frameborder="0" loading="lazy" allowtransparency="true" allowfullscreen scrolling="no" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title">Audio Sync</h3>
-                    <p class="card-category">Video</p>
+                    <h3 class="card-title">Nexus Launch</h3>
+                    <p class="card-category">Reels</p>
                 </div>
-            </div> -->
+            </div>
 
-            <!-- Gaming Cards - 4 cards -->
+            <div class="portfolio-card" data-category="reels">
+                <div class="card-img">
+                    <!-- <img src="/api/placeholder/300/180" alt="Commercial video"> -->
+                     <iframe width="100%" height="100%" src="https://www.instagram.com/p/DMHygkFztDb/embed" title="Instagram video" frameborder="0" loading="lazy" allowtransparency="true" allowfullscreen scrolling="no" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Nexus Promotion</h3>
+                    <p class="card-category">Reels</p>
+                </div>
+            </div>
+            
+            <div class="portfolio-card" data-category="reels">
+                <div class="card-img">
+                    <!-- <img src="/api/placeholder/300/180" alt="Commercial video"> -->
+                     <iframe width="100%" height="100%" src="https://www.instagram.com/reel/DL4hXL8ykD4/embed" title="Instagram video" frameborder="0" loading="lazy" allowtransparency="true" allowfullscreen scrolling="no" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Callon Nuts Ad</h3>
+                    <p class="card-category">Reels</p>
+                </div>
+            </div>
+
+            <div class="portfolio-card" data-category="reels">
+                <div class="card-img">
+                    <!-- <img src="/api/placeholder/300/180" alt="Promo video"> -->
+                     <iframe width="100%" height="100%" src="https://www.instagram.com/reel/DMPZiZcyzPO/embed" title="Instagram video" frameborder="0" loading="lazy" allowtransparency="true" allowfullscreen scrolling="no" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Callon Nuts Post</h3>
+                    <p class="card-category">Reels</p>
+                </div>
+            </div>
+
+            <div class="portfolio-card" data-category="reels">
+                <div class="card-img">
+                    <!-- <img src="/api/placeholder/300/180" alt="Tutorial video"> -->
+                     <iframe width="100%" height="100%" src="https://www.instagram.com/reel/DMAIFj5KfFk/embed" title="Instagram video" frameborder="0" loading="lazy" allowtransparency="true" allowfullscreen scrolling="no" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">TheGrandAmbassador Post</h3>
+                    <p class="card-category">Reels</p>
+                </div>
+            </div>
+
+            <div class="portfolio-card" data-category="reels">
+                <div class="card-img">
+                    <!-- <img src="/api/placeholder/300/180" alt="Tutorial video"> -->
+                     <iframe width="100%" height="100%" src="https://www.instagram.com/reel/DMKIsgQM3xR/embed" title="Instagram video" frameborder="0" loading="lazy" allowtransparency="true" allowfullscreen scrolling="no" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">TheGrandAmbassador Post</h3>
+                    <p class="card-category">Reels</p>
+                </div>
+            </div>
+
+            <!-- Gaming Cards -->
             <div class="portfolio-card" data-category="gaming">
                 <div class="card-img">
                     <!-- <img src="/api/placeholder/300/180" alt="Commercial video"> -->
@@ -400,7 +448,7 @@
                 </div>
             </div>
 
-            <!-- Certificates Cards - 4 cards -->
+            <!-- Certificates Cards -->
             <div class="portfolio-card" data-category="certificates">
                 <div class="card-img">
                     <img src="assets-2/my-work/certificates/1.png" alt="code crafter competition certificate" loading="lazy" decoding="async" width="300" height="180">
@@ -441,7 +489,7 @@
                 </div>
             </div>
 
-            <!-- Web Design Cards - 4 cards -->
+            <!-- Web Design Cards -->
             <!-- <div class="portfolio-card" data-category="web-design">
               <div class="card-img">
                   <img src="/api/placeholder/300/180" alt="E-commerce website design">
@@ -529,12 +577,12 @@
     <!-- Full Screen Model -->
 
 <!-- Fullscreen Modal Viewer -->
-<div id="fullscreenModal" class="modal">
-    <button class="close-btn" onclick="closeFullscreen()">&times;</button>
-    <!-- <button class="arrow-btn left" onclick="showPrevImage()">&#10094;</button> -->
-    <img id="modalImage" src="" alt="Fullscreen Image">
-    <!-- <button class="arrow-btn right" onclick="showNextImage()">&#10095;</button> -->
-  </div>
+<div id="fullscreenModal" class="modal" role="dialog" aria-modal="true" tabindex="-1" aria-hidden="true">
+        <button class="close-btn" onclick="closeFullscreen()" aria-label="Close viewer">&times;</button>
+        <!-- <button class="arrow-btn left" onclick="showPrevImage()">&#10094;</button> -->
+        <img id="modalImage" src="" alt="Fullscreen Image">
+        <!-- <button class="arrow-btn right" onclick="showNextImage()">&#10095;</button> -->
+    </div>
   
   <!-- Footer Email Section -->
 
