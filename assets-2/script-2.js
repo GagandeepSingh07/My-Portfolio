@@ -176,10 +176,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const imageElements = Array.from(document.querySelectorAll('.portfolio-card .card-img img:not(.play-icon)'));
   let currentIndex = 0;
 
+  // track last focused element so we can restore focus when modal closes
+  let lastFocused = null;
+  const pageRoot = document.getElementById('parent') || document.body;
+
   function showImage(index) {
     if (index >= 0 && index < imageElements.length) {
       currentIndex = index;
       modalImg.src = imageElements[currentIndex].src;
+      // save current focus and make background inert so it's not focusable
+      lastFocused = document.activeElement;
+      try {
+        pageRoot.inert = true;
+      } catch (err) {
+        // if inert not supported, it's ok — polyfill should handle it when loaded
+      }
+
       modal.classList.add('show');
       // focus for accessibility
       modal.setAttribute('aria-hidden', 'false');
@@ -240,6 +252,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function closeFullscreen() {
     modal.classList.remove('show');
+
+    // restore focus before hiding the modal to avoid aria-hidden focus warnings
+    if (lastFocused && typeof lastFocused.focus === 'function') {
+      try { lastFocused.focus(); } catch (e) { document.activeElement.blur(); }
+    } else {
+      try { document.activeElement.blur(); } catch (e) { /* ignore */ }
+    }
+
+    // remove inert from the main content and then hide from assistive tech
+    try {
+      pageRoot.inert = false;
+    } catch (err) {
+      // ignore if inert unsupported
+    }
+
     modal.setAttribute('aria-hidden', 'true');
   }
 
