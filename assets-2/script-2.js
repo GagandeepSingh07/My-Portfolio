@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Make cards keyboard-focusable and wire Enter/Space to open modal for images
+  // Make cards clickable for reels (redirect to Instagram)
   portfolioCards.forEach((card, idx) => {
     // give a descriptive aria-label if not present
     const titleEl = card.querySelector('.card-title');
@@ -185,23 +185,34 @@ document.addEventListener('DOMContentLoaded', function () {
     card.setAttribute('role', 'button');
     card.setAttribute('aria-label', ariaLabel);
 
-    const img = card.querySelector('.card-img img');
-    if (img) {
-      img.addEventListener('click', () => showImage(imageElements.indexOf(img)));
-    }
-
-    card.addEventListener('keydown', (ev) => {
-      if (ev.key === 'Enter' || ev.key === ' ') {
-        ev.preventDefault();
-        if (img) {
-          showImage(imageElements.indexOf(img));
-        } else {
-          // if no image, try to focus first iframe inside
-          const iframe = card.querySelector('iframe');
-          if (iframe) iframe.focus();
+    const instagramUrl = card.getAttribute('data-instagram-url');
+    const img = card.querySelector('.card-img img:not(.play-icon)');
+    
+    // Check if card is a reel with Instagram URL
+    if (instagramUrl) {
+      // Make entire card clickable to open Instagram post
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', (e) => {
+        window.open(instagramUrl, '_blank');
+      });
+      
+      card.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Enter' || ev.key === ' ') {
+          ev.preventDefault();
+          window.open(instagramUrl, '_blank');
         }
-      }
-    });
+      });
+    } else if (img) {
+      // Regular image cards - open in modal
+      img.addEventListener('click', () => showImage(imageElements.indexOf(img)));
+      
+      card.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Enter' || ev.key === ' ') {
+          ev.preventDefault();
+          showImage(imageElements.indexOf(img));
+        }
+      });
+    }
   });
 
   // refresh imageElements in case DOM changes

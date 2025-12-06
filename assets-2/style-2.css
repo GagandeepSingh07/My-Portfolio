@@ -912,3 +912,66 @@ span {
     transform: translateX(-7rem);
   }
 }
+
+/* Reels cards with play button overlay */
+.card-img .play-button {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-img .play-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.portfolio-card:hover .card-img .play-button::before {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Play button icon (SVG) */
+.card-img .play-button .play-icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s ease;
+    pointer-events: none;
+}
+
+.portfolio-card:hover .card-img .play-button .play-icon {
+    transform: scale(1.1);
+}
+
+/* Cover image for reels */
+.card-img .play-button img:not(.play-icon) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* For backwards compatibility with iframes (if any remain) */
+.card-img .play-button iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
