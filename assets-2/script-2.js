@@ -62,6 +62,9 @@ document.addEventListener('DOMContentLoaded', function () {
       const SHOW_BASE_DELAY = 120; // ms before first item shows
       const SHOW_STAGGER = 60; // ms additional delay per item
 
+      // Use a WeakMap to store state associated with cards, avoiding direct property assignment
+      const cardState = new WeakMap();
+
       const matchesList = Array.from(portfolioCards).filter(c => filter === 'all' || c.getAttribute('data-category') === filter);
 
       // First, handle non-matching cards: cancel any pending show timers and schedule hide
@@ -69,31 +72,36 @@ document.addEventListener('DOMContentLoaded', function () {
         const isMatch = matchesList.includes(card);
         if (!isMatch) {
           // cancel any pending show timer
-          if (card._showTimer) {
-            clearTimeout(card._showTimer);
-            delete card._showTimer;
+          const state = cardState.get(card) || {};
+          if (state.showTimer) {
+            clearTimeout(state.showTimer);
+            state.showTimer = null;
           }
 
           // remove possible fade-in state and schedule fade-out/hide
           card.classList.remove('fade-in');
           // remove any previous hide handler
-          if (card._hideHandler) {
-            card.removeEventListener('animationend', card._hideHandler);
-            delete card._hideHandler;
+          if (state.hideHandler) {
+            card.removeEventListener('animationend', state.hideHandler);
+            state.hideHandler = null;
           }
 
           card.classList.add('fade-out');
           card.setAttribute('aria-hidden', 'true');
 
-          const onAnim = function () {
+          const onAnimEnd = function () {
             card.style.display = 'none';
             card.classList.add('is-hidden');
-            card.removeEventListener('animationend', onAnim);
-            if (card._hideHandler === onAnim) delete card._hideHandler;
+            card.removeEventListener('animationend', onAnimEnd);
+            const currentState = cardState.get(card);
+            if (currentState && currentState.hideHandler === onAnimEnd) {
+              currentState.hideHandler = null;
+            }
           };
 
-          card._hideHandler = onAnim;
-          card.addEventListener('animationend', onAnim);
+          state.hideHandler = onAnimEnd;
+          card.addEventListener('animationend', onAnimEnd);
+          cardState.set(card, state);
         }
       });
 
@@ -101,15 +109,16 @@ document.addEventListener('DOMContentLoaded', function () {
       matchesList.forEach((card, idx) => {
         // cancel any pending hide handler so it won't hide the card after we show it
         if (card._hideHandler) {
-          card.removeEventListener('animationend', card._hideHandler);
-          delete card._hideHandler;
+          const state = cardState.get(card) || {};
+          if (state.hideHandler) {
+            card.removeEventListener('animationend', state.hideHandler);
+            state.hideHandler = null;
+            cardState.set(card, state);
+          }
         }
 
         // cancel any previous show timer for this card
-        if (card._showTimer) {
-          clearTimeout(card._showTimer);
-          delete card._showTimer;
-        }
+        clearTimeout((cardState.get(card) || {}).showTimer);
 
         // ensure visible and remove hidden classes
         card.classList.remove('is-hidden');
@@ -129,10 +138,11 @@ document.addEventListener('DOMContentLoaded', function () {
           card.setAttribute('aria-hidden', 'false');
           // cleanup
           card.style.animationDelay = '';
-          if (card._showTimer) delete card._showTimer;
+          const state = cardState.get(card);
+          if (state) state.showTimer = null;
         }, delayMs);
 
-        card._showTimer = timer;
+        cardState.set(card, { ...cardState.get(card), showTimer: timer });
       });
       // update visible count immediately (matches count for chosen filter)
       if (resultsSummaryEl) {
@@ -143,9 +153,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }
-
-  // Prevent right-click context menu
-  document.addEventListener('contextmenu', e => e.preventDefault());
 
   // Email form handler
   const emailForm = document.getElementById('emailForm');
@@ -162,7 +169,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // Modal image viewer
   const modal = document.getElementById('fullscreenModal');
   const modalImg = document.getElementById('modalImage');
-  let imageElements = Array.from(document.querySelectorAll('.portfolio-card .card-img img'));
+  // Get all images that are not the play icon for the modal viewer
+  const imageElements = Array.from(document.querySelectorAll('.portfolio-card .card-img img:not(.play-icon)'));
   let currentIndex = 0;
 
   function showImage(index) {
@@ -176,8 +184,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Make cards clickable for reels (redirect to Instagram)
-  portfolioCards.forEach((card, idx) => {
+  // Add event listeners to portfolio cards for modal or Instagram link
+  portfolioCards.forEach(card => {
     // give a descriptive aria-label if not present
     const titleEl = card.querySelector('.card-title');
     const ariaLabel = titleEl ? `${titleEl.textContent.trim()} — ${card.getAttribute('data-category')}` : 'Portfolio item';
@@ -186,8 +194,8 @@ document.addEventListener('DOMContentLoaded', function () {
     card.setAttribute('aria-label', ariaLabel);
 
     const instagramUrl = card.getAttribute('data-instagram-url');
-    const img = card.querySelector('.card-img img:not(.play-icon)');
-    
+    const img = card.querySelector('.card-img img:not(.play-icon)'); // The actual portfolio image
+
     // Check if card is a reel with Instagram URL
     if (instagramUrl) {
       // Make entire card clickable to open Instagram post
@@ -195,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
       card.addEventListener('click', (e) => {
         window.open(instagramUrl, '_blank');
       });
-      
+
       card.addEventListener('keydown', (ev) => {
         if (ev.key === 'Enter' || ev.key === ' ') {
           ev.preventDefault();
@@ -204,8 +212,12 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     } else if (img) {
       // Regular image cards - open in modal
-      img.addEventListener('click', () => showImage(imageElements.indexOf(img)));
-      
+      const imageIndex = imageElements.indexOf(img);
+      if (imageIndex === -1) return; // Should not happen if logic is correct
+
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', () => showImage(imageIndex));
+
       card.addEventListener('keydown', (ev) => {
         if (ev.key === 'Enter' || ev.key === ' ') {
           ev.preventDefault();
@@ -215,25 +227,30 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // refresh imageElements in case DOM changes
-  imageElements = Array.from(document.querySelectorAll('.portfolio-card .card-img img'));
-
-  window.showNextImage = function () {
+  function showNextImage() {
     showImage((currentIndex + 1) % imageElements.length);
-  };
+  }
 
-  window.showPrevImage = function () {
+  function showPrevImage() {
     showImage((currentIndex - 1 + imageElements.length) % imageElements.length);
-  };
+  }
 
-  window.closeFullscreen = function () {
+  function closeFullscreen() {
     modal.classList.remove('show');
     modal.setAttribute('aria-hidden', 'true');
-  };
+  }
 
   if (modal) {
+    // Assign events to modal controls
+    document.getElementById('closeModal').addEventListener('click', closeFullscreen);
+    document.getElementById('nextModal').addEventListener('click', showNextImage);
+    document.getElementById('prevModal').addEventListener('click', showPrevImage);
+
+    // Close modal if backdrop is clicked
     modal.addEventListener('click', e => {
-      if (e.target === modal) window.closeFullscreen();
+      if (e.target === modal) {
+        closeFullscreen();
+      }
     });
   }
   
@@ -241,11 +258,11 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('keydown', function (e) {
     if (!modal.classList.contains('show')) return;
     if (e.key === 'Escape') {
-      window.closeFullscreen();
+      closeFullscreen();
     } else if (e.key === 'ArrowRight') {
-      window.showNextImage();
+      showNextImage();
     } else if (e.key === 'ArrowLeft') {
-      window.showPrevImage();
+      showPrevImage();
     }
   });
 });

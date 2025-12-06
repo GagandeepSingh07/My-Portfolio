@@ -421,6 +421,8 @@ span {
 /* Only reels get 9:16 aspect ratio (vertical format) */
 .portfolio-card[data-category="reels"] .card-img {
   position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
 }
 
 .portfolio-card[data-category="reels"] .card-img::before {
@@ -436,16 +438,6 @@ span {
   display: block;
   object-fit: cover;
   transition: transform 0.5s;
-}
-
-/* Only position reel images absolutely within their aspect ratio container */
-.portfolio-card[data-category="reels"] .card-img img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .portfolio-card:hover .card-img img {
@@ -974,63 +966,66 @@ span {
 
 /* Reels cards with play button overlay - 9:16 vertical format */
 .card-img .play-button {
-position: relative;
-width: 100%;
-height: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
 
 .card-img .play-button::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-color: rgba(0, 0, 0, 0.3);
-z-index: 1;
-transition: background-color 0.3s ease;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  transition: background-color 0.3s ease;
 }
 
 .portfolio-card:hover .card-img .play-button::before {
-background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Play button icon (SVG) */
 .card-img .play-button .play-icon {
-position: absolute;
-width: 60px;
-height: 60px;
-z-index: 2;
-filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
-transition: transform 0.3s ease;
-pointer-events: none;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  z-index: 3;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+  transition: transform 0.3s ease;
+  pointer-events: none;
 }
 
 .portfolio-card:hover .card-img .play-button .play-icon {
-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* Cover image for reels - positioned absolutely to fill aspect ratio container */
 .card-img .play-button img:not(.play-icon) {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-object-fit: cover;
-z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 /* For backwards compatibility with iframes (if any remain) */
 .card-img .play-button iframe {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-pointer-events: none;
-z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
 }
