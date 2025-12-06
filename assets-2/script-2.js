@@ -45,6 +45,8 @@ document.addEventListener('DOMContentLoaded', function () {
 }
 
   // Improved filter: uses fade-in/out animation and aria updates
+  const cardState = new WeakMap(); // Move outside the event listener
+  
   if (filterContainer) {
     filterContainer.addEventListener('click', function (e) {
       const button = e.target.closest('.filter-btn');
@@ -57,13 +59,10 @@ document.addEventListener('DOMContentLoaded', function () {
       button.classList.add('active');
       button.setAttribute('aria-pressed', 'true');
 
-  const filter = button.getAttribute('data-filter');
+      const filter = button.getAttribute('data-filter');
       // Show matches with a small staggered delay. This makes the filtering feel smoother.
       const SHOW_BASE_DELAY = 120; // ms before first item shows
       const SHOW_STAGGER = 60; // ms additional delay per item
-
-      // Use a WeakMap to store state associated with cards, avoiding direct property assignment
-      const cardState = new WeakMap();
 
       const matchesList = Array.from(portfolioCards).filter(c => filter === 'all' || c.getAttribute('data-category') === filter);
 
@@ -108,17 +107,16 @@ document.addEventListener('DOMContentLoaded', function () {
       // Then, show matching cards with staggered timers
       matchesList.forEach((card, idx) => {
         // cancel any pending hide handler so it won't hide the card after we show it
-        if (card._hideHandler) {
-          const state = cardState.get(card) || {};
-          if (state.hideHandler) {
-            card.removeEventListener('animationend', state.hideHandler);
-            state.hideHandler = null;
-            cardState.set(card, state);
-          }
+        const state = cardState.get(card) || {};
+        if (state.hideHandler) {
+          card.removeEventListener('animationend', state.hideHandler);
+          state.hideHandler = null;
         }
 
         // cancel any previous show timer for this card
-        clearTimeout((cardState.get(card) || {}).showTimer);
+        if (state.showTimer) {
+          clearTimeout(state.showTimer);
+        }
 
         // ensure visible and remove hidden classes
         card.classList.remove('is-hidden');
@@ -138,12 +136,17 @@ document.addEventListener('DOMContentLoaded', function () {
           card.setAttribute('aria-hidden', 'false');
           // cleanup
           card.style.animationDelay = '';
-          const state = cardState.get(card);
-          if (state) state.showTimer = null;
+          const currentState = cardState.get(card);
+          if (currentState) {
+            currentState.showTimer = null;
+            cardState.set(card, currentState);
+          }
         }, delayMs);
 
-        cardState.set(card, { ...cardState.get(card), showTimer: timer });
+        state.showTimer = timer;
+        cardState.set(card, state);
       });
+      
       // update visible count immediately (matches count for chosen filter)
       if (resultsSummaryEl) {
         const visibleCount = filter === 'all'
@@ -241,10 +244,11 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   if (modal) {
-    // Assign events to modal controls
-    document.getElementById('closeModal').addEventListener('click', closeFullscreen);
-    document.getElementById('nextModal').addEventListener('click', showNextImage);
-    document.getElementById('prevModal').addEventListener('click', showPrevImage);
+    // Assign events to modal controls if they exist
+    const closeBtn = document.querySelector('.close-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeFullscreen);
+    }
 
     // Close modal if backdrop is clicked
     modal.addEventListener('click', e => {

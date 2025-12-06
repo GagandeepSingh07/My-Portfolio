@@ -336,7 +336,7 @@ span {
 }
 
 .portfolio-grid {
-  column-count: 3;
+  column-count: 4;
   column-gap: 20px;
   margin-bottom: 2rem;
 }
@@ -859,7 +859,7 @@ span {
 
 @media (max-width: 1024px) {
   .portfolio-grid {
-      column-count: 2;
+      column-count: 3;
       column-gap: 15px;
   }
 }
