@@ -172,6 +172,14 @@ document.addEventListener('DOMContentLoaded', function () {
   // Modal image viewer
   const modal = document.getElementById('fullscreenModal');
   const modalImg = document.getElementById('modalImage');
+  // Global click handler to close modal when clicking anywhere on the page
+  function globalModalCloseHandler(e) {
+    // if modal not open, nothing to do
+    if (!modal || !modal.classList.contains('show')) return;
+    // debug
+    console.debug('global click detected while modal open, closing modal');
+    closeFullscreen();
+  }
   // Get all images that are not the play icon for the modal viewer
   const imageElements = Array.from(document.querySelectorAll('.portfolio-card .card-img img:not(.play-icon)'));
   let currentIndex = 0;
@@ -196,6 +204,15 @@ document.addEventListener('DOMContentLoaded', function () {
       // focus for accessibility
       modal.setAttribute('aria-hidden', 'false');
       modal.focus && modal.focus();
+      // attach a global click handler on the next tick so the original click
+      // that opened the modal doesn't immediately close it
+      setTimeout(() => {
+        try {
+          document.addEventListener('click', globalModalCloseHandler, true);
+        } catch (e) {
+          // ignore
+        }
+      }, 0);
     }
   }
 
@@ -253,6 +270,13 @@ document.addEventListener('DOMContentLoaded', function () {
   function closeFullscreen() {
     modal.classList.remove('show');
 
+    // remove global click handler if present
+    try {
+      document.removeEventListener('click', globalModalCloseHandler, true);
+    } catch (e) {
+      // ignore
+    }
+
     // restore focus before hiding the modal to avoid aria-hidden focus warnings
     if (lastFocused && typeof lastFocused.focus === 'function') {
       try { lastFocused.focus(); } catch (e) { document.activeElement.blur(); }
@@ -277,12 +301,34 @@ document.addEventListener('DOMContentLoaded', function () {
       closeBtn.addEventListener('click', closeFullscreen);
     }
 
-    // Close modal if backdrop is clicked
+    // Close modal if backdrop or image is clicked (robust fallback)
     modal.addEventListener('click', e => {
-      if (e.target === modal) {
+      // debug
+      console.debug('modal click target:', e.target);
+      if (e.target === modal || e.target === modalImg) {
+        console.debug('closing modal via backdrop/image click');
         closeFullscreen();
       }
     });
+
+    // Close modal when the image itself is clicked (toggle behavior)
+    if (modalImg) {
+      // Make image focusable for keyboard users
+      modalImg.tabIndex = 0;
+      modalImg.addEventListener('click', (e) => {
+        // stop propagation to avoid duplicate handling by backdrop listener
+        e.stopPropagation();
+        console.debug('modal image clicked');
+        closeFullscreen();
+      });
+
+      modalImg.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          closeFullscreen();
+        }
+      });
+    }
   }
   
   // Keyboard shortcuts for modal

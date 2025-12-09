@@ -546,6 +546,12 @@ span {
   transition: transform 0.3s ease;
 }
 
+/* Make fullscreen image indicate it can be closed */
+.modal img {
+  cursor: zoom-out;
+  pointer-events: auto;
+}
+
 
 .close-btn {
   position: absolute;

@@ -49,6 +49,24 @@ window.addEventListener('load', function() {
   initEducationStyleToggle();
   // Initialize resume link wiring (reads canonical URL from meta)
   initResumeLinks();
+
+  // Fade out and remove site loader if present (wait 1s before starting fade)
+  try {
+    const loader = document.getElementById('site-loader');
+    if (loader) {
+      // Keep the loader visible for 1 second after load, then fade it out
+      setTimeout(() => {
+        loader.classList.add('fade-out');
+        // Remove from DOM after transition completes (match CSS transition ~600ms)
+        setTimeout(() => {
+          if (loader.parentNode) loader.parentNode.removeChild(loader);
+        }, 700);
+      }, 1000);
+    }
+  } catch (e) {
+    // ignore errors related to loader removal
+    console.warn('Loader removal error', e);
+  }
 });
 
 // Function to handle education section style toggle
