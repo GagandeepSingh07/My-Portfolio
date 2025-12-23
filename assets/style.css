@@ -791,6 +791,15 @@ opacity: .7;
 /* transform: scale(1.05); */
 }
 
+#img-1 img {
+  max-width: 105%;
+  object-fit: contain;
+  transform: scale(1.10);
+  margin-bottom: 2rem;
+  padding-left: 15rem;
+}
+
+
 /* ------------------- */
 /* Other Links Section */
 /* ------------------- */

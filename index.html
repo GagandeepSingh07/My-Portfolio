@@ -3,14 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>Gagandeep Singh | Graphic Designer & Visual Storyteller Portfolio</title>
+  <meta name="description" content="Portfolio of Gagandeep Singh, a graphic designer and video editor focusd on branding, motion graphics, video editing, and web design. Explore projects. Now">
   <meta name="resume-url" content="https://drive.google.com/file/d/1rgmzbXrdn2-9fj8CuEKNUkBxl-J8aITK/view?usp=sharing">
   <link rel="icon" type="image/svg+xml" href="Other files/favicon.svg">
   <link rel="icon" type="image/x-icon" href="Other files/favicon.ico">
   <link rel="apple-touch-icon" href="Other files/favicon.svg">
   <link rel="stylesheet" href="assets/globleStyle.css">
   <link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" media="print" onload="this.media='all'">
+  <link rel="canonical" href="https://singhgagan-portfolio.vercel.app/" />
+  <meta name="author" content="Gagandeep Singh">
+  <meta name="publisher" content="Gagandeep Singh">
+  <meta name="keywords" content="Graphic Designer, Visual Storyteller, Portfolio, Branding, Motion Graphics, Video Editing, Web Design, Creative Projects, Gagandeep Singh">
+  <meta name="googlebot" content="index, follow">
+  <meta name="robots" content="index, follow">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Gagandeep Singh",
+  "url": "https://singhgagan-portfolio.vercel.app/",
+  "jobTitle": "Graphic Designer & Video Editor",
+  "sameAs": [
+    "https://www.linkedin.com/in/singhgagan07/",
+    "https://www.behance.net/singhgagan07",
+    "https://github.com/GagandeepSingh07",
+    "https://www.instagram.com/gagan.designs.07"
+  ]
+  "knowsAbout": [
+  "Graphic Design",
+  "Motion Graphics",
+  "Video Editing",
+  "Web Design",
+  "Branding"
+],
+"image": "https://singhgagan-portfolio.vercel.app/assets/Images/gagandeep-singh-profile-photo-3.png"
+}
+</script>
+
 </head>
 <body>
   <!-- Site loader (added) -->
@@ -70,9 +101,9 @@
   <header class="hero-section-container">
     <div class="hero-left fade-in">
         <div class="title hero-text-content">
-            <p id="my-greet">
+            <h1 id="my-greet">
                 Hi,I'm<br>Gagandeep<br>Singh
-              </p>
+              </h1>
         </div>
         <div class="greet hero-text-content">
             <p id="passion">
@@ -85,14 +116,14 @@
               </p>
         </div>
         <div class="btn-box hero-text-content">
-            <button id="my-work">EXPLORE MY WORK</button>
-            <button id="my-work-mobile">MY WORK</button>
+            <button id="my-work" aria-label="View graphic design portfolio">EXPLORE MY WORK</button>
+            <button id="my-work-mobile" aria-label="View graphic design portfolio">MY WORK</button>
             <button id="touch">GET IN TOUCH</button>
         </div>
     </div>
     <div class="hero-right fade-in-img">
         <div id="img-1">
-            <img loading="lazy" id="img-hover-ani" src="assets/Images/Other 07.png" alt="hero-section-img" />
+            <img loading="lazy" src="assets/Images/gagandeep-singh-hero-section-photo-1.png" alt="Gagandeep Singh graphic designer portfolio hero image">
           </div>
     </div>
   </header>
@@ -102,13 +133,13 @@
    <main class="main-section-container" id="main-about-section">
     <div class="main-left autoFadeinShow">
       <div id="main-image">
-        <img loading="lazy" src="assets/Images/IMG_7079.png" alt="Its Me.....if you don't see😁" />
+        <img loading="lazy" src="assets/Images/gagandeep-singh-profile-photo-3.png" alt="Its Me.....if you don't see😁" />
         <!-- <div id="img-ellipse"></div> -->
       </div>
     </div>
     <div class="main-right autoFadeinShow">
       <div class="main-about main-text-content">
-        <p id="about-me">ABOUT ME</p>
+        <h2 id="about-me">ABOUT ME</h2>
         <p class="WI">Who I am</p>
         <p id="description">
           I'm Gagandeep Singh, an entry-level graphic designer with a strong
@@ -236,7 +267,7 @@
         </div>
         <div id="work-btn">
           <!-- <button id="view-work">VIEW WORK</button> -->
-          <button id="view-work" onclick="window.location.href='my-work.html'">VIEW WORK</button>
+          <button id="view-work" onclick="window.location.href='my-work.html'" aria-label="View graphic design portfolio">VIEW WORK</button>
         </div>        
     </div>
   </div>
@@ -244,7 +275,7 @@
   <!-- Software I Used Section -->
 
   <div class="skill-header-container">
-    <p class="skill-header">MY SKILLS</p>
+    <h2 class="skill-header">MY SKILLS</h2>
     <p id="Software" class="software-ope-ani">Softwares I Work With</p>
     <!-- <p id="use">USE-TO</p> -->
   </div>
@@ -438,13 +469,13 @@
     <div class="intro-to-left autoFadeinShow">
         <div class="portfolio-text-content">
           <p id="intro-title">Introduction To</p>
-          <p id="portfolio-title">My Portfolio.</p>
+          <h2 id="portfolio-title">My Portfolio.</h2>
           <p id="post-summary">
           "Here’s a collection of my latest work in graphic design, motion graphics, video  editing, 2D/3D animation, and web design. These projects showcase my skills, creativity, and attention to detail."</p>
         </div>
         <div class="btn-box-portfolio">
             <a href="my-work.html">
-              <button id="my-work-2">View Portfolio</button>
+              <button id="my-work-2" aria-label="View graphic design portfolio">View Portfolio</button>
             </a>
         </div>
     </div>
@@ -452,7 +483,7 @@
     <div class="intro-img-right autoFadeinShow">
 
       <!-- Static Image -->
-      <img loading="lazy" id="img-hover-ani-2" src="assets/Images/Other 12.png" alt="portfolio-section-img" />
+      <img loading="lazy" id="img-hover-ani-2" src="assets/Images/gagandeep-singh-letter-box-photo-1.png" alt="portfolio-section-img" />
 
       <!-- Interactive Cards -->
       
@@ -595,7 +626,7 @@
 
   </div>
 <div class="rectangle"></div>
-  <script src="assets/script.js"></script>
+  <script defer src="assets/script.js"></script>
   <script defer src="https://speed-insights.vercel.app/script.js"></script>
 
 </body>
