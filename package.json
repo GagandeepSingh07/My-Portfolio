@@ -1,8 +1,5 @@
 {
   "name": "my-portfolio",
   "version": "1.0.0",
-  "description": "Static portfolio website",
-  "scripts": {
-    "start": "npx serve ."
-  }
+  "description": "Static portfolio website"
 }
