@@ -73,29 +73,47 @@
 
   <!-- Navbar-section -->
 
-    <nav><!-- class="nav-load-animation" -->
-      <input type="checkbox" id="sidebar-action">
-      <label for="sidebar-action" class="open-sidebar-button">
-          <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000">
-              <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
-          </svg>
-      </label>
+  <input type="checkbox" id="home-sidebar-action">
 
-      <label id="overlay" for="sidebar-action"></label> <!-- this label is used for closing the sidebar from left empty space :) -->
-      <div class="links-container">
-          <label for="sidebar-action" class="close-sidebar-button">
-              <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000">
-                  <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
-              </svg>
-          </label>
+<header class="home-header">
+    <a class="home-logo" href="index.html">Portfolio.</a>
 
-          <a class="home-link" href="index.html">Portfolio.</a>
-          <a href="#main-about-section">About</a>
-          <a href="https://drive.google.com/file/d/1rgmzbXrdn2-9fj8CuEKNUkBxl-J8aITK/view?usp=sharing" target="_blank">Resume</a>
-          <a href="work.html">Work</a>
-          <a href="#social-links">Contact</a>
-      </div>
-  </nav>
+    <nav>
+        <ul class="home-nav-links">
+            <li><a href="https://drive.google.com/file/d/1rgmzbXrdn2-9fj8CuEKNUkBxl-J8aITK/view?usp=sharing" target="_blank">Resume</a></li>
+            <li><a href="work.html">Projects</a></li>
+            <li><a href="#main-about-section">About</a></li>
+        </ul>
+    </nav>
+
+    <a href="#social-links" class="home-cta"><button>Contact</button></a>
+
+    <!-- SINGLE TOGGLE BUTTON -->
+    <label for="home-sidebar-action" class="home-menu-toggle">
+        <!-- Hamburger -->
+        <svg class="home-icon-hamburger" width="30" height="30" viewBox="0 -960 960 960">
+            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+        </svg>
+
+        <!-- Close -->
+        <svg class="home-icon-close" width="30" height="30" viewBox="0 -960 960 960">
+            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+        </svg>
+    </label>
+</header>
+
+<label id="home-overlay" for="home-sidebar-action"></label>
+
+<aside class="home-sidebar">
+    <ul>
+        <li><a href="https://drive.google.com/file/d/1rgmzbXrdn2-9fj8CuEKNUkBxl-J8aITK/view?usp=sharing" target="_blank">Resume</a></li>
+        <li><a href="work.html">Projects</a></li>
+        <li><a href="#main-about-section">About</a></li>
+        <li class="sidebar-cta">
+            <a href="#social-links" class="home-cta"><button>Contact</button></a>
+        </li>
+    </ul>
+</aside>
 
   <!-- Hero-Section -->
    
