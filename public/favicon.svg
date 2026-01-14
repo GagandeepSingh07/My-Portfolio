@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="0.333331in" height="0.333331in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 333 333"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <font id="FontID0" horiz-adv-x="824" font-variant="normal" style="fill-rule:nonzero" font-weight="700">
+	<font-face 
+		font-family="Razed">
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="G" horiz-adv-x="760"><path d="M385.33 701.166c62.1719,0 127.343,-26.164 195.664,-78.6693 80.8371,-75.1653 121.167,-165.165 121.167,-269.998 0,-134.338 -59.6632,-238.162 -179.167,-311.5 -51.4964,-27.3366 -108.665,-40.998 -171.491,-40.998 -147.004,0 -254.51,71.4977 -322.176,214.33 -16.3338,47.1743 -24.487,96.3392 -24.487,147.508l0 3.32674c0,27.3366 2.49506,41.1753 7.32156,41.1753l361.838 0c1.66337,0 3.50399,-1.84062 5.33097,-5.50821l0 -121.003c0,-1.99059 -1.66337,-3.99482 -5.33097,-5.8218l-221.665 0 0 -2.00423c2.65867,-25.1687 24.337,-57.3318 64.9942,-96.6664 37.0032,-27.3366 81.8324,-40.998 134.174,-40.998l1.99059 0c109.673,0 178.676,53.9914 207.008,162.001 2.33145,13.3342 3.50399,27.6638 3.50399,42.9886l0 24.5006c0,92.6716 -46.0018,157.843 -137.678,195.173 -31.3314,5.65819 -46.9971,9.99386 -46.9971,13.3342l0 124.998c0,2.49506 2.00423,3.83121 5.99905,3.83121z"/></glyph>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Razed";src:url("#FontID0") format(svg)}
+    .str0 {stroke:#89D1D1;stroke-width:27.8031}
+    .fil0 {fill:none}
+    .fil1 {fill:#89D1D1}
+    .fnt0 {font-weight:bold;font-size:288.76px;font-family:'Razed'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <circle class="fil0 str0" cx="167" cy="167" r="142"/>
+  <g transform="matrix(-1.02317 -0 0 1 441.29 101.736)">
+   <text x="167" y="167"  class="fil1 fnt0">G</text>
+  </g>
+ </g>
+</svg>

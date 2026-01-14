@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /assets/
+Disallow: /scripts/
+Disallow: /styles/
+Disallow: /.git/
+Disallow: /.vercel/
+
+Sitemap: https://singhgagan-portfolio.vercel.app/sitemap.xml
