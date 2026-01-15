@@ -549,7 +549,7 @@ span {
 
 .modal {
   position: fixed;
-  z-index: 9999;
+  z-index: 99999;
   top: 0; 
   left: 0;
   width: 100vw; 
@@ -575,6 +575,8 @@ span {
   max-width: 90%;
   max-height: 80%;
   transition: transform 0.3s ease;
+  z-index: 100000;
+  position: relative;
 }
 
 /* Make fullscreen image indicate it can be closed */
@@ -593,6 +595,7 @@ span {
   background: none;
   border: none;
   cursor: pointer;
+  z-index: 100001;
 }
 
 .close-btn:hover {

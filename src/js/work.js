@@ -2,17 +2,32 @@ document.addEventListener('DOMContentLoaded', function () {
   // Filter functionality with event delegation
   const filterContainer = document.querySelector('.filter-container');
   const filterButtons = document.querySelectorAll('.filter-btn');
-  const portfolioCards = document.querySelectorAll('.portfolio-card');
+  const portfolioSections = document.querySelectorAll('.post-holder');
 
   // results summary element (shows how many items are visible)
   const resultsSummaryEl = document.getElementById('resultsSummary');
 
+  // Map category names from HTML to filter values
+  const categoryMap = {
+    'Social Media Posts': 'social-media',
+    '3D Work': '3d-work',
+    'Logos': 'logos',
+    'Animation': 'animation',
+    'Videos': 'videos',
+    'Reels': 'reels',
+    'Gaming': 'gaming',
+    'Certificates': 'certificates'
+  };
+
   // compute and render counts per category and attach badges to filter buttons
   function updateFilterCounts() {
-    const counts = { all: portfolioCards.length };
-    portfolioCards.forEach(card => {
-      const cat = card.getAttribute('data-category') || 'others';
-      counts[cat] = (counts[cat] || 0) + 1;
+    const counts = { all: 0 };
+    portfolioSections.forEach(section => {
+      const cat = section.getAttribute('data-category');
+      const filterKey = categoryMap[cat] || 'others';
+      const itemCount = section.querySelectorAll('.post').length;
+      counts[filterKey] = (counts[filterKey] || 0) + itemCount;
+      counts.all += itemCount;
     });
 
     filterButtons.forEach(btn => {
@@ -40,9 +55,9 @@ document.addEventListener('DOMContentLoaded', function () {
   updateFilterCounts();
 
   if (!filterContainer) {
-  console.warn('Filter container not found');
-  return;
-}
+    console.warn('Filter container not found');
+    return;
+  }
 
   // Improved filter: uses fade-in/out animation and aria updates
   const cardState = new WeakMap(); // Move outside the event listener
@@ -62,12 +77,16 @@ document.addEventListener('DOMContentLoaded', function () {
       const filter = button.getAttribute('data-filter');
       // Show matches with a small staggered delay. This makes the filtering feel smoother.
       const SHOW_BASE_DELAY = 120; // ms before first item shows
-      const SHOW_STAGGER = 60; // ms additional delay per item
+      const SHOW_STAGGER = 60; // ms additional delay per section
 
-      const matchesList = Array.from(portfolioCards).filter(c => filter === 'all' || c.getAttribute('data-category') === filter);
+      const matchesList = Array.from(portfolioSections).filter(section => {
+        if (filter === 'all') return true;
+        const cat = section.getAttribute('data-category');
+        return categoryMap[cat] === filter;
+      });
 
-      // First, handle non-matching cards: cancel any pending show timers and schedule hide
-      portfolioCards.forEach(card => {
+      // First, handle non-matching sections: cancel any pending show timers and schedule hide
+      portfolioSections.forEach(card => {
         const isMatch = matchesList.includes(card);
         if (!isMatch) {
           // cancel any pending show timer
@@ -104,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
 
-      // Then, show matching cards with staggered timers
+      // Then, show matching sections with staggered timers
       matchesList.forEach((card, idx) => {
         // cancel any pending hide handler so it won't hide the card after we show it
         const state = cardState.get(card) || {};
@@ -149,9 +168,19 @@ document.addEventListener('DOMContentLoaded', function () {
       
       // update visible count immediately (matches count for chosen filter)
       if (resultsSummaryEl) {
-        const visibleCount = filter === 'all'
-          ? portfolioCards.length
-          : Array.from(portfolioCards).filter(c => c.getAttribute('data-category') === filter).length;
+        let visibleCount = 0;
+        if (filter === 'all') {
+          portfolioSections.forEach(section => {
+            visibleCount += section.querySelectorAll('.post').length;
+          });
+        } else {
+          portfolioSections.forEach(section => {
+            const cat = section.getAttribute('data-category');
+            if (categoryMap[cat] === filter) {
+              visibleCount += section.querySelectorAll('.post').length;
+            }
+          });
+        }
         resultsSummaryEl.textContent = `Showing ${visibleCount} item${visibleCount !== 1 ? 's' : ''}`;
       }
     });
@@ -181,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
     closeFullscreen();
   }
   // Get all images that are not the play icon for the modal viewer
-  const imageElements = Array.from(document.querySelectorAll('.portfolio-card .card-img img:not(.play-icon)'));
+  const imageElements = Array.from(document.querySelectorAll('.post .image-box img, .post .reel-box img:not(.play)'));
   let currentIndex = 0;
 
   // track last focused element so we can restore focus when modal closes
@@ -216,34 +245,38 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Add event listeners to portfolio cards for modal or Instagram link
+  // Add event listeners to posts for modal or Instagram link
+  const portfolioCards = document.querySelectorAll('.post');
   portfolioCards.forEach(card => {
     // give a descriptive aria-label if not present
-    const titleEl = card.querySelector('.card-title');
-    const ariaLabel = titleEl ? `${titleEl.textContent.trim()} — ${card.getAttribute('data-category')}` : 'Portfolio item';
+    const titleEl = card.querySelector('.title');
+    const categoryEl = card.querySelector('.category');
+    const ariaLabel = titleEl ? `${titleEl.textContent.trim()}${categoryEl ? ' — ' + categoryEl.textContent.trim() : ''}` : 'Portfolio item';
     card.setAttribute('tabindex', '0');
     card.setAttribute('role', 'button');
     card.setAttribute('aria-label', ariaLabel);
 
-    const instagramUrl = card.getAttribute('data-instagram-url');
-    const img = card.querySelector('.card-img img:not(.play-icon)'); // The actual portfolio image
+    // Check if this is a reel (has a parent anchor tag)
+    const parentLink = card.closest('a.reel');
+    const img = card.querySelector('.image-box img, .reel-box img:not(.play)'); // The actual portfolio image
 
-    // Check if card is a reel with Instagram URL
-    if (instagramUrl) {
+    // Check if card is a reel with Instagram/external URL
+    if (parentLink) {
       // Make entire card clickable to open Instagram post
       card.style.cursor = 'pointer';
       card.addEventListener('click', (e) => {
-        window.open(instagramUrl, '_blank');
+        e.preventDefault();
+        window.open(parentLink.href, '_blank');
       });
 
       card.addEventListener('keydown', (ev) => {
         if (ev.key === 'Enter' || ev.key === ' ') {
           ev.preventDefault();
-          window.open(instagramUrl, '_blank');
+          window.open(parentLink.href, '_blank');
         }
       });
-    } else if (img) {
-      // Regular image cards - open in modal
+    } else if (img && !card.querySelector('.landing-box iframe')) {
+      // Regular image cards (not videos) - open in modal
       const imageIndex = imageElements.indexOf(img);
       if (imageIndex === -1) return; // Should not happen if logic is correct
 
