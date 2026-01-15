@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="src/css/global.css">
     <link rel="stylesheet" href="src/css/components.css">
     <link rel="stylesheet" href="src/css/work.css">
+    <link rel="stylesheet" href="src/css/cards-styling.css">
   </head>
   <body>
     <main id="parent">
@@ -93,7 +94,7 @@
 
         <div class="filter-container" role="tablist" aria-label="Portfolio filters">
             <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
-            <button class="filter-btn" data-filter="social-media" aria-pressed="false">Social Media Post</button>
+            <button class="filter-btn" data-filter="social-media" aria-pressed="false">Social Media Posts</button>
             <button class="filter-btn" data-filter="3d-work" aria-pressed="false">3D Work</button>
             <button class="filter-btn" data-filter="logos" aria-pressed="false">Logos</button>
             <button class="filter-btn" data-filter="animation" aria-pressed="false">Animation</button>
@@ -105,531 +106,707 @@
             <!-- <button class="filter-btn" data-filter="others">Others</button> -->
         </div>
 
-        <div class="portfolio-grid">
 
-            <!-- Social Media Cards -->
-            <div class="portfolio-card" data-category="social-media">
-                <div class="card-img">
-                    <img src="src/images/portfolio/social-media/carryon-faucets-1.jpg" alt="CarryOn Faucets" loading="lazy" decoding="async" width="300" height="180">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">CarryOn Faucets (Rose Gold)</h3>
-                    <p class="card-category">Social Media Post</p>
-                </div>
+    <!-- Social Media Posts -->
+    <section class="post-holder" data-category="Social Media Posts">
+      <div class="social-post">
+        <div class="post">
+          <div class="image-box">
+            <img
+              src="/src/images/portfolio/social-media/cosmogen-shampoo.jpg"
+              class="post-image"
+              alt=""
+            />
+          </div>
+          <div class="post-content">
+            <div class="title">CarryOn Faucets (Rose Gold)</div>
+            <div class="badge-holder">
+              <div class="category">Social Media Post</div>
+              <div class="new-badge"></div>
             </div>
+          </div>
+        </div>
 
-            <div class="portfolio-card" data-category="social-media">
-                <div class="card-img">
-                    <img src="src/images/portfolio/social-media/faher-facewash.jpg" alt="Faher Facewash" loading="lazy" decoding="async" width="300" height="180">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Faher Facewash</h3>
-                    <p class="card-category">Social Media Post</p>
-                </div>
+        <div class="post">
+          <div class="image-box">
+            <img
+              src="/src/images/portfolio/social-media/faher-facewash.jpg"
+              class="post-image"
+              alt=""
+            />
+          </div>
+          <div class="post-content">
+            <div class="title">Faher Facewash</div>
+            <div class="badge-holder">
+              <div class="category">Social Media Post</div>
+              <div class="recent-badge"></div>
             </div>
+          </div>
+        </div>
 
-            <div class="portfolio-card" data-category="social-media">
-                <div class="card-img">
-                    <img src="src/images/portfolio/social-media/carryon-faucets-2.jpg" alt="CarryOn Faucets" loading="lazy" decoding="async" width="300" height="180">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">CarryOn Faucets (Gold)</h3>
-                    <p class="card-category">Social Media Post</p>
-                </div>
+        <div class="post">
+          <div class="image-box">
+            <img
+              src="/src/images/portfolio/social-media/carryon-faucets-2.jpg"
+              class="post-image"
+              alt=""
+            />
+          </div>
+          <div class="post-content">
+            <div class="title">CarryOn Faucets (Gold)</div>
+            <div class="badge-holder">
+              <div class="category">Social Media Post</div>
+              <div class="recent-badge"></div>
             </div>
+          </div>
+        </div>
 
-            <div class="portfolio-card" data-category="social-media">
-                <div class="card-img">
-                    <img src="src/images/portfolio/social-media/cosmogen-shampoo.jpg" alt="Cosmogen Shampoo" loading="lazy" decoding="async" width="300" height="180">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Cosmogen Shampoo</h3>
-                    <p class="card-category">Social Media Post</p>
-                </div>
+        <div class="post">
+          <div class="image-box">
+            <img
+              src="/src/images/portfolio/social-media/carryon-faucets-1.jpg"
+              class="post-image"
+              alt=""
+            />
+          </div>
+          <div class="post-content">
+            <div class="title">Cosmogen Shampoo</div>
+            <div class="badge-holder">
+              <div class="category">Social Media Post</div>
+              <div class="old-badge"></div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <!-- 3D Work Cards -->
-            <div class="portfolio-card" data-category="3d-work">
-                <div class="card-img">
-                    <img src="src/images/portfolio/3d-work/study-table.png" alt="Table Model" loading="lazy" decoding="async" width="300" height="180">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Study Table Design</h3>
-                    <p class="card-category">3D Work</p>
-                </div>
+    <!-- 3D Work -->
+    <section class="post-holder" data-category="3D Work">
+      <div class="social-post">
+        <div class="post">
+          <div class="image-box">
+            <img
+              src="/src/images/portfolio/3d-work/study-table.png"
+              class="post-image"
+              alt=""
+            />
+          </div>
+          <div class="post-content">
+            <div class="title">Study Table Design - Autodesk Maya</div>
+            <div class="badge-holder">
+              <div class="category">3D Work</div>
+              <div class="old-badge"></div>
             </div>
+          </div>
+        </div>
 
-            <div class="portfolio-card" data-category="3d-work">
-                <div class="card-img">
-                    <img src="src/images/portfolio/3d-work/procedural-planet.png" alt="3D procedural planet" loading="lazy" decoding="async" width="300" height="180">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Procedural Planet Render</h3>
-                    <p class="card-category">3D Work</p>
-                </div>
+        <div class="post">
+          <div class="image-box">
+            <img
+              src="/src/images/portfolio/3d-work/donut-model.png"
+              class="post-image"
+              alt=""
+            />
+          </div>
+          <div class="post-content">
+            <div class="title">Donut Model/Animation - Blender</div>
+            <div class="badge-holder">
+              <div class="category">3D Work</div>
+              <div class="old-badge"></div>
             </div>
+          </div>
+        </div>
 
-            <div class="portfolio-card" data-category="3d-work">
-                <div class="card-img">
-                    <img src="src/images/portfolio/3d-work/interior-design.png" alt="3D architectural visualization" loading="lazy" decoding="async" width="300" height="180">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Interior Design</h3>
-                    <p class="card-category">3D Work</p>
-                </div>
+        <div class="post">
+          <div class="image-box">
+            <img
+              src="/src/images/portfolio/3d-work/procedural-planet.png"
+              class="post-image"
+              alt=""
+            />
+          </div>
+          <div class="post-content">
+            <div class="title">Procedural Planet Render - Blender</div>
+            <div class="badge-holder">
+              <div class="category">3D Work</div>
+              <div class="old-badge"></div>
             </div>
+          </div>
+        </div>
 
-            <div class="portfolio-card" data-category="3d-work">
-                <div class="card-img">
-                    <img src="src/images/portfolio/3d-work/donut-model.png" alt="3D donut" loading="lazy" decoding="async" width="300" height="180">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Donut Model</h3>
-                    <p class="card-category">3D Work</p>
-                </div>
+        <div class="post">
+          <div class="image-box">
+            <img
+              src="/src/images/portfolio/3d-work/exterior-design.png"
+              class="post-image"
+              alt=""
+            />
+          </div>
+          <div class="post-content">
+            <div class="title">Abandoned House - Blender</div>
+            <div class="badge-holder">
+              <div class="category">3D Work</div>
+              <div class="old-badge"></div>
             </div>
+          </div>
+        </div>
 
-            <div class="portfolio-card" data-category="3d-work">
-                <div class="card-img">
-                    <img src="src/images/portfolio/3d-work/exterior-design.png" alt="3D architectural visualization" loading="lazy" decoding="async" width="300" height="180">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Exterior Design</h3>
-                    <p class="card-category">3D Work</p>
-                </div>
+        <div class="post">
+          <div class="image-box">
+            <img
+              src="/src/images/portfolio/3d-work/interior-design.png"
+              class="post-image"
+              alt=""
+            />
+          </div>
+          <div class="post-content">
+            <div class="title">Stylized Room - Autodesk Maya</div>
+            <div class="badge-holder">
+              <div class="category">3D Work</div>
+              <div class="old-badge"></div>
             </div>
+          </div>
+        </div>
 
-            <!-- Logos Cards -->
-            <div class="portfolio-card" data-category="logos">
-                <div class="card-img">
-                    <img src="src/images/portfolio/logos/logo-competition-1.png" alt="Abstract logo design Competition 1" loading="lazy" decoding="async" width="300" height="180">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Logo Competition (2nd)</h3>
-                    <p class="card-category">Logos</p>
-                </div>
-            </div>
+      </div>
+    </section>
 
-            <div class="portfolio-card" data-category="logos">
-                <div class="card-img">
-                    <img src="src/images/portfolio/logos/logo-competition-2.png" alt="Minimalist logo design Competition 2" loading="lazy" decoding="async" width="300" height="180">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Logo Competition (1nd)</h3>
-                    <p class="card-category">Logos</p>
-                </div>
-            </div>
+    <!-- Logo Design -->
+    <section class="post-holder" data-category="Logos">
+      <div class="social-post">
 
-            <div class="portfolio-card" data-category="logos">
-                <div class="card-img">
-                    <img src="src/images/portfolio/logos/typecraft-logo.png" alt="Typography logo" loading="lazy" decoding="async" width="300" height="180">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">TypeCraft (YT Logo)</h3>
-                    <p class="card-category">Logos</p>
-                </div>
+        <div class="post">
+          <div class="image-box">
+            <img
+              src="/src/images/portfolio/logos/unit-converter-logo.png"
+              class="post-image"
+              alt=""
+            />
+          </div>
+          <div class="post-content">
+            <div class="title">Unit Converter - App Logo</div>
+            <div class="badge-holder">
+              <div class="category">Logo</div>
+              <div class="new-badge"></div>
             </div>
+          </div>
+        </div>
 
-            <div class="portfolio-card" data-category="logos">
-                <div class="card-img">
-                    <img src="src/images/portfolio/logos/music-channel-logo.png" alt="Music logo design" loading="lazy" decoding="async" width="300" height="180">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Music Channel (YT Logo)</h3>
-                    <p class="card-category">Logos</p>
-                </div>
+        <div class="post">
+          <div class="image-box">
+            <img
+              src="/src/images/portfolio/logos/music-channel-logo.png"
+              class="post-image"
+              alt=""
+            />
+          </div>
+          <div class="post-content">
+            <div class="title">Music Channel - Youtube</div>
+            <div class="badge-holder">
+              <div class="category">Logo</div>
+              <div class="recent-badge"></div>
             </div>
+          </div>
+        </div>
 
-            <div class="portfolio-card" data-category="logos">
-                <div class="card-img">
-                    <img src="src/images/portfolio/logos/unit-converter-logo.png" alt="Minimalist logo" loading="lazy" decoding="async" width="300" height="180">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Unit Converter Logo</h3>
-                    <p class="card-category">Logos</p>
-                </div>
+        <div class="post">
+          <div class="image-box">
+            <img
+              src="/src/images/portfolio/logos/typecraft-logo.png"
+              class="post-image"
+              alt=""
+            />
+          </div>
+          <div class="post-content">
+            <div class="title">Amit Bangar - Youtube</div>
+            <div class="badge-holder">
+              <div class="category">Logo</div>
+              <div class="recent-badge"></div>
             </div>
+          </div>
+        </div>
 
-            <!-- Animation Cards -->
-            <div class="portfolio-card" data-category="animation">
-                <div class="card-img">
-                    <!-- <img src="/api/placeholder/300/180" alt="2D character animation"> -->
-                     <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/p6Y2JqDD1yM?si=w-mAFw03J_N5c01K&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Character WalkCycle</h3>
-                    <p class="card-category">Animation</p>
-                </div>
+        <div class="post">
+          <div class="image-box">
+            <img
+              src="/src/images/portfolio/logos/logo-competition-2.png"
+              class="post-image"
+              alt=""
+            />
+          </div>
+          <div class="post-content">
+            <div class="title">Logo Competition - 1st Prize</div>
+            <div class="badge-holder">
+              <div class="category">Logo</div>
+              <div class="old-badge"></div>
             </div>
+          </div>
+        </div>
 
-            <div class="portfolio-card" data-category="animation">
-                <div class="card-img">
-                    <!-- <img src="/api/placeholder/300/180" alt="UI animation"> -->
-                     <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/l5lyWQiTwtI?si=6CqdwwIwDIsC31To&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Expression Animation</h3>
-                    <p class="card-category">Animation</p>
-                </div>
+        <div class="post">
+          <div class="image-box">
+            <img
+              src="/src/images/portfolio/logos/logo-competition-1.png"
+              class="post-image"
+              alt=""
+            />
+          </div>
+          <div class="post-content">
+            <div class="title">Logo Competition - 2nd Prize</div>
+            <div class="badge-holder">
+              <div class="category">Logo</div>
+              <div class="old-badge"></div>
             </div>
+          </div>
+        </div>
 
-            <div class="portfolio-card" data-category="animation">
-                <div class="card-img">
-                    <!-- <img src="/api/placeholder/300/180" alt="Logo animation"> -->
-                     <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/gH1p1ALnwaE?si=nV7P0OK5JIIPia77&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Logo Reveal</h3>
-                    <p class="card-category">Animation</p>
-                </div>
-            </div>
+      </div>
+    </section>
 
-            <div class="portfolio-card" data-category="animation">
-                <div class="card-img">
-                    <!-- <img src="/api/placeholder/300/180" alt="Motion graphics animation"> -->
-                     <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/LRs5LRUmINA?si=A2sY7wyzRMFG4rMt&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">News Lower-Third</h3>
-                    <p class="card-category">Animation</p>
-                </div>
-            </div>
+    <!-- Animation Videos -->
+    <section class="post-holder youtube-grid" data-category="Animation">
+      <div class="social-post">
 
-            <!-- Videos Cards -->
-            
-            <div class="portfolio-card" data-category="videos">
-                <div class="card-img">
-                    <!-- <img src="/api/placeholder/300/180" alt="Commercial video"> -->
-                     <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/GWXdfl7S4AE?si=duP_-oO7aXGpRBHv" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">The Loop - Short Film</h3>
-                    <p class="card-category">Video</p>
-                </div>
+        <a
+          href="https://www.instagram.com/reels/DRAF2QVAQSh/"
+          target="_blank"
+          rel="reel"
+          class="reel"
+        >
+          <div class="post">
+            <div class="landing-box">
+              <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/gH1p1ALnwaE?si=nV7P0OK5JIIPia77&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
-            
-            <div class="portfolio-card" data-category="videos">
-                <div class="card-img">
-                    <!-- <img src="/api/placeholder/300/180" alt="Commercial video"> -->
-                     <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/JPB9LXlbWNo?si=fQZLKKvtTwQ7bjsK&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">City Distruction VFX</h3>
-                    <p class="card-category">Video</p>
-                </div>
-            </div>
-
-            <div class="portfolio-card" data-category="videos">
-                <div class="card-img">
-                    <!-- <img src="/api/placeholder/300/180" alt="Promo video"> -->
-                    <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/JWvyOdpNt_A?si=bHaAWmf3_S-dZTu4&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">3D Camera Tracking</h3>
-                    <p class="card-category">Video</p>
-                </div>
-            </div>
-
-            <div class="portfolio-card" data-category="videos">
-                <div class="card-img">
-                    <!-- <img src="/api/placeholder/300/180" alt="Tutorial video"> -->
-                     <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/qmMDtxOL9_Y?si=OXYd3xJqjBZgGS-N&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Text Animation</h3>
-                    <p class="card-category">Video</p>
-                </div>
-            </div>
-
-            <!-- Reels Cards -->
-
-            <div class="portfolio-card" data-category="reels" data-instagram-url="https://www.instagram.com/reel/DRdupcQAZ7A/">
-                <div class="card-img">
-                    <div class="play-button">
-                        <img src="src/images/icons/ui/play-button.svg" alt="Play Button" class="play-icon">
-                        <img src="src/images/portfolio/reels/sonn-chidiya-cover-3.jpg" alt="sonn.chidiya" loading="lazy" decoding="async" width="300" height="180">
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Sonn.Chidiya Cover/Video 3</h3>
-                    <p class="card-category">Reels</p>
-                </div>
-            </div>
-
-            <div class="portfolio-card" data-category="reels" data-instagram-url="https://www.instagram.com/reel/DRYpRGIgV8c/">
-                <div class="card-img">
-                    <div class="play-button">
-                        <img src="src/images/icons/ui/play-button.svg" alt="Play Button" class="play-icon">
-                        <img src="src/images/portfolio/reels/sonn-chidiya-cover-2.jpg" alt="sonn.chidiya" loading="lazy" decoding="async" width="300" height="180">
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Sonn.Chidiya Cover/Video 2</h3>
-                    <p class="card-category">Reels</p>
-                </div>
-            </div>
-
-            <div class="portfolio-card" data-category="reels" data-instagram-url="https://www.instagram.com/reel/DRAF2QVAQSh/">
-                <div class="card-img">
-                    <div class="play-button">
-                        <img src="src/images/icons/ui/play-button.svg" alt="Play Button" class="play-icon">
-                        <img src="src/images/portfolio/reels/sonn-chidiya-cover.jpg" alt="sonn.chidiya" loading="lazy" decoding="async" width="300" height="180">
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Sonn.Chidiya Cover/Video</h3>
-                    <p class="card-category">Reels</p>
-                </div>
-            </div>
-
-            <div class="portfolio-card" data-category="reels" data-instagram-url="https://www.instagram.com/p/DMM8P6STL4b/">
-                <div class="card-img">
-                    <div class="play-button">
-                        <img src="src/images/icons/ui/play-button.svg" alt="Play Button" class="play-icon">
-                        <img src="src/images/portfolio/reels/nexus-launch.png" alt="Nexus Launch" loading="lazy" decoding="async" width="300" height="180">
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Nexus Launch</h3>
-                    <p class="card-category">Reels</p>
-                </div>
-            </div>
-
-            <div class="portfolio-card" data-category="reels" data-instagram-url="https://www.instagram.com/p/DMHygkFztDb/">
-                <div class="card-img">
-                    <div class="play-button">
-                        <img src="src/images/icons/ui/play-button.svg" alt="Play Button" class="play-icon">
-                        <img src="src/images/portfolio/reels/nexus-promotion.png" alt="Nexus Promotion" loading="lazy" decoding="async" width="300" height="180">
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Nexus Promotion</h3>
-                    <p class="card-category">Reels</p>
-                </div>
-            </div>
-            
-            <div class="portfolio-card" data-category="reels" data-instagram-url="https://www.instagram.com/reel/DL4hXL8ykD4/">
-                <div class="card-img">
-                    <div class="play-button">
-                        <img src="src/images/icons/ui/play-button.svg" alt="Play Button" class="play-icon">
-                        <img src="src/images/portfolio/reels/callon-nuts-ad.png" alt="Callon Nuts Ad" loading="lazy" decoding="async" width="300" height="180">
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Callon Nuts Ad</h3>
-                    <p class="card-category">Reels</p>
-                </div>
-            </div>
-
-            <div class="portfolio-card" data-category="reels" data-instagram-url="https://www.instagram.com/reel/DMPZiZcyzPO/">
-                <div class="card-img">
-                    <div class="play-button">
-                        <img src="src/images/icons/ui/play-button.svg" alt="Play Button" class="play-icon">
-                        <img src="src/images/portfolio/reels/callon-nuts-post.png" alt="Callon Nuts Post" loading="lazy" decoding="async" width="300" height="180">
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Callon Nuts Post</h3>
-                    <p class="card-category">Reels</p>
-                </div>
-            </div>
-
-            <div class="portfolio-card" data-category="reels" data-instagram-url="https://www.instagram.com/reel/DMAIFj5KfFk/">
-                <div class="card-img">
-                    <div class="play-button">
-                        <img src="src/images/icons/ui/play-button.svg" alt="Play Button" class="play-icon">
-                        <img src="src/images/portfolio/reels/grandambassador-post1.png" alt="TheGrandAmbassador Post" loading="lazy" decoding="async" width="300" height="180">
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">TheGrandAmbassador Post</h3>
-                    <p class="card-category">Reels</p>
-                </div>
-            </div>
-
-            <div class="portfolio-card" data-category="reels" data-instagram-url="https://www.instagram.com/reel/DMKIsgQM3xR/">
-                <div class="card-img">
-                    <div class="play-button">
-                        <img src="src/images/icons/ui/play-button.svg" alt="Play Button" class="play-icon">
-                        <img src="src/images/portfolio/reels/grandambassador-post2.png" alt="TheGrandAmbassador Post" loading="lazy" decoding="async" width="300" height="180">
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">TheGrandAmbassador Post</h3>
-                    <p class="card-category">Reels</p>
-                </div>
-            </div>
-
-            <!-- Gaming Cards -->
-            <div class="portfolio-card" data-category="gaming">
-                <div class="card-img">
-                    <!-- <img src="/api/placeholder/300/180" alt="Commercial video"> -->
-                     <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/FC6sYHuCW5w?si=PXRiOqjY0Ek1E5zz&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Money Rain - Free Fire</h3>
-                    <p class="card-category">Gaming Montage</p>
-                </div>
-            </div>
-
-            <div class="portfolio-card" data-category="gaming">
-                <div class="card-img">
-                    <!-- <img src="/api/placeholder/300/180" alt="Promo video"> -->
-                    <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/mK1cxcsnIJw?si=VvbngbRkuIro-ldR&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Defeating Genichiro Ashina</h3>
-                    <p class="card-category">Gaming Montage</p>
-                </div>
-            </div>
-
-            <div class="portfolio-card" data-category="gaming">
-                <div class="card-img">
-                    <!-- <img src="/api/placeholder/300/180" alt="Tutorial video"> -->
-                     <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/iakHZLq9piE?si=DsAxQ3Om9zSfp6kA&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Wednesday - Free Fire</h3>
-                    <p class="card-category">Gaming Montage</p>
-                </div>
-            </div>
-
-            <div class="portfolio-card" data-category="gaming">
-                <div class="card-img">
-                    <!-- <img src="/api/placeholder/300/180" alt="Documentary style video"> -->
-                     <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/yWx_POm3uy4?si=-srUXmBuw6-UP6vP&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">No Love - Free Fire</h3>
-                    <p class="card-category">Gaming Montage</p>
-                </div>
-            </div>
-
-            <!-- Certificates Cards -->
-            <div class="portfolio-card" data-category="certificates">
-                <div class="card-img">
-                    <img src="src/images/portfolio/certificates/code-crafter.png" alt="code crafter competition certificate" loading="lazy" decoding="async" width="300" height="180">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Code Crafter Competition</h3>
-                    <p class="card-category">Certificates</p>
-                </div>
-            </div>
-
-            <div class="portfolio-card" data-category="certificates">
-                <div class="card-img">
-                    <img src="src/images/portfolio/certificates/data-visualization.png" alt="data visualization" loading="lazy" decoding="async" width="300" height="180">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Data Visualization</h3>
-                    <p class="card-category">Certificates</p>
-                </div>
-            </div>
-
-            <div class="portfolio-card" data-category="certificates">
-                <div class="card-img">
-                    <img src="src/images/portfolio/certificates/big-data-analytics.png" alt="Big Data Analytics" loading="lazy" decoding="async" width="300" height="180">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Big Data Analytics</h3>
-                    <p class="card-category">Certificates</p>
-                </div>
-            </div>
-
-            <div class="portfolio-card" data-category="certificates">
-                <div class="card-img">
-                    <img src="src/images/portfolio/certificates/quiz-competition.png" alt="Quiz Competition" loading="lazy" decoding="async" width="300" height="180">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Quiz Competition</h3>
-                    <p class="card-category">Certificates</p>
-                </div>
-            </div>
-
-            <!-- Web Design Cards -->
-            <!-- <div class="portfolio-card" data-category="web-design">
-              <div class="card-img">
-                  <img src="/api/placeholder/300/180" alt="E-commerce website design">
+            <div class="post-content">
+              <div class="title">Planet Logo Reveal - 2D</div>
+              <div class="badge-holder">
+                <div class="category">Animation</div>
+                <div class="new-badge"></div>
               </div>
-              <div class="card-content">
-                  <h3 class="card-title">E-Shop Platform</h3>
-                  <p class="card-category">Web Design</p>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="https://www.instagram.com/reels/DRAF2QVAQSh/"
+          target="_blank"
+          rel="reel"
+          class="reel"
+        >
+          <div class="post">
+            <div class="landing-box">
+              <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/p6Y2JqDD1yM?si=w-mAFw03J_N5c01K&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="post-content">
+              <div class="title">Walk Cycle - 2D</div>
+              <div class="badge-holder">
+                <div class="category">Animation</div>
+                <div class="recent-badge"></div>
               </div>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="https://www.instagram.com/reels/DRAF2QVAQSh/"
+          target="_blank"
+          rel="reel"
+          class="reel"
+        >
+          <div class="post">
+            <div class="landing-box">
+              <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/l5lyWQiTwtI?si=6CqdwwIwDIsC31To&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="post-content">
+              <div class="title">Different Expressions - 2D</div>
+              <div class="badge-holder">
+                <div class="category">Animation</div>
+                <div class="recent-badge"></div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="https://www.instagram.com/reels/DRAF2QVAQSh/"
+          target="_blank"
+          rel="reel"
+          class="reel"
+        >
+          <div class="post">
+            <div class="landing-box">
+              <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/LRs5LRUmINA?si=A2sY7wyzRMFG4rMt&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="post-content">
+              <div class="title">News Lower Third - Motion Graphics</div>
+              <div class="badge-holder">
+                <div class="category">Animation</div>
+                <div class="recent-badge"></div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Videos -->
+    <section class="post-holder youtube-grid" data-category="Videos">
+      <div class="social-post">
+
+          <div class="post">
+            <div class="landing-box">
+              <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/GWXdfl7S4AE?si=duP_-oO7aXGpRBHv" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="post-content">
+              <div class="title">The Loop Short Film - College Project</div>
+              <div class="badge-holder">
+                <div class="category">Video</div>
+                <div class="new-badge"></div>
+              </div>
+            </div>
           </div>
 
-          <div class="portfolio-card" data-category="web-design">
-              <div class="card-img">
-                  <img src="/api/placeholder/300/180" alt="Portfolio website design">
+          <div class="post">
+            <div class="landing-box">
+              <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/JPB9LXlbWNo?si=fQZLKKvtTwQ7bjsK&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="post-content">
+              <div class="title">City Distruction - VFX Project</div>
+              <div class="badge-holder">
+                <div class="category">Video</div>
+                <div class="recent-badge"></div>
               </div>
-              <div class="card-content">
-                  <h3 class="card-title">Creative Portfolio</h3>
-                  <p class="card-category">Web Design</p>
-              </div>
+            </div>
           </div>
 
-          <div class="portfolio-card" data-category="web-design">
-              <div class="card-img">
-                  <img src="/api/placeholder/300/180" alt="Travel blog design">
+          <div class="post">
+            <div class="landing-box">
+              <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/qmMDtxOL9_Y?si=OXYd3xJqjBZgGS-N&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="post-content">
+              <div class="title">Text Animation - Motion Graphics</div>
+              <div class="badge-holder">
+                <div class="category">Video</div>
+                <div class="recent-badge"></div>
               </div>
-              <div class="card-content">
-                  <h3 class="card-title">Wanderlust Blog</h3>
-                  <p class="card-category">Web Design</p>
-              </div>
+            </div>
           </div>
 
-          <div class="portfolio-card" data-category="web-design">
-              <div class="card-img">
-                  <img src="/api/placeholder/300/180" alt="Dashboard UI design">
+          <div class="post">
+            <div class="landing-box">
+              <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/JWvyOdpNt_A?si=bHaAWmf3_S-dZTu4&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="post-content">
+              <div class="title">3D Camera Tracking - VFX Project</div>
+              <div class="badge-holder">
+                <div class="category">Video</div>
+                <div class="old-badge"></div>
               </div>
-              <div class="card-content">
-                  <h3 class="card-title">Analytics Dashboard</h3>
-                  <p class="card-category">Web Design</p>
+            </div>
+          </div>
+
+      </div>
+    </section>
+
+    <!-- Reels Posts -->
+    <section class="post-holder" data-category="Reels">
+      <div class="social-post">
+        <a
+          href="https://www.instagram.com/reels/DRAF2QVAQSh/"
+          target="_blank"
+          rel="reel"
+          class="reel"
+        >
+          <div class="post">
+            <div class="reel-box">
+              <img src="/src/images/icons/ui/play-button.svg" alt="play" class="play"
+              />
+              <img
+                src="/src/images/portfolio/reels/sonn-chidiya-cover.jpg"
+                class="post-image"
+                alt=""
+              />
+            </div>
+            <div class="post-content">
+              <div class="title">Rahul Gandhi - @sonn.chidiya</div>
+              <div class="badge-holder">
+                <div class="category">Reel</div>
+                <div class="new-badge"></div>
               </div>
-          </div> -->
-
-            <!-- Others Cards - 4 cards -->
-            <!-- <div class="portfolio-card" data-category="others">
-                <div class="card-img">
-                    <img src="/api/placeholder/300/180" alt="Illustration artwork">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Digital Illustrations</h3>
-                    <p class="card-category">Others</p>
-                </div>
             </div>
+          </div>
+        </a>
 
-            <div class="portfolio-card" data-category="others">
-                <div class="card-img">
-                    <img src="/api/placeholder/300/180" alt="Photography">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Urban Photography</h3>
-                    <p class="card-category">Others</p>
-                </div>
+        <a
+          href="https://www.instagram.com/reels/DRYpRGIgV8c/"
+          target="_blank"
+          rel="reel"
+          class="reel"
+        >
+          <div class="post">
+            <div class="reel-box">
+              <img src="/src/images/icons/ui/play-button.svg" alt="play" class="play"
+              />
+              <img
+                src="/src/images/portfolio/reels/sonn-chidiya-cover-2.jpg"
+                class="post-image"
+                alt=""
+              />
             </div>
-
-            <div class="portfolio-card" data-category="others">
-                <div class="card-img">
-                    <img src="/api/placeholder/300/180" alt="Print design">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Print Materials</h3>
-                    <p class="card-category">Others</p>
-                </div>
+            <div class="post-content">
+              <div class="title">Nithari kaand - @sonn.chidiya</div>
+              <div class="badge-holder">
+                <div class="category">Reel</div>
+                <div class="recent-badge"></div>
+              </div>
             </div>
+          </div>
+        </a>
 
-            <div class="portfolio-card" data-category="others">
-                <div class="card-img">
-                    <img  src="/api/placeholder/300/180" alt="Experimental project">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">AR Experiment</h3>
-                    <p class="card-category">Others</p>
-                </div>
+        <a
+          href="https://www.instagram.com/reels/DRdupcQAZ7A/"
+          target="_blank"
+          rel="reel"
+          class="reel"
+        >
+          <div class="post">
+            <div class="reel-box">
+              <img src="/src/images/icons/ui/play-button.svg" alt="play" class="play"
+              />
+              <img
+                src="/src/images/portfolio/reels/sonn-chidiya-cover-3.jpg"
+                class="post-image"
+                alt=""
+              />
             </div>
-        </div> -->
+            <div class="post-content">
+              <div class="title">Weaker Economy - @sonn.chidiya</div>
+              <div class="badge-holder">
+                <div class="category">Reel</div>
+                <div class="recent-badge"></div>
+              </div>
+            </div>
+          </div>
+        </a>
 
-    </div>
+        <a
+          href="https://www.instagram.com/reels/DL4hXL8ykD4/"
+          target="_blank"
+          rel="reel"
+          class="reel"
+        >
+          <div class="post">
+            <div class="reel-box">
+              <img src="/src/images/icons/ui/play-button.svg" alt="play" class="play"
+              />
+              <img
+                src="/src/images/portfolio/reels/callon-nuts-ad.png"
+                class="post-image"
+                alt=""
+              />
+            </div>
+            <div class="post-content">
+              <div class="title">Promo Post - @callon.nuts</div>
+              <div class="badge-holder">
+                <div class="category">Reel</div>
+                <div class="recent-badge"></div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="https://www.instagram.com/reels/DL4hXL8ykD4/"
+          target="_blank"
+          rel="reel"
+          class="reel"
+        >
+          <div class="post">
+            <div class="reel-box">
+              <img src="/src/images/icons/ui/play-button.svg" alt="play" class="play"
+              />
+              <img
+                src="/src/images/portfolio/reels/callon-nuts-post.png"
+                class="post-image"
+                alt=""
+              />
+            </div>
+            <div class="post-content">
+              <div class="title">Motion Graphics - @callon.nuts</div>
+              <div class="badge-holder">
+                <div class="category">Reel</div>
+                <div class="recent-badge"></div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="https://www.instagram.com/reels/DMAIFj5KfFk/"
+          target="_blank"
+          rel="reel"
+          class="reel"
+        >
+          <div class="post">
+            <div class="reel-box">
+              <img src="/src/images/icons/ui/play-button.svg" alt="play" class="play"
+              />
+              <img
+                src="/src/images/portfolio/reels/grandambassador-post1.png"
+                class="post-image"
+                alt=""
+              />
+            </div>
+            <div class="post-content">
+              <div class="title">Promo Post - @thegrandambassador</div>
+              <div class="badge-holder">
+                <div class="category">Reel</div>
+                <div class="recent-badge"></div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="https://www.instagram.com/p/DMM8P6STL4b/"
+          target="_blank"
+          rel="reel"
+          class="reel"
+        >
+          <div class="post">
+            <div class="reel-box">
+              <img src="/src/images/icons/ui/play-button.svg" alt="play" class="play"
+              />
+              <img
+                src="/src/images/portfolio/reels/nexus-launch.png"
+                class="post-image"
+                alt=""
+              />
+            </div>
+            <div class="post-content">
+              <div class="title">Nexus Launch - @nexus_sanitations</div>
+              <div class="badge-holder">
+                <div class="category">Reel</div>
+                <div class="old-badge"></div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="https://www.instagram.com/p/DMHygkFztDb/"
+          target="_blank"
+          rel="reel"
+          class="reel"
+        >
+          <div class="post">
+            <div class="reel-box">
+              <img src="/src/images/icons/ui/play-button.svg" alt="play" class="play"
+              />
+              <img
+                src="/src/images/portfolio/reels/nexus-promotion.png"
+                class="post-image"
+                alt=""
+              />
+            </div>
+            <div class="post-content">
+              <div class="title">Nexus Promotion - @nexus_sanitations</div>
+              <div class="badge-holder">
+                <div class="category">Reel</div>
+                <div class="old-badge"></div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="https://www.instagram.com/p/DMHygkFztDb/"
+          target="_blank"
+          rel="reel"
+          class="reel"
+        >
+          <div class="post">
+            <div class="reel-box">
+              <img src="/src/images/icons/ui/play-button.svg" alt="play" class="play"
+              />
+              <img
+                src="/src/images/portfolio/reels/grandambassador-post2.png"
+                class="post-image"
+                alt=""
+              />
+            </div>
+            <div class="post-content">
+              <div class="title">Motion Graphics - @thegrandambassador</div>
+              <div class="badge-holder">
+                <div class="category">Reel</div>
+                <div class="old-badge"></div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Gaming Videos -->
+    <section class="post-holder youtube-grid" data-category="Gaming">
+      <div class="social-post">
+
+          <div class="post">
+            <div class="landing-box">
+              <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/mK1cxcsnIJw?si=VvbngbRkuIro-ldR&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="post-content">
+              <div class="title">Defeating Genichiro Ashina - Sekiro</div>
+              <div class="badge-holder">
+                <div class="category">Gaming</div>
+                <div class="new-badge"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="post">
+            <div class="landing-box">
+              <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/FC6sYHuCW5w?si=PXRiOqjY0Ek1E5zz&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="post-content">
+              <div class="title">Montage on Money Rain - Free Fire</div>
+              <div class="badge-holder">
+                <div class="category">Gaming</div>
+                <div class="recent-badge"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="post">
+            <div class="landing-box">
+              <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/iakHZLq9piE?si=DsAxQ3Om9zSfp6kA&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="post-content">
+              <div class="title">Montage on Wednesday - Free Fire</div>
+              <div class="badge-holder">
+                <div class="category">Gaming</div>
+                <div class="recent-badge"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="post">
+            <div class="landing-box">
+              <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/yWx_POm3uy4?si=-srUXmBuw6-UP6vP&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1" title="YouTube video player" frameborder="0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="post-content">
+              <div class="title">Montage on No Love - Free Fire</div>
+              <div class="badge-holder">
+                <div class="category">Gaming</div>
+                <div class="old-badge"></div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </section>
 
     <!-- Full Screen Model -->
 

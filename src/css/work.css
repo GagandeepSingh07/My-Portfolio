@@ -518,38 +518,6 @@ span {
   font-family: var(--body-text-font-family);
 }
 
-.portfolio-grid {
-  column-count: 4;
-  column-gap: 20px;
-  margin-bottom: 2rem;
-}
-
-.portfolio-card {
-  display: inline-block;
-  width: 100%;
-  background-color: var(--card-bg-color);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
-  cursor: pointer;
-  margin-bottom: 20px;
-  break-inside: avoid;
-  page-break-inside: avoid;
-}
-
-.portfolio-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  /* border: 1px solid var(--accent-color); */
-}
-
-/* keyboard focus visible */
-.portfolio-card:focus {
-  outline: 3px solid rgba(137,143,219,0.25);
-  outline-offset: 4px;
-  transform: translateY(-3px);
-}
-
 /* Fade helpers for filtering transitions */
 .fade-in {
   animation: fadeIn 260ms ease forwards;
@@ -573,81 +541,6 @@ span {
 .is-hidden {
   pointer-events: none;
   display: none !important;
-}
-
-/* .portfolio-card:hover .card-content {
-  transform: translateY(80px);
-  pointer-events: auto;
-} */
-
-.card-img {
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  position: relative;
-}
-
-/* No default aspect ratio - let content determine height */
-.card-img > img,
-.card-img > iframe {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Specific height for YouTube/video iframes to maintain 16:9 */
-.card-img > iframe {
-  aspect-ratio: 16 / 9;
-  height: auto;
-}
-
-/* Only reels get 9:16 aspect ratio (vertical format) */
-.portfolio-card[data-category="reels"] .card-img {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 9 / 16;
-}
-
-.portfolio-card[data-category="reels"] .card-img::before {
-  content: '';
-  display: block;
-  padding-top: 177.78%; /* 16/9 * 100 = 177.78% (9:16 vertical ratio) */
-}
-
-/* Regular images - natural sizing */
-.card-img img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  transition: transform 0.5s;
-}
-
-.portfolio-card:hover .card-img img {
-  transform: scale(1.05);
-}
-
-.card-content {
-  padding: 15px;
-  background-color: #030c44a6;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  pointer-events: none; 
-}
-
-.card-title {
-  font-size: var(--sub-heading-font-size);
-  font-weight: var(--sub-heading-font-weight);
-  font-family: var(--sub-heading-font-family);
-  letter-spacing: var(--sub-heading-letter-spacing);
-  color:var(--Cmaincolor);
-  margin-bottom: 5px;
-}
-
-.card-category {
-  color: var(--text-color);
-  font-family: var(--body-text-font-family);
-  opacity: .7;
-  font-size: 12px;
 }
 
 /* ---------------- */
@@ -978,38 +871,6 @@ span {
   }
 }
 
-@media (max-width: 1024px) {
-  .portfolio-grid {
-      column-count: 3;
-      column-gap: 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  .portfolio-grid {
-      column-count: 2;
-      column-gap: 10px;
-      margin-left: 10px;
-      margin-right: 10px;
-  }
-  
-  .portfolio-card {
-      margin-bottom: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .portfolio-grid {
-      column-count: 1;
-      column-gap: 0;
-  }
-  
-  .portfolio-card {
-      margin-bottom: 15px;
-  }
-}
-
-
 /* Footer Email Section */
 
 @media (max-width: 768px) {
@@ -1083,70 +944,4 @@ span {
   .scrolltotopsvg {
     transform: translateX(-7rem);
   }
-}
-
-/* Reels cards with play button overlay - 9:16 vertical format */
-.card-img .play-button {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-}
-
-.card-img .play-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 1;
-  transition: background-color 0.3s ease;
-}
-
-.portfolio-card:hover .card-img .play-button::before {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* Play button icon (SVG) */
-.card-img .play-button .play-icon {
-  position: relative;
-  width: 60px;
-  height: 60px;
-  z-index: 3;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
-  transition: transform 0.3s ease;
-  pointer-events: none;
-}
-
-.portfolio-card:hover .card-img .play-button .play-icon {
-  transform: scale(1.1);
-}
-
-/* Cover image for reels - positioned absolutely to fill aspect ratio container */
-.card-img .play-button img:not(.play-icon) {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-/* For backwards compatibility with iframes (if any remain) */
-.card-img .play-button iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
 }

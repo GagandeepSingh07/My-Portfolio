@@ -343,3 +343,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+
+//Badge Text Update Script
+
+const badgeTextMap = {
+        "recent-badge": "Recent",
+        "replaced-badge": "Replaced",
+        "new-badge": "New",
+        "old-badge": "Old",
+      };
+
+      document.querySelectorAll("div").forEach((el) => {
+        Object.keys(badgeTextMap).forEach((cls) => {
+          if (el.classList.contains(cls)) {
+            el.textContent = badgeTextMap[cls];
+          }
+        });
+      });
