@@ -1,0 +1,99 @@
+/* --------------- */
+/* Thought Section */
+/* --------------- */
+
+.thought-box {
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+}
+
+.thought-container {
+    width: 78%;
+    height: 330px;
+    display: flex;
+    background: rgb(58,58,190);
+    background: linear-gradient(140deg, rgba(58,58,190,1) 21%, rgba(137,209,209,1) 88%);
+    border-radius: 25px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    padding: 1rem 1rem 0.5rem 1rem;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.dash-container, .thought-text-holder, .work-btn {
+    width: 100%;
+}
+
+.dash-container {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thought-text-holder {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#work-btn {
+    height: 14%;
+    display: flex;
+    justify-content: center;
+}
+
+.dash {
+    color: #ffffff;
+    font-weight: 150;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+#view-work {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 165px;
+    height: 100%;
+    background: var(--color-1);
+    border: none;
+    border-radius: 50px;
+    font-size: 12px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 550;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+    font-family: var(--heading-font);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#view-work:hover {
+    background-color: #ffffff;
+    color: var(--color-1);
+}
+
+.thought-text {
+    font-size: 2rem;
+    letter-spacing: .5px;
+    font-weight: var(--h2-font-weight);
+    font-family: var(--h2-font-family);
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.thought-text:hover {
+    opacity: .7;
+}

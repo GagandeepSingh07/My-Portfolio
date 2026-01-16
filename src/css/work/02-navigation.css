@@ -1,0 +1,208 @@
+/* -------------- */
+/* Navbar Section */
+/* -------------- */
+
+/* Copied (and slightly adapted) from home.css so
+   work.html navbar matches index.html navbar */
+
+.home-header {
+    position: sticky;
+    top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    margin: 20px;
+    padding: 0 5%;
+    border-radius: 100px;
+    z-index: 10001;
+
+    /* glassmorphism */
+    background: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-image: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(0, 0, 0, 0.1)
+    );
+}
+
+.home-logo {
+    font-size: 24px;
+    font-family: var(--heading-font);
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.home-nav-links {
+    list-style: none;
+}
+
+.home-nav-links li {
+    display: inline-block;
+    padding: 0 18px;
+}
+
+.home-nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: var(--heading-font);
+    font-weight: 500;
+}
+
+.home-nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.home-cta button {
+    height: 40px;
+    padding: 0 26px;
+    background: var(--accent-color-2);
+    border: none;
+    border-radius: 999px;
+    color: var(--bg-color);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: var(--heading-font);
+}
+
+.home-header svg {
+    fill: var(--text-color);
+}
+
+.home-cta {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.home-sidebar ul {
+    list-style: none;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-end;
+    margin-right: 2rem;
+}
+
+/* ===== CHECKBOX ===== */
+#home-sidebar-action {
+    display: none;
+}
+
+/* ===== TOGGLE BUTTON (SAME POSITION) ===== */
+.home-menu-toggle {
+    display: none;
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10000;
+}
+
+/* icon swap */
+.home-menu-toggle .home-icon-close {
+    display: none;
+}
+
+#home-sidebar-action:checked + .home-header .home-menu-toggle .home-icon-hamburger {
+    display: none;
+}
+
+#home-sidebar-action:checked + .home-header .home-menu-toggle .home-icon-close {
+    display: block;
+}
+
+#home-sidebar-action:checked + .home-header {
+    backdrop-filter: blur(0);
+    -webkit-backdrop-filter: blur(0);
+    background-image: none;
+}
+
+#home-sidebar-action:checked + .home-header .home-logo {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* ===== OVERLAY ===== */
+#home-overlay {
+    display: none;
+}
+
+#home-sidebar-action:checked ~ #home-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .6);
+    z-index: 9998;
+}
+
+/* ===== SIDEBAR ===== */
+.home-sidebar {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 320px;
+    height: 100vh;
+
+    /* glassmorphism for sidebar */
+    background: #00000070;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(20px);
+    background-image: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(0, 0, 0, 0.1)
+    );
+    transition: right .3s ease;
+    z-index: 9999;
+    padding-top: 100px;
+}
+
+#home-sidebar-action:checked ~ .home-sidebar {
+    right: 0;
+}
+
+/* ===== SIDEBAR LINKS ===== */
+.home-sidebar ul {
+    list-style: none;
+    padding: 0 24px;
+}
+
+.home-sidebar li {
+    padding: 0;
+}
+
+.home-sidebar a {
+    font-size: 18px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: var(--heading-font);
+    font-weight: 500;
+}
+
+.home-sidebar a:hover {
+    color: var(--accent-color);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 716px) {
+    .home-nav-links,
+    .home-header .home-cta {
+        display: none;
+    }
+
+    .home-menu-toggle {
+        display: block;
+    }
+}

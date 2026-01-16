@@ -8,10 +8,19 @@
     <link rel="icon" type="image/svg+xml" href="public/favicon.svg">
     <link rel="icon" type="image/x-icon" href="public/favicon.ico">
     <link rel="apple-touch-icon" href="public/favicon.svg">
-    <link rel="stylesheet" href="src/css/global.css">
-    <link rel="stylesheet" href="src/css/components.css">
-    <link rel="stylesheet" href="src/css/work.css">
-    <link rel="stylesheet" href="src/css/cards-styling.css">
+    <!-- Shared CSS files -->
+    <link rel="stylesheet" href="src/css/shared/variables.css">
+    <link rel="stylesheet" href="src/css/shared/legacy-navigation.css">
+    
+    <!-- Section-based CSS files for work page -->
+    <link rel="stylesheet" href="src/css/work/08-portfolio-cards.css">
+    <link rel="stylesheet" href="src/css/work/01-variables-base.css">
+    <link rel="stylesheet" href="src/css/work/02-navigation.css">
+    <link rel="stylesheet" href="src/css/work/03-work-title.css">
+    <link rel="stylesheet" href="src/css/work/04-work-gallery.css">
+    <link rel="stylesheet" href="src/css/work/05-modal.css">
+    <link rel="stylesheet" href="src/css/work/06-footer.css">
+    <link rel="stylesheet" href="src/css/work/07-responsiveness.css">
   </head>
   <body>
     <main id="parent">
@@ -863,8 +872,22 @@
   <div class="rectangle"></div>
 
     <script src="https://unpkg.com/wicg-inert@3.1.1/dist/inert.min.js"></script>
-    <script src="src/js/main.js"></script>
-    <script src="src/js/work.js"></script>
+    
+    <!-- Shared JS files -->
+    <script src="src/js/shared/config.js"></script>
+    <script src="src/js/shared/resume-links.js"></script>
+    <script src="src/js/shared/email-form.js"></script>
+    <script src="src/js/shared/utilities.js"></script>
+    <script src="src/js/shared/main-shared.js"></script>
+    
+    <!-- Section-based JS files for work page -->
+    <script src="src/js/work/01-filter-setup.js"></script>
+    <script src="src/js/work/02-filter-counts.js"></script>
+    <script src="src/js/work/03-filter-animation.js"></script>
+    <script src="src/js/work/04-email-form.js"></script>
+    <script src="src/js/work/05-modal-viewer.js"></script>
+    <script src="src/js/work/06-badge-text.js"></script>
+    <script src="src/js/work/07-main-init.js"></script>
     <script defer src="https://speed-insights.vercel.app/script.js"></script>
 
   </body>

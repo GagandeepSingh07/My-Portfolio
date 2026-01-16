@@ -1,0 +1,138 @@
+/* ----------------------- */
+/* Software I Used Section */
+/* ----------------------- */
+
+.skill-header-container {
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+}
+
+.skill-header,
+#use {
+    text-align: center;
+    font-size: var(--sub-heading-font-size);
+    font-weight: var(--sub-heading-font-weight);
+    font-family: var(--sub-heading-font-family);
+    letter-spacing: var(--sub-heading-letter-spacing);
+    color:var(--accent-color);
+    padding-top: 2rem;
+}
+
+#Software {
+    font-size: var(--h2-font-size);
+    text-align: center;
+    color: #ffffff;
+    font-family: var(--h2-font-family);
+    font-weight: var(--h2-font-weight);
+    transform: translateY(-.2rem);
+}
+
+.software-ope-ani {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.software-ope-ani:hover {
+    opacity: .7;
+}
+
+#use {
+    transform: translateY(-1rem);
+}
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 325px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px;
+    transition: transform .15s ease-in-out;
+    padding-bottom: 1rem;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+.card-bg-holder {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: start;
+    transform: translateY(-8.4rem);
+    z-index: -3;
+}
+
+.card-bg {
+    background-color: var(--card-bg-color);
+    opacity: .65;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .15s ease-in-out;
+}
+
+.image-container{
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.card img{
+    width: 28%;
+    height: 28%;
+}
+
+.card-content{
+    padding: 16px;
+}
+
+.card-title-holder {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(.7rem);
+}
+
+#card-title {
+    font-size: var(--sub-heading-font-size);
+    font-weight: var(--sub-heading-font-weight);
+    font-family: var(--sub-heading-font-family);
+    letter-spacing: var(--sub-heading-letter-spacing);
+    color:var(--accent-color);
+    transform: translateY(-.4rem);
+}
+
+.card-description{
+    color: var(--text-color);
+    font-family: var(--body-text-font-family);
+    font-size: var(--body-text-font-size);
+    line-height: 1.3;
+    text-align: center;
+}
+
+.card-content .btn{
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 16px;
+    color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, .2);
+    box-shadow:  0px 2px 4px #868686,
+                0px -2px 4px #ffffff;
+}

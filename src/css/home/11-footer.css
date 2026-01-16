@@ -1,0 +1,258 @@
+/* -------------- */
+/* footer Section */
+/* -------------- */
+
+.rectangle {
+    width: 100%;
+    height: 8px;
+    background: rgb(58,58,190);
+    background: linear-gradient(140deg, rgba(58,58,190,1) 21%, rgba(137,209,209,1) 88%);
+}
+
+.footer {
+    background-color: #1c185370;
+    box-sizing: border-box;
+    padding: 4rem 2rem 1rem 2rem;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-section h3 {
+    color: var(--text-color);
+    font-family: var(--body-text-font-family);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+/* Underline effect for section headers */
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.footer-section:hover h3::after {
+    width: 75px;
+    background-color: var(--accent-color-2);
+}
+
+.footer-section p {
+    font-family: var(--body-text-font-family);
+    font-weight: 200;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    font-family: var(--body-text-font-family);
+    font-weight: 200;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
+    font-family: var(--body-text-font-family);
+    font-weight: 200;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    display: inline-block;
+}
+
+.footer-section ul li a:hover {
+    color: var(--text-color);
+    padding-left: 5px;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.social-link {
+    color: var(--text-color);
+    font-family: var(--body-text-font-family);
+    font-weight: 200;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    opacity: .7;
+}
+
+.social-link:hover {
+    color: var(--text-color);
+    transform: translateY(-2px);
+    opacity: 1;
+}
+
+.social-link .fab {
+    scale: 1.5;
+}
+
+/* Copyright Section */
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+}
+
+.footer-bottom p {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+/* --------------- */
+/* -scroll to top- */
+/* --------------- */
+
+.scrolltotop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    color: transparent;
+    transition: transform 0.3s ease;
+}
+
+.scrolltotopsvg {
+    display: none;
+}
+
+.scrolltotop:hover {
+    animation: popup 0.8s ease-out;
+}
+
+.scrolltotop:hover p {
+    color: var(--accent-color);
+}
+
+@keyframes popup {
+    0% {
+        transform: translateY(0px);
+    }  
+    25% {
+        transform: translateY(-6px);
+    }
+    50% {
+        transform: translateY(-2px);
+    }
+    75% {
+        transform: translateY(-6px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.scrolltotop .scroll {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+    font-size: 15px;
+}
+
+.scrolltotop p {
+    text-decoration: none;
+}
+
+/* ------------------------- */
+/* -scroll to top ends here- */
+/* ------------------------- */
+
+.email-container {
+    z-index: 10;
+    width: 100%;
+    height: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.email-container p {
+    display: flex;
+    margin-left: 2rem;
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: 500;
+    font-family: var(--sub-heading-font-family);
+    letter-spacing: var(--sub-heading-letter-spacing);
+    transform: translateY(5px);
+    cursor: pointer;
+    transition: opacity .3s ease-in-out;
+}
+
+.email-container p:hover {
+    opacity: .7;
+}
+
+.email-container .emailButton {
+    position: relative;
+    display: flex;
+    gap: 4px;
+    margin-right: 2rem;
+    width: auto;
+}
+
+.email-container input {
+    height: 40px;
+    border-radius: 50px;
+    background-color: #1c185370;
+    width: 20rem;
+    outline: none;
+    border: none;
+    color: var(--text-color);
+    padding-left: 30px;
+}
+
+.email-container input::placeholder {
+    color: #ffffff71;
+    padding-bottom: .3rem;
+}
+
+.email-container form button {
+    position: absolute;
+    top: 4.5px;
+    right: 6.5px;
+    
+    background: var(--accent-color-2);
+    font-family: var(--sub-heading-font-family);
+    font-weight: var(--sub-heading-font-weight);
+    color: var(--bg-color);
+    font-size: 12px;
+    letter-spacing: 1px;
+    outline: none;
+    border: none;
+    padding: 8px 26px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: opacity .3s ease-in-out;
+}
+
+.email-container form button:hover {
+    opacity: .7;
+}

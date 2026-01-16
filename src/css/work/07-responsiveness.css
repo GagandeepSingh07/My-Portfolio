@@ -1,0 +1,157 @@
+/* ---------------------- */
+/* Responsiveness Section */
+/* ---------------------- */
+
+/* Navigation Section */
+
+@media(max-width: 525px) {
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 1002;
+    }
+
+    .links-container {
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 300px;
+        height: 100%;
+        background-color: var(--color-1);
+        box-shadow: -5px 0 5px rgba(0, 0, 0, .25);
+        transition: right 0.3s ease;
+        padding-top: 60px;
+    }
+
+    nav a {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
+    }
+
+    .open-sidebar-button,
+    .close-sidebar-button {
+        padding: 20px;
+        display: block;
+    }
+
+    #sidebar-action:checked~.links-container {
+        right: 0;
+    }
+
+    #sidebar-action:checked~.open-sidebar-button {
+        z-index: 1;
+        display: none;
+    }
+
+    .close-sidebar-button {
+        position: absolute;
+        top: -5px;
+        right: 0;
+    }
+
+    #sidebar-action:checked~#overlay {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+}
+
+@media(max-width: 525px) {
+    .word-card {
+        display: none;
+    }
+}
+
+/* ------------- */
+/* Work section  */
+/* ------------- */
+
+@media (max-width: 768px) {
+    .work-card-main-container {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+/* Footer Email Section */
+
+@media (max-width: 768px) {
+    .email-container .emailButton {
+        display: block;
+    }
+
+    .email-container form , .email-container p {
+        transform: scale(.7);
+    }
+}
+
+@media (max-width: 560px) {
+    .email-container {
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+    }
+    .email-container .emailButton {
+        display: block;
+    }
+
+    .email-container form , .email-container p {
+        transform: scale(.6);
+    }
+
+    .email-container p {
+        margin-left: 1rem;
+        font-size: 15px;
+        transform: translateY(0);
+    }
+    .email-container .emailButton {
+        margin-right: .2rem;
+    }
+}
+
+@media (max-width: 390px) {
+    .email-container p {
+        margin-left: 0;
+    }
+    .email-container form , .email-container p {
+        transform: scale(.5);
+    }
+    .email-container p {
+        font-size: 10px;
+    }
+}
+
+/* -scroll to top- */
+
+@media (max-width:832px) {
+    .scrolltotop {
+        display: none;
+    }
+    .scrolltotopsvg {
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 0;
+        color: white;
+        transition: transform 0.3s ease;
+        transform: translateX(-3rem);
+    }
+}
+
+@media (max-width:444px) {
+    .emailButton #emailInput, #emailsubmitbutton {
+        transform: translateX(-5rem);
+    }
+    .scrolltotopsvg {
+        transform: translateX(-7rem);
+    }
+}

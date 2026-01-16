@@ -1,0 +1,112 @@
+/* ------------- */
+/* Work section  */
+/* ------------- */
+
+.work-card-main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio-header {
+    margin-bottom: 30px;
+    padding: 10px 0;
+}
+
+.portfolio-title {
+    font-size: 24px;
+    font-weight: var(--sub-heading-font-weight);
+    font-family: var(--sub-heading-font-family);
+    letter-spacing: var(--sub-heading-letter-spacing);
+    color: var(--Cmaincolor);
+    padding-top: 2rem;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.portfolio-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 40px;
+    height: 3px;
+    background-color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+.portfolio-title:hover {
+    color: var(--accent-color);
+}
+
+.filter-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    color: var(--Cmaincolor);
+    font-size: 14px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.filter-btn.active {
+    color: var(--accent-color);
+}
+
+/* small count badge on filter buttons */
+.filter-count {
+    display: inline-block;
+    background: rgba(255,255,255,0.08);
+    color: var(--Cmaincolor);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+/* summary text showing how many items are visible */
+.results-summary {
+    margin-top: 6px;
+    color: var(--Cmaincolor);
+    font-size: 14px;
+    opacity: 0.9;
+    font-family: var(--body-text-font-family);
+}
+
+/* Fade helpers for filtering transitions */
+.fade-in {
+    animation: fadeIn 260ms ease forwards;
+}
+
+.fade-out {
+    animation: fadeOut 260ms ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(.95); }
+}
+
+/* When hidden from filter, remove pointer events for accessibility */
+.is-hidden {
+    pointer-events: none;
+    display: none !important;
+}

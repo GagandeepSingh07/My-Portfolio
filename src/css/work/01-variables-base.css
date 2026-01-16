@@ -1,0 +1,41 @@
+/* Work page base styles - includes shared variables */
+@import url('../shared/variables.css');
+
+:root {
+    /* Work page specific temp colors */
+    --Cmaincolor: #ffffff;
+    --Ccolor1: #f77c73;
+    --Ccolor2: #6cbdff;
+    --Ccolor3: #71ff76;
+    --Ccolor4: #ffd65d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 12pt;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 12pt;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+}
+
+body {
+    background-color: var(--bg-color);
+}

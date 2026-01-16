@@ -1,0 +1,138 @@
+/* ------------------ */
+/* Work Title Section */
+/* ------------------ */
+
+.word-card {
+    min-height: 100px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.loader {
+    background-color: #1c185370;
+    border-radius: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 78%;
+    height: 68px;
+    box-shadow: 8px 8px 19px #07070717,
+        -8px -8px 19px #ffffff00;
+    overflow: hidden;
+    padding-left: 5%;
+}
+
+.loader pre,
+span {
+    color: var(--text-color);
+    font-family: var(--h2-font-family);
+    font-weight: var(--h2-font-weight);
+    font-size: 50px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    transition: color 0.3s ease;
+}
+
+.words {
+    overflow: hidden;
+    position: relative;
+}
+
+.words::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+}
+
+.word {
+    display: block;
+    height: 100%;
+    padding-left: 6px;
+    color: var(--accent-color-2);
+    animation: spin_4991 20s infinite;
+    transition: color 0.3s ease;
+}
+
+.word-card:hover .word {
+    color: var(--accent-color);
+}
+
+@keyframes spin_4991 {
+    /* Item 1 */
+    0% {
+        transform: translateY(400%);
+    }
+    8% {
+        transform: translateY(400%);
+    }
+    12% {
+        transform: translateY(300%);
+    }
+
+    /* Item 2 */
+    20% {
+        transform: translateY(300%);
+    }
+    24% {
+        transform: translateY(200%);
+    }
+
+    /* Item 3 */
+    32% {
+        transform: translateY(200%);
+    }
+    36% {
+        transform: translateY(100%);
+    }
+
+    /* Item 4 */
+    44% {
+        transform: translateY(100%);
+    }
+    48% {
+        transform: translateY(0%);
+    }
+
+    /* Item 5 */
+    56% {
+        transform: translateY(0%);
+    }
+    60% {
+        transform: translateY(-100%);
+    }
+
+    /* Item 6 */
+    68% {
+        transform: translateY(-100%);
+    }
+    72% {
+        transform: translateY(-200%);
+    }
+
+    /* Item 7 */
+    80% {
+        transform: translateY(-200%);
+    }
+    84% {
+        transform: translateY(-300%);
+    }
+
+    /* Item 8 */
+    92% {
+        transform: translateY(-300%);
+    }
+    96% {
+        transform: translateY(-400%);
+    }
+
+    100% {
+        transform: translateY(-400%);
+    }
+}

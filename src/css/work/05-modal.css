@@ -1,0 +1,83 @@
+/* ---------------- */
+/* Fullscreen Modal */
+/* ---------------- */
+
+.modal {
+    position: fixed;
+    z-index: 99999;
+    top: 0; 
+    left: 0;
+    width: 100vw; 
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.05);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 80%;
+    transition: transform 0.3s ease;
+    z-index: 100000;
+    position: relative;
+}
+
+/* Make fullscreen image indicate it can be closed */
+.modal img {
+    cursor: zoom-out;
+    pointer-events: auto;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 100001;
+}
+
+.close-btn:hover {
+    color: var(--accent-color);
+}
+
+.arrow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    user-select: none;
+    z-index: 10000;
+}
+
+.arrow-btn.left {
+    left: 20px;
+}
+
+.arrow-btn.right {
+    right: 20px;
+}
+
+.arrow-btn:hover {
+    color: var(--accent-color);
+}
