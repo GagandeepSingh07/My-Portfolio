@@ -1,0 +1,242 @@
+/* ----------------------------- */
+/* Programming Languages Section */
+/* ----------------------------- */
+
+.lang-header-container {
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+}
+
+.lang-header,
+#lang-use {
+    text-align: center;
+    font-size: var(--sub-heading-font-size);
+    font-weight: var(--sub-heading-font-weight);
+    font-family: var(--sub-heading-font-family);
+    letter-spacing: var(--sub-heading-letter-spacing);
+    color: var(--accent-color);
+    padding-top: 2rem;
+}
+
+#Programming {
+    font-size: var(--h2-font-size);
+    text-align: center;
+    color: #ffffff;
+    font-family: var(--h2-font-family);
+    font-weight: var(--h2-font-weight);
+    transform: translateY(-.2rem);
+}
+
+.lang-ope-ani {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.lang-ope-ani:hover {
+    opacity: .7;
+}
+
+#lang-use {
+    transform: translateY(-1rem);
+}
+
+.lang-grid-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.lang-card {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, var(--card-bg-color), rgba(255, 255, 255, 0.05));
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* .lang-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.lang-card:hover::before {
+    left: 100%;
+} */
+
+.lang-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-color);
+}
+
+.lang-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.lang-card:hover .lang-icon {
+    color: var(--accent-color-2);
+    transform: rotate(5deg) scale(1.1);
+}
+
+.lang-name {
+    font-family: var(--body-text-font-family);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.lang-card:hover .lang-name {
+    color: var(--accent-color-2);
+}
+
+
+
+.lang-tooltip {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-color);
+    color: #ffffff;
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 100;
+    border: 1px solid var(--accent-color);
+}
+
+.lang-card:hover .lang-tooltip {
+    bottom: -35px;
+    opacity: 1;
+}
+
+/* ------------------- */
+/* Scroll Animations */
+/* ------------------- */
+
+.lang-card.autoShow {
+    animation: langSlideUp both;
+    animation-timeline: view(70% 30%);
+    animation-delay: calc(var(--card-index) * 0.1s);
+}
+
+@keyframes langSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger animation for cards */
+.lang-card.autoShow:nth-child(1) { --card-index: 1; }
+.lang-card.autoShow:nth-child(2) { --card-index: 2; }
+.lang-card.autoShow:nth-child(3) { --card-index: 3; }
+.lang-card.autoShow:nth-child(4) { --card-index: 4; }
+.lang-card.autoShow:nth-child(5) { --card-index: 5; }
+.lang-card.autoShow:nth-child(6) { --card-index: 6; }
+.lang-card.autoShow:nth-child(7) { --card-index: 7; }
+.lang-card.autoShow:nth-child(8) { --card-index: 8; }
+.lang-card.autoShow:nth-child(9) { --card-index: 9; }
+.lang-card.autoShow:nth-child(10) { --card-index: 10; }
+.lang-card.autoShow:nth-child(11) { --card-index: 11; }
+.lang-card.autoShow:nth-child(12) { --card-index: 12; }
+.lang-card.autoShow:nth-child(13) { --card-index: 13; }
+.lang-card.autoShow:nth-child(14) { --card-index: 14; }
+.lang-card.autoShow:nth-child(15) { --card-index: 15; }
+.lang-card.autoShow:nthChild(16) { --card-index: 16; }
+
+/* Animation for programming header (from left) */
+.lang-header-container {
+    animation: langHeaderSlide both;
+    animation-timeline: view(70% 30%);
+}
+
+@keyframes langHeaderSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .lang-grid-container {
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+    }
+    
+    .lang-card {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .lang-icon {
+        font-size: 2rem;
+    }
+    
+    .lang-name {
+        font-size: 0.75rem;
+    }
+    
+    .lang-level {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .lang-grid-container {
+        gap: 1rem;
+    }
+    
+    .lang-card {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .lang-icon {
+        font-size: 1.5rem;
+    }
+    
+    .lang-name {
+        font-size: 0.65rem;
+    }
+    
+    .lang-level {
+        display: none;
+    }
+}

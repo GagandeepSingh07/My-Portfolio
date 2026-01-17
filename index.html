@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="src/css/home/10-portfolio.css">
   <link rel="stylesheet" href="src/css/home/11-footer.css">
   <link rel="stylesheet" href="src/css/home/12-responsiveness.css">
+  <link rel="stylesheet" href="src/css/home/13-programming-languages.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" media="print" onload="this.media='all'">
   <link rel="canonical" href="https://singhgagan-portfolio.vercel.app/" />
   <meta name="author" content="Gagandeep Singh">
@@ -306,7 +307,7 @@
 
   <!-- Software I Used Section -->
 
-  <div class="skill-header-container">
+  <div class="skill-header-container autoShow">
     <h2 class="skill-header">MY SKILLS</h2>
     <p id="Software" class="software-ope-ani">Softwares I Work With</p>
     <!-- <p id="use">USE-TO</p> -->
@@ -495,6 +496,122 @@
  </div> -->
   </div>
 
+  <!-- Programming Languages Section -->
+
+  <div class="lang-header-container">
+    <h2 class="lang-header">MY SKILLS</h2>
+    <p id="Programming" class="lang-ope-ani">Programming Languages</p>
+    <p id="lang-use">Core Technologies</p>
+  </div>
+
+  <div class="lang-grid-container">
+    <!-- Frontend Development Section -->
+    <!-- HTML5 -->
+    <div class="lang-card autoShow" data-lang="HTML5" data-level="Expert">
+      <i class="fab fa-html5 lang-icon"></i>
+      <span class="lang-name">HTML5</span>
+      <div class="lang-tooltip">Semantic HTML, Accessibility</div>
+    </div>
+
+    <!-- CSS3 -->
+    <div class="lang-card autoShow" data-lang="CSS3" data-level="Expert">
+      <i class="fab fa-css3-alt lang-icon"></i>
+      <span class="lang-name">CSS3</span>
+      <div class="lang-tooltip">SASS, Responsive Design</div>
+    </div>
+
+    <!-- JavaScript -->
+    <div class="lang-card autoShow" data-lang="JavaScript" data-level="Advanced">
+      <i class="fab fa-js lang-icon"></i>
+      <span class="lang-name">JavaScript</span>
+      <div class="lang-tooltip">ES6+, DOM Manipulation</div>
+    </div>
+
+    <!-- Bootstrap -->
+    <div class="lang-card autoShow" data-lang="Bootstrap" data-level="Advanced">
+      <i class="fab fa-bootstrap lang-icon"></i>
+      <span class="lang-name">Bootstrap</span>
+      <div class="lang-tooltip">Bootstrap 5, Components</div>
+    </div>
+
+    <!-- Tailwind CSS -->
+    <div class="lang-card autoShow" data-lang="Tailwind CSS" data-level="Advanced">
+      <i class="fas fa-wind lang-icon"></i>
+      <span class="lang-name">Tailwind CSS</span>
+      <div class="lang-tooltip">Utility-first, Responsive</div>
+    </div>
+
+    <!-- Python -->
+    <div class="lang-card autoShow" data-lang="Python" data-level="Advanced">
+      <i class="fab fa-python lang-icon"></i>
+      <span class="lang-name">Python</span>
+      <div class="lang-tooltip">Django, Flask, Data Science</div>
+    </div>
+
+    <!-- C++ -->
+    <div class="lang-card autoShow" data-lang="C++" data-level="Intermediate">
+      <i class="fas fa-code lang-icon"></i>
+      <span class="lang-name">C++</span>
+      <div class="lang-tooltip">STL, Algorithms</div>
+    </div>
+
+    <!-- Java -->
+    <div class="lang-card autoShow" data-lang="Java" data-level="Intermediate">
+      <i class="fab fa-java lang-icon"></i>
+      <span class="lang-name">Java</span>
+      <div class="lang-tooltip">Spring Boot, OOP</div>
+    </div>
+
+    <!-- PHP -->
+    <div class="lang-card autoShow" data-lang="PHP" data-level="Intermediate">
+      <i class="fab fa-php lang-icon"></i>
+      <span class="lang-name">PHP</span>
+      <div class="lang-tooltip">Laravel, WordPress</div>
+    </div>
+
+    <!-- Git -->
+    <div class="lang-card autoShow" data-lang="Git" data-level="Advanced">
+      <i class="fab fa-git-alt lang-icon"></i>
+      <span class="lang-name">Git</span>
+      <div class="lang-tooltip">Version Control, GitHub</div>
+    </div>
+
+    <!-- GitHub -->
+    <div class="lang-card autoShow" data-lang="GitHub" data-level="Advanced">
+      <i class="fab fa-github lang-icon"></i>
+      <span class="lang-name">GitHub</span>
+      <div class="lang-tooltip">Repositories, CI/CD</div>
+    </div>
+
+    <!-- Vercel -->
+    <div class="lang-card autoShow" data-lang="Vercel" data-level="Advanced">
+      <i class="fas fa-server lang-icon"></i>
+      <span class="lang-name">Vercel</span>
+      <div class="lang-tooltip">Static Hosting, Serverless</div>
+    </div>
+
+    <!-- Netlify -->
+    <div class="lang-card autoShow" data-lang="Netlify" data-level="Advanced">
+      <i class="fas fa-cloud lang-icon"></i>
+      <span class="lang-name">Netlify</span>
+      <div class="lang-tooltip">JAMstack, Continuous Deployment</div>
+    </div>
+
+    <!-- Render -->
+    <div class="lang-card autoShow" data-lang="Render" data-level="Intermediate">
+      <i class="fas fa-cube lang-icon"></i>
+      <span class="lang-name">Render</span>
+      <div class="lang-tooltip">PaaS, Docker</div>
+    </div>
+
+    <!-- Apache -->
+    <div class="lang-card autoShow" data-lang="Apache" data-level="Intermediate">
+      <i class="fas fa-server lang-icon"></i>
+      <span class="lang-name">Apache</span>
+      <div class="lang-tooltip">Web Server, Configuration</div>
+    </div>
+  </div>
+
   <!-- Portfolio-Section -->
                                                  <!--autoShow-->
   <div id="explore-redirect-link" class="portfolio-section-container">
@@ -673,6 +790,7 @@
   <script defer src="src/js/home/05-resume-links.js"></script>
   <script defer src="src/js/home/06-email-form.js"></script>
   <script defer src="src/js/home/07-utilities.js"></script>
+  <script defer src="src/js/home/08-programming-languages.js"></script>
   <script defer src="https://speed-insights.vercel.app/script.js"></script>
 
 </body>

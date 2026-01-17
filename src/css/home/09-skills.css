@@ -8,6 +8,22 @@
     margin-top: 2rem;
 }
 
+.skill-header-container.autoShow {
+    animation: skillHeaderSlide both;
+    animation-timeline: view(70% 30%);
+}
+
+@keyframes skillHeaderSlide {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .skill-header,
 #use {
     text-align: center;
