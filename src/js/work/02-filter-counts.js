@@ -7,7 +7,16 @@ function updateFilterCounts(filterButtons, portfolioSections) {
 
     portfolioSections.forEach(section => {
         const cat = section.getAttribute('data-category');
-        const itemCount = section.querySelectorAll('.post').length;
+        
+        // Check for different project types in sections
+        let itemCount = 0;
+        if (cat === 'programming') {
+            // Count programming cards
+            itemCount = section.querySelectorAll('.lang-work-card').length;
+        } else {
+            // Count regular posts for other sections
+            itemCount = section.querySelectorAll('.post').length;
+        }
 
         counts[cat] = (counts[cat] || 0) + itemCount;
         counts.all += itemCount;
