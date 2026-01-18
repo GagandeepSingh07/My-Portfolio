@@ -194,7 +194,47 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .lang-header-container {
+        margin-top: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .lang-header {
+        font-size: 2.2rem;
+    }
+    
+    #Programming {
+        font-size: 3rem;
+    }
+    
+    #lang-use {
+        font-size: 1rem;
+        transform: translateY(-0.8rem);
+    }
+}
+
 @media (max-width: 768px) {
+    .lang-header-container {
+        margin-top: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    .lang-header {
+        font-size: 1.8rem;
+        padding-top: 1.5rem;
+    }
+    
+    #Programming {
+        font-size: 2.5rem;
+        transform: translateY(-0.1rem);
+    }
+    
+    #lang-use {
+        font-size: 0.9rem;
+        transform: translateY(-0.6rem);
+    }
+    
     .lang-grid-container {
         gap: 1.5rem;
         padding: 1.5rem 0;
@@ -218,9 +258,52 @@
     }
 }
 
+@media (max-width: 640px) {
+    .lang-header-container {
+        margin-top: 0.8rem;
+        padding: 0 0.3rem;
+    }
+    
+    .lang-header {
+        font-size: 1.6rem;
+        padding-top: 1.2rem;
+    }
+    
+    #Programming {
+        font-size: 2.2rem;
+        transform: translateY(-0.05rem);
+    }
+    
+    #lang-use {
+        font-size: 0.85rem;
+        transform: translateY(-0.5rem);
+    }
+}
+
 @media (max-width: 480px) {
+    .lang-header-container {
+        margin-top: 0.5rem;
+        padding: 0 0.2rem;
+    }
+    
+    .lang-header {
+        font-size: 1.4rem;
+        padding-top: 1rem;
+    }
+    
+    #Programming {
+        font-size: 2rem;
+        transform: translateY(0);
+    }
+    
+    #lang-use {
+        font-size: 0.8rem;
+        transform: translateY(-0.4rem);
+    }
+    
     .lang-grid-container {
         gap: 1rem;
+        padding: 1rem 0;
     }
     
     .lang-card {
@@ -238,5 +321,74 @@
     
     .lang-level {
         display: none;
+    }
+}
+
+@media (max-width: 360px) {
+    .lang-header-container {
+        margin-top: 0.3rem;
+        padding: 0 0.1rem;
+    }
+    
+    .lang-header {
+        font-size: 1.2rem;
+        padding-top: 0.8rem;
+    }
+    
+    #Programming {
+        font-size: 1.8rem;
+    }
+    
+    #lang-use {
+        font-size: 0.75rem;
+        transform: translateY(-0.3rem);
+    }
+    
+    .lang-grid-container {
+        gap: 0.8rem;
+        padding: 0.8rem 0;
+    }
+    
+    .lang-card {
+        width: 70px;
+        height: 70px;
+        gap: 0.3rem;
+    }
+    
+    .lang-icon {
+        font-size: 1.3rem;
+    }
+    
+    .lang-name {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .lang-header {
+        font-size: 1.1rem;
+        padding-top: 0.6rem;
+    }
+    
+    #Programming {
+        font-size: 1.6rem;
+    }
+    
+    #lang-use {
+        font-size: 0.7rem;
+        transform: translateY(-0.2rem);
+    }
+    
+    .lang-card {
+        width: 65px;
+        height: 65px;
+    }
+    
+    .lang-icon {
+        font-size: 1.2rem;
+    }
+    
+    .lang-name {
+        font-size: 0.55rem;
     }
 }
