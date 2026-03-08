@@ -1,6 +1,6 @@
 {
-  "name": "creative-portfolio",
-  "version": "1.0.0",
+  "name": "gagandeep-singh-portfolio",
+  "version": "3.1.5",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
