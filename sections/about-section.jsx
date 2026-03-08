@@ -30,11 +30,11 @@ export default function AboutSection() {
                         "I Believe That Design Is Not Just About Making Things Look Good But Also About Solving Problems Creatively. I Am Eager To Collaborate, Learn, And Grow In This Ever-Evolving Field."
                     </blockquote>
 
-                    <div className="flex flex-wrap gap-4 pt-4">
-                        <a href="https://drive.google.com/file/d/1VUl3psB8Pkk5g15UYmqgui1bkNQgVhXN/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="btn glass">
+                    <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="https://drive.google.com/file/d/1VUl3psB8Pkk5g15UYmqgui1bkNQgVhXN/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="btn glass flex items-center justify-center">
                             View Resume
                         </a>
-                        <a href="#portfolio" className="btn glass">
+                        <a href="#portfolio" className="btn glass flex items-center justify-center">
                             View Work
                         </a>
                     </div>

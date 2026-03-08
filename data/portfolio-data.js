@@ -50,7 +50,7 @@ export const portfolioData = [
         type: 'image'
     },
     {
-        title: 'Procedural Planet Generation - Blender',
+        title: 'Procedural Planet - Blender',
         image: '/images/portfolio/3d-work/procedural-planet.png',
         category: '3d-work',
         badge: 'recent',

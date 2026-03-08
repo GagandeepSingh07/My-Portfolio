@@ -72,8 +72,50 @@ export default function ExperienceSection() {
                 description="My Professional Journey"
             />
 
-            <div className="max-w-4xl mx-auto mt-12 relative px-4">
-                {/* Timeline line - fixed position */}
+            {/* Mobile layout */}
+            <div className="md:hidden max-w-lg mx-auto mt-10 px-4 space-y-5">
+                {experienceData.map((item, index) => (
+                    <motion.div
+                        key={index}
+                        className="glass rounded-2xl p-5"
+                        initial={{ y: 60, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{
+                            delay: index * 0.1,
+                            type: "spring",
+                            stiffness: 320,
+                            damping: 70,
+                            mass: 1
+                        }}
+                    >
+                        {/* Top row: period + current badge */}
+                        <div className="flex items-center gap-2 mb-3">
+                            <span className="text-xs font-medium text-[#89D1D1] tracking-wide">{item.period}</span>
+                            {item.current && (
+                                <span className="px-2 py-0.5 text-xs rounded-full glass">Current</span>
+                            )}
+                        </div>
+                        {/* Title */}
+                        <h3 className="text-base font-semibold text-white mb-1">{item.title}</h3>
+                        {/* Company + location */}
+                        <a
+                            href={item.companyUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-gray-200 hover:text-white transition"
+                        >
+                            {item.company}
+                        </a>
+                        <p className="text-xs text-gray-400 mt-0.5 mb-3">{item.location}</p>
+                        {/* Description */}
+                        <p className="text-sm text-gray-100 leading-relaxed">{item.description}</p>
+                    </motion.div>
+                ))}
+            </div>
+
+            {/* Desktop layout — left-side timeline */}
+            <div className="hidden md:block max-w-4xl mx-auto mt-12 relative px-4">
                 <div className="absolute left-6.5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-white/30 to-transparent" />
 
                 <div className="space-y-8">
@@ -94,31 +136,23 @@ export default function ExperienceSection() {
                             }}
                             onAnimationComplete={() => {
                                 const card = ref.current[index];
-                                if (card) {
-                                    card.classList.add("transition", "duration-300");
-                                }
+                                if (card) card.classList.add("transition", "duration-300");
                             }}
                         >
-                            {/* Timeline dot - simple circle */}
                             <div className="absolute left-0.5 top-6 w-5 h-5 rounded-full bg-white/30 border-2 border-white/30 z-10" />
 
-                            {/* Content card with left margin for dot */}
                             <div className="ml-12 glass p-6 rounded-xl hover:-translate-y-0.5 transition duration-300">
-                                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
+                                <div className="flex items-start justify-between gap-2 mb-3">
                                     <div className="flex-1">
                                         <div className="flex items-center gap-2 mb-2 flex-wrap">
-                                            <h3 className="text-lg font-semibold text-white">
-                                                {item.title}
-                                            </h3>
+                                            <h3 className="text-lg font-semibold text-white">{item.title}</h3>
                                             {item.current && (
-                                                <span className="px-2 py-0.5 text-xs rounded-full glass">
-                                                    Current
-                                                </span>
+                                                <span className="px-2 py-0.5 text-xs rounded-full glass">Current</span>
                                             )}
                                         </div>
-                                        <a 
-                                            href={item.companyUrl} 
-                                            target="_blank" 
+                                        <a
+                                            href={item.companyUrl}
+                                            target="_blank"
                                             rel="noopener noreferrer"
                                             className="text-sm font-medium text-gray-200 hover:text-white transition"
                                         >
@@ -128,9 +162,7 @@ export default function ExperienceSection() {
                                     </div>
                                     <p className="text-sm text-gray-300 whitespace-nowrap">{item.period}</p>
                                 </div>
-                                <p className="text-sm text-gray-100 leading-relaxed">
-                                    {item.description}
-                                </p>
+                                <p className="text-sm text-gray-100 leading-relaxed">{item.description}</p>
                             </div>
                         </motion.div>
                     ))}

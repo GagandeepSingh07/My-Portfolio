@@ -25,7 +25,7 @@ export default function CallToAction() {
             >
                 Have a project in mind? Let's collaborate to create stunning visuals that tell your story and captivate your audience. Get in touch to discuss your creative needs!
             </motion.p>
-            <motion.div className="flex flex-col sm:flex-row gap-4 mt-8"
+            <motion.div className="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto"
                 initial={{ y: 80, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
@@ -33,7 +33,7 @@ export default function CallToAction() {
             >
                 <a 
                     href="/work"
-                    className="btn glass transition-none flex items-center gap-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20"
+                    className="btn glass transition-none flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20"
                     data-cursor="link"
                 >
                     View My Work
@@ -41,7 +41,7 @@ export default function CallToAction() {
                 </a>
                 <a 
                     href="mailto:singhgagan40951@gmail.com"
-                    className="btn glass transition-none flex items-center gap-2"
+                    className="btn glass transition-none flex items-center justify-center gap-2"
                     data-cursor="mail"
                 >
                     <MailIcon className="size-4" />
@@ -49,7 +49,7 @@ export default function CallToAction() {
                 </a>
                 <a 
                     href="tel:+918427505176"
-                    className="btn glass transition-none flex items-center gap-2"
+                    className="btn glass transition-none flex items-center justify-center gap-2"
                     data-cursor="phone"
                 >
                     Call Now
