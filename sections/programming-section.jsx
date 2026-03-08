@@ -1,14 +1,15 @@
+'use client';
+
 import SectionTitle from "@/components/section-title";
-import { CodeIcon } from "lucide-react";
-import { motion } from "framer-motion";
-import { useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 export default function ProgrammingSection() {
-  const refs = useRef([]);
+  const [activeTab, setActiveTab] = useState(0);
 
   const programmingSkills = [
     {
-      category: "Core Technologies",
+      category: "Core",
       skills: [
         { name: "HTML5", description: "Semantic HTML, Accessibility" },
         { name: "CSS3", description: "SASS, Responsive Design" },
@@ -16,7 +17,7 @@ export default function ProgrammingSection() {
       ],
     },
     {
-      category: "Frameworks & Libraries",
+      category: "Frameworks",
       skills: [
         { name: "Bootstrap", description: "Bootstrap 5, Components" },
         { name: "Tailwind CSS", description: "Utility-first, Responsive" },
@@ -27,7 +28,7 @@ export default function ProgrammingSection() {
       ],
     },
     {
-      category: "Programming Languages",
+      category: "Languages",
       skills: [
         { name: "Python", description: "Django, Flask, Data Science" },
         { name: "C++", description: "STL, Algorithms" },
@@ -36,42 +37,38 @@ export default function ProgrammingSection() {
       ],
     },
     {
-      category: "Development Tools",
+      category: "Tools",
       skills: [
         { name: "Git", description: "Version Control, GitHub" },
         { name: "GitHub", description: "Repositories, CI/CD" },
-        { name: "GitHub Desktop", description: "GUI App, Simplified Workflow" },
+        { name: "GitHub Desktop", description: "GUI, Simplified Workflow" },
         { name: "VS Code", description: "Extensions, Debugging" },
       ],
     },
     {
-      category: "Backend & APIs",
+      category: "Backend",
       skills: [
-        { name: "Node.js", description: "REST APIs, Event-driven Architecture" },
+        { name: "Node.js", description: "REST APIs, Event-driven" },
         { name: "Express.js", description: "Routing, Middleware" },
-        { name: "TypeScript", description: "Type Safety, Backend Development" },
-        // { name: "Django", description: "ORM, REST Framework" },
-        // { name: "Spring Boot", description: "Microservices, REST APIs" },
+        { name: "TypeScript", description: "Type Safety, Backend" },
         { name: "MongoDB", description: "NoSQL, Aggregation" },
         { name: "Mongoose", description: "ODM, Schema Validation" },
         { name: "MySQL", description: "Joins, Indexing" },
-        { name: "JWT", description: "Authentication, Token-based Security" },
-        { name: "bcrypt", description: "Password Hashing, Security" },
+        { name: "JWT", description: "Auth, Token Security" },
+        { name: "bcrypt", description: "Password Hashing" },
         { name: "CORS", description: "Cross-Origin Requests" },
-        { name: "Cloudinary", description: "Media Management, Image Uploads" },
-        // { name: "PostgreSQL", description: "Advanced SQL, Optimization" },
-        // { name: "Redis", description: "Caching, Pub/Sub" }
+        { name: "Cloudinary", description: "Media Management" },
       ],
     },
     {
-      category: "Document Generation",
+      category: "Docs",
       skills: [
-        { name: "jsPDF", description: "PDF Generation, Documents" },
+        { name: "jsPDF", description: "PDF Generation" },
         { name: "html2canvas", description: "HTML to Canvas/Image" },
       ],
     },
     {
-      category: "Deployment & Hosting",
+      category: "Deployment",
       skills: [
         { name: "Vercel", description: "Static Hosting, Serverless" },
         { name: "Netlify", description: "JAMstack, Continuous Deployment" },
@@ -81,6 +78,8 @@ export default function ProgrammingSection() {
     },
   ];
 
+  const active = programmingSkills[activeTab];
+
   return (
     <section className="mt-32" id="programming">
       <SectionTitle
@@ -88,59 +87,64 @@ export default function ProgrammingSection() {
         description="Technologies & Tools I Use for Development"
       />
 
-      <div className="max-w-6xl mx-auto mt-12 space-y-12">
-        {programmingSkills.map((category, categoryIndex) => (
-          <motion.div
-            key={categoryIndex}
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{
-              delay: categoryIndex * 0.1,
-              type: "spring",
-              stiffness: 320,
-              damping: 70,
-              mass: 1,
-            }}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <CodeIcon className="size-5" />
-              <h3 className="text-xl font-semibold text-white">
-                {category.category}
-              </h3>
-            </div>
+      <motion.div
+        className="max-w-3xl mx-auto mt-10 px-4"
+        initial={{ y: 60, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ type: "spring", stiffness: 280, damping: 70, mass: 1 }}
+      >
+        {/* Tab Bar */}
+        <div className="flex flex-wrap gap-2 mb-6">
+          {programmingSkills.map((cat, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveTab(index)}
+              className={`relative px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-200 ${
+                activeTab === index
+                  ? "text-white"
+                  : "text-gray-400 hover:text-gray-200"
+              }`}
+            >
+              {activeTab === index && (
+                <motion.span
+                  layoutId="tab-pill"
+                  className="absolute inset-0 rounded-full glass border border-white/20"
+                  transition={{ type: "spring", stiffness: 400, damping: 35 }}
+                />
+              )}
+              <span className="relative z-10">{cat.category}</span>
+            </button>
+          ))}
+        </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {category.skills.map((skill, skillIndex) => (
-                <motion.div
-                  key={skillIndex}
-                  ref={(el) => {
-                    const index = categoryIndex * 10 + skillIndex;
-                    refs.current[index] = el;
-                  }}
-                  className="glass p-4 rounded-lg hover:-translate-y-0.5 transition duration-300"
-                  style={{ opacity: 0 }}
-                  initial={{ scale: 0.9, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    delay: skillIndex * 0.05,
-                    type: "spring",
-                    stiffness: 320,
-                    damping: 70,
-                    mass: 1,
-                  }}
+        {/* Skills Panel */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="glass rounded-2xl p-6"
+          >
+            <p className="text-xs text-gray-400 mb-4 uppercase tracking-widest">
+              {active.skills.length} technologies
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {active.skills.map((skill, i) => (
+                <div
+                  key={i}
+                  className="px-4 py-2.5 rounded-xl bg-white/8 border border-white/10 hover:bg-white/15 hover:-translate-y-0.5 transition duration-200"
                 >
-                  <h4 className="text-base font-medium text-white mb-2">
-                    {skill.name}
-                  </h4>
-                  <p className="text-sm text-gray-300">{skill.description}</p>
-                </motion.div>
+                  <p className="text-sm font-medium text-white">{skill.name}</p>
+                  <p className="text-xs text-gray-400 mt-0.5">{skill.description}</p>
+                </div>
               ))}
             </div>
           </motion.div>
-        ))}
-      </div>
+        </AnimatePresence>
+      </motion.div>
     </section>
   );
 }

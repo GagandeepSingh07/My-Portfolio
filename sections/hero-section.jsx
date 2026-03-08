@@ -1,4 +1,4 @@
-import { PlayCircleIcon } from "lucide-react";
+
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
@@ -50,11 +50,10 @@ export default function HeroSection() {
                     viewport={{ once: true }}
                     transition={{ type: "spring", stiffness: 320, damping: 70, mass: 1 }}
                 >
-                    <a href="/work" className="btn max-md:w-full glass py-3">
+                    <a href="/work" className="btn max-md:w-full glass flex items-center justify-center py-3">
                         View Full Portfolio
                     </a>
-                    <a href="https://drive.google.com/file/d/1VUl3psB8Pkk5g15UYmqgui1bkNQgVhXN/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="btn max-md:w-full glass flex items-center justify-center gap-2 py-3">
-                        <PlayCircleIcon className="size-4.5" />
+                    <a href="https://drive.google.com/file/d/1VUl3psB8Pkk5g15UYmqgui1bkNQgVhXN/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="btn max-md:w-full glass flex items-center justify-center py-3">
                         View Resume
                     </a>
                 </motion.div>
