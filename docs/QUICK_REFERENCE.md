@@ -1,324 +1,93 @@
-# Quick Reference - Portfolio File Structure
+# Quick Reference: Portfolio Data Structure
 
-## 📍 Where Does Everything Go?
+## Current Portfolio Stats
+- **Total Items**: 30
+- **Categories**: 5 (Social Media, 3D Work, Logos, Reels, Certificates)
+- **Images Added**: ✅ All images from your collection
 
-### Need to add a new stylesheet?
-→ `src/css/[purpose].css`
+---
+
+## Category Breakdown
+
+| Category | Count | Badge Distribution |
+|----------|-------|-------------------|
+| Social Media | 4 | 1 NEW, 2 RECENT, 1 none |
+| 3D Work | 8 | 1 NEW, 3 RECENT, 4 none |
+| Logos | 5 | 2 NEW, 1 RECENT, 2 none |
+| Reels | 9 | 2 NEW, 4 RECENT, 3 none |
+| Certificates | 4 | 1 RECENT, 3 none |
+
+---
+
+## File Structure
+
+```
+public/
+└── images/
+    └── portfolio/
+        ├── social-media/     (4 images)
+        ├── 3d-work/          (8 images)
+        ├── logos/            (5 images)
+        ├── reels/            (9 images)
+        └── certificates/     (4 images)
+```
+
+---
+
+## Image Path Format
+
+All images use the pattern:
+```
+/images/portfolio/{category}/{filename}
+```
 
 Examples:
-- Global variables → `src/css/global.css`
-- Reusable components → `src/css/components.css`
-- Page-specific → `src/css/about.css`
-- Media queries → `src/css/responsive.css`
+- `/images/portfolio/social-media/cosmogen-shampoo.jpg`
+- `/images/portfolio/3d-work/donut-model.png`
+- `/images/portfolio/logos/typecraft-logo.png`
+- `/images/portfolio/reels/nexus-launch.png`
+- `/images/portfolio/certificates/big-data-analytics.png`
 
 ---
 
-### Need to add JavaScript?
-→ `src/js/`
+## Testing Checklist
 
-Examples:
-- Shared functions → `src/js/main.js`
-- Page-specific → `src/js/contact.js`
-- Reusable module → `src/js/components/slider.js`
-- Helper functions → `src/js/utils/helpers.js`
-
----
-
-### Need to add an image?
-
-**Personal Photo?**
-→ `src/images/profile/[descriptive-name].png`
-
-**Software Icon?**
-→ `src/images/icons/software/[tool-name].png`
-
-**UI Icon?**
-→ `src/images/icons/ui/[icon-name].svg`
-
-**Portfolio Work?**
-→ `src/images/portfolio/[category]/[project-name].[ext]`
-
-Categories:
-- `social-media/` - Posts, ads
-- `3d-work/` - Renders, models
-- `logos/` - Logo designs
-- `reels/` - Video thumbnails
-- `certificates/` - Achievements
-- `videos/` - Video thumbnails
+- [ ] Start dev server: `npm run dev`
+- [ ] Visit: `http://localhost:3000/work`
+- [ ] Check all 30 items load correctly
+- [ ] Test category filters (should show correct counts)
+- [ ] Click images for fullscreen view
+- [ ] Verify play icons show on reels
+- [ ] Test responsive layout on mobile
+- [ ] Check badge colors and labels
 
 ---
 
-### Need to add a static file?
-→ `public/`
+## Customization Guide
 
-Examples:
-- Favicon → `public/favicon.ico`
-- Robots → `public/robots.txt`
-- Sitemap → `public/sitemap.xml`
-- Manifest → `public/manifest.json`
+### To Add New Items:
+1. Add image to `/public/images/portfolio/{category}/`
+2. Add entry to `/data/portfolio-data.js`
+3. Use this template:
+   ```javascript
+   {
+       title: 'Project Name',
+       image: '/images/portfolio/category/filename.ext',
+       category: 'category-name',
+       badge: 'new', // optional
+       type: 'image', // or 'reel', 'landing'
+       playIcon: true // only for videos
+   }
+   ```
 
----
-
-### Need to add documentation?
-→ `docs/`
-
-Examples:
-- Setup guide → `docs/SETUP.md`
-- API docs → `docs/API.md`
-- Changelog → `docs/CHANGELOG.md`
-
----
-
-## 📋 File Naming Cheat Sheet
-
-### ✅ DO:
-```
-hero-photo.png          ✓ Lowercase
-after-effects.png       ✓ Hyphenated
-study-table.png         ✓ Descriptive
-global.css              ✓ Purpose-clear
-navigation.js           ✓ Component name
-```
-
-### ❌ DON'T:
-```
-Hero Photo.png          ✗ Spaces
-After_Effects.png       ✗ Underscores + capitals
-IMG_001.png             ✗ Generic
-style2.css              ✗ Numbers without context
-script.js               ✗ Too generic
-```
+### To Update Badges:
+Edit `/data/portfolio-data.js` and change the `badge` property:
+- `badge: 'new'` - Green badge
+- `badge: 'recent'` - Blue badge
+- `badge: 'replaced'` - Yellow badge
+- `badge: 'old'` - Red badge
+- Remove badge property for no badge
 
 ---
 
-## 🎯 Common Tasks
-
-### Adding a New Page
-
-1. Create HTML: `new-page.html` (root)
-2. Create CSS: `src/css/new-page.css`
-3. Create JS: `src/js/new-page.js`
-4. Update navigation in all pages
-
----
-
-### Adding a New Component
-
-1. Create CSS: `src/css/components.css` (add to existing)
-2. Create JS: `src/js/components/component-name.js`
-3. Import in main.js if needed
-
----
-
-### Adding Portfolio Work
-
-1. Save image: `src/images/portfolio/[category]/[name].[ext]`
-2. Update: `work.html` - Add new card
-3. Update: Filter if new category
-
----
-
-### Updating Styles
-
-**Global changes?**
-→ `src/css/global.css`
-
-**Component changes?**
-→ `src/css/components.css`
-
-**Page-specific?**
-→ `src/css/[page-name].css`
-
-**Responsive?**
-→ `src/css/responsive.css`
-
----
-
-## 🔍 Finding Files Quick
-
-| Need to find... | Look in... |
-|----------------|-----------|
-| CSS variables | `src/css/global.css` |
-| Button styles | `src/css/components.css` |
-| Navigation code | `src/js/components/navigation.js` |
-| Email form logic | `src/js/components/emailForm.js` |
-| Hero section image | `src/images/profile/hero-photo.png` |
-| Portfolio images | `src/images/portfolio/[category]/` |
-| Software icons | `src/images/icons/software/` |
-| Favicon | `public/favicon.ico` |
-| Setup instructions | `docs/MIGRATION_GUIDE.md` |
-
----
-
-## 🛠️ Path Reference
-
-### In HTML Files:
-
-**CSS:**
-```html
-<link href="src/css/global.css">
-<link href="src/css/components.css">
-<link href="src/css/home.css">
-```
-
-**JavaScript:**
-```html
-<script src="src/js/main.js"></script>
-<script src="src/js/home.js"></script>
-```
-
-**Images:**
-```html
-<!-- Profile photo -->
-<img src="src/images/profile/hero-photo.png">
-
-<!-- Software icon -->
-<img src="src/images/icons/software/photoshop.png">
-
-<!-- Portfolio work -->
-<img src="src/images/portfolio/3d-work/study-table.png">
-
-<!-- Favicon -->
-<link rel="icon" href="public/favicon.svg">
-```
-
----
-
-### In CSS Files:
-
-**Background images:**
-```css
-.hero {
-  background-image: url('../images/profile/hero-photo.png');
-}
-```
-
-**Import fonts:**
-```css
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
-```
-
----
-
-### In JavaScript:
-
-**Import modules:**
-```javascript
-import { initNavigation } from './components/navigation.js';
-import { showModal } from './components/modal.js';
-```
-
----
-
-## 📦 Full Path Examples
-
-```
-Portfolio Homepage:
-├── HTML: index.html
-├── CSS: src/css/global.css
-│        src/css/components.css
-│        src/css/home.css
-│        src/css/responsive.css
-├── JS:  src/js/main.js
-│        src/js/home.js
-└── Images: src/images/profile/hero-photo.png
-            src/images/icons/software/photoshop.png
-
-Work Page:
-├── HTML: work.html
-├── CSS: src/css/global.css
-│        src/css/components.css
-│        src/css/work.css
-│        src/css/responsive.css
-├── JS:  src/js/main.js
-│        src/js/work.js
-│        src/js/components/filter.js
-│        src/js/components/modal.js
-└── Images: src/images/portfolio/[category]/[files]
-```
-
----
-
-## 🚨 Common Mistakes to Avoid
-
-### ❌ Wrong:
-```
-src/hero-photo.png              (missing category)
-images/photoshop.png            (not in src/)
-css/style.css                   (not in src/)
-script.js                       (not in src/js/)
-src/images/IMG_001.png          (generic name)
-src/css/style-2.css             (unclear purpose)
-```
-
-### ✅ Correct:
-```
-src/images/profile/hero-photo.png
-src/images/icons/software/photoshop.png
-src/css/global.css
-src/js/main.js
-src/images/portfolio/3d-work/study-table.png
-src/css/work.css
-```
-
----
-
-## 📱 Mobile Development
-
-All paths remain the same on mobile/desktop.
-Responsive styles go in: `src/css/responsive.css`
-
----
-
-## 🔄 Migration Reference
-
-| Old Path | New Path |
-|----------|----------|
-| `assets/globleStyle.css` | `src/css/global.css` |
-| `assets/style.css` | `src/css/home.css` |
-| `assets-2/style-2.css` | `src/css/work.css` |
-| `assets/script.js` | `src/js/home.js` |
-| `assets-2/script-2.js` | `src/js/work.js` |
-| `assets/Images/gagandeep-singh-hero-section-photo-1.png` | `src/images/profile/hero-photo.png` |
-| `assets/icons/Photoshop.png` | `src/images/icons/software/photoshop.png` |
-| `assets-2/my-work/3d/3d 1.png` | `src/images/portfolio/3d-work/study-table.png` |
-| `Other files/favicon.ico` | `public/favicon.ico` |
-| `robots.txt` | `public/robots.txt` |
-
----
-
-## ⚡ Quick Commands
-
-**Create new directories:**
-```bash
-mkdir -p src/css src/js src/images/portfolio/new-category
-```
-
-**Find a file:**
-```bash
-find src -name "hero-photo.png"
-```
-
-**List all CSS:**
-```bash
-ls src/css/
-```
-
-**List all images:**
-```bash
-ls -R src/images/
-```
-
----
-
-## 📞 Need Help?
-
-Check these docs:
-1. [File Structure Guide](FILE_STRUCTURE.md) - Detailed breakdown
-2. [Migration Guide](MIGRATION_GUIDE.md) - Step-by-step migration
-3. [Structure Comparison](STRUCTURE_COMPARISON.md) - Before/after visual
-
----
-
-**Last Updated:** January 2026  
-**Version:** 2.0
+Ready to go! 🚀

@@ -1,76 +1,41 @@
-# Dependencies
-node_modules/
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
+.pnpm-debug.log*
 
-# Build outputs
-dist/
-build/
-.cache/
-*.log
+# env files (can opt-in for committing if needed)
+.env*
 
-# Environment files
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# IDE and editor files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.DS_Store
-*.sublime-project
-*.sublime-workspace
-
-# OS files
-Thumbs.db
-Desktop.ini
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Temporary files
-*.tmp
-*.temp
-.temp/
-tmp/
-
-# Archive (old files - keep locally, don't commit)
-archive/
-
-# Test coverage
-coverage/
-*.coverage
-.nyc_output/
-
-# Debug files
-debug.log
-*.log
-
-# Backup files
-*.bak
-*.backup
-*~
-
-# Image optimization tools
-.cache/
-*.cache
-
-# Vercel
+# vercel
 .vercel
 
-# Local development
-.local/
-
-# Optional: Uncomment if using these tools
-# *.map
-# *.min.js
-# *.min.css
+# typescript
+*.tsbuildinfo
+next-env.d.ts
