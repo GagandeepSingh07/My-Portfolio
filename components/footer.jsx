@@ -177,11 +177,11 @@ export default function Footer() {
 
       <hr className="w-full border-white/20 mt-12" />
 
-      <div className="flex flex-col md:flex-row items-center w-full justify-between gap-4 py-6">
+      <div className="flex flex-col md:flex-row items-center w-full justify-center gap-4 py-6">
         <p className="text-sm text-gray-300">
           © {currentYear} Gagandeep Singh. All rights reserved.
         </p>
-        <p className="text-sm text-gray-300">Designed & Built with 🩵</p>
+        {/* <p className="text-sm text-gray-300">Designed & Built with 🩵</p> */}
       </div>
     </motion.footer>
   );

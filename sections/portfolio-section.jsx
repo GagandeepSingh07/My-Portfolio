@@ -5,62 +5,98 @@ import { ExternalLinkIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-// Option 3 — Fanned Cards with hover animation
-function FannedCards() {
-  const [hovered, setHovered] = useState(false);
+// Scattered polaroid-style photo grid with hover lift effect
+function PortfolioPreview() {
+  const [hoveredIdx, setHoveredIdx] = useState(null);
+
+  const photos = [
+    {
+      src: "/images/portfolio/social-media/cosmogen-shampoo.jpg",
+      // top-left
+      style: {
+        top: 0, left: 0, width: "52%", height: "52%",
+        transform: "rotate(-4deg)",
+        transformOrigin: "center center",
+        borderRadius: 10,
+        zIndex: 1,
+      },
+      hoverStyle: { transform: "rotate(-6deg) translate(-3px, -5px)", zIndex: 10 },
+    },
+    {
+      src: "/images/portfolio/3d-work/procedural-planet.png",
+      // top-right
+      style: {
+        top: 0, right: 0, width: "52%", height: "52%",
+        transform: "rotate(5deg)",
+        transformOrigin: "center center",
+        borderRadius: 10,
+        zIndex: 2,
+      },
+      hoverStyle: { transform: "rotate(7deg) translate(3px, -5px)", zIndex: 10 },
+    },
+    {
+      src: "/images/portfolio/logos/logo-competition-2.png",
+      // bottom-left
+      style: {
+        bottom: 0, left: 0, width: "52%", height: "52%",
+        transform: "rotate(3deg)",
+        transformOrigin: "center center",
+        borderRadius: 10,
+        zIndex: 2,
+      },
+      hoverStyle: { transform: "rotate(5deg) translate(-3px, 5px)", zIndex: 10 },
+    },
+    {
+      src: "/images/portfolio/3d-work/interior-design.png",
+      // bottom-right
+      style: {
+        bottom: 0, right: 0, width: "52%", height: "52%",
+        transform: "rotate(-3deg)",
+        transformOrigin: "center center",
+        borderRadius: 10,
+        zIndex: 1,
+      },
+      hoverStyle: { transform: "rotate(-5deg) translate(3px, 5px)", zIndex: 10 },
+    },
+  ];
+
   return (
     <div
       className="mx-auto cursor-default"
-      style={{ width: 160, height: 160 }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      style={{ width: 200, height: 200, position: "relative" }}
     >
-      <svg width="160" height="160" viewBox="0 0 120 120" fill="none">
-        <defs>
-          <linearGradient id="cardGradPF" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#89D1D1" />
-            <stop offset="100%" stopColor="#908FDB" />
-          </linearGradient>
-        </defs>
-        {/* Bottom card */}
-        <rect x="30" y="46" width="64" height="44" rx="8"
-          fill="#908FDB" fillOpacity={hovered ? 0.32 : 0.22}
-          stroke="#908FDB" strokeOpacity={hovered ? 0.6 : 0.4} strokeWidth="1.2"
+      {photos.map((photo, i) => (
+        <div
+          key={i}
+          onMouseEnter={() => setHoveredIdx(i)}
+          onMouseLeave={() => setHoveredIdx(null)}
           style={{
-            transition: "all 0.35s ease",
-            transform: hovered ? "rotate(-13deg)" : "rotate(-8deg)",
-            transformOrigin: "62px 68px",
+            position: "absolute",
+            overflow: "hidden",
+            boxShadow: hoveredIdx === i
+              ? "0 12px 32px rgba(0,0,0,0.5)"
+              : "0 4px 14px rgba(0,0,0,0.35)",
+            border: "2px solid rgba(255,255,255,0.15)",
+            transition: "transform 0.35s ease, box-shadow 0.35s ease, z-index 0s",
+            ...photo.style,
+            ...(hoveredIdx === i ? photo.hoverStyle : {}),
           }}
-        />
-        {/* Middle card */}
-        <rect x="28" y="42" width="64" height="44" rx="8"
-          fill="#89D1D1" fillOpacity={hovered ? 0.30 : 0.22}
-          stroke="#89D1D1" strokeOpacity={hovered ? 0.65 : 0.5} strokeWidth="1.2"
-          style={{
-            transition: "all 0.35s ease",
-            transform: hovered ? "rotate(-5deg)" : "rotate(-3deg)",
-            transformOrigin: "60px 64px",
-          }}
-        />
-        {/* Top card — lifts on hover */}
-        <rect x="28" y="38" width="64" height="44" rx="8"
-          fill="url(#cardGradPF)" fillOpacity="0.28"
-          stroke="white" strokeOpacity={hovered ? 0.75 : 0.55} strokeWidth="1.4"
-          style={{
-            transition: "all 0.35s ease",
-            transform: hovered ? "translateY(-6px)" : "translateY(0)",
-          }}
-        />
-        {/* Lines on top card */}
-        <line x1="38" y1="52" x2="70" y2="52"
-          stroke="white" strokeOpacity={hovered ? 0.6 : 0.4} strokeWidth="1.5" strokeLinecap="round"
-          style={{ transition: "all 0.35s ease", transform: hovered ? "translateY(-6px)" : "translateY(0)" }}
-        />
-        <line x1="38" y1="60" x2="58" y2="60"
-          stroke="white" strokeOpacity={hovered ? 0.4 : 0.25} strokeWidth="1.2" strokeLinecap="round"
-          style={{ transition: "all 0.35s ease", transform: hovered ? "translateY(-6px)" : "translateY(0)" }}
-        />
-      </svg>
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={photo.src}
+            alt=""
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              display: "block",
+              transition: "opacity 0.35s ease",
+              opacity: hoveredIdx === null ? 0.82 : hoveredIdx === i ? 1 : 0.5,
+            }}
+          />
+        </div>
+      ))}
     </div>
   );
 }
@@ -75,7 +111,7 @@ export default function PortfolioSection() {
         viewport={{ once: true }}
         transition={{ type: "spring", stiffness: 320, damping: 70, mass: 1 }}
       >
-        <FannedCards />
+        <PortfolioPreview />
 
         <SectionTitle
           title="My Portfolio"
