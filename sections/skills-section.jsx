@@ -82,7 +82,7 @@ export default function SkillsSection() {
         <section className="mt-32" id="skills">
             <SectionTitle
                 title="My Skills"
-                description="Software I Work With"
+                description="Softwares I Work With"
             />
 
             <div className="flex flex-wrap items-stretch justify-center gap-6 mt-10 px-6">
