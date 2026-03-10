@@ -320,24 +320,34 @@ export const portfolioData = [
     // ==========================================
     // PROGRAMMING
     // ==========================================
+    {
+        title: 'Portfolio Website',
+        image: '/images/portfolio/websites/portfolio-website.png',
+        category: 'programming',
+        badge: 'new',
+        type: 'website',
+        siteUrl: 'https://singhgagan-portfolio.vercel.app/',
+        link: 'https://singhgagan-portfolio.vercel.app/',
+        tech: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion'],
+    },
+    {
+        title: 'Student Management System',
+        image: '/images/portfolio/websites/teaching-hub-academy.png',
+        category: 'programming',
+        badge: 'recent',
+        type: 'website',
+        siteUrl: 'https://teahinghubacademy.com/',
+        link: 'https://teahinghubacademy.com/',
+        tech: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express.js', 'MongoDB'],
+    },
     // {
-    //     title: 'E-Commerce Platform',
-    //     image: '/images/portfolio/logos/logo-competition-2.png',
-    //     category: 'programming',
-    //     badge: 'new',
-    //     type: 'image'
-    // },
-    // {
-    //     title: 'Portfolio Website',
-    //     image: '/images/portfolio/logos/music-channel-logo.png',
-    //     category: 'programming',
-    //     type: 'image'
-    // },
-    // {
-    //     title: 'Mobile App Development',
-    //     image: '/images/portfolio/logos/unit-converter-logo.png',
+    //     title: 'Student Management System',
+    //     image: '/images/portfolio/websites/teaching-hub-academy.png',
     //     category: 'programming',
     //     badge: 'recent',
-    //     type: 'image'
-    // }
+    //     type: 'website',
+    //     siteUrl: 'https://teahinghubacademy.com/',
+    //     link: 'https://teahinghubacademy.com/',
+    //     tech: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express.js', 'MongoDB'],
+    // },
 ];
