@@ -98,10 +98,20 @@ const ROLL_SPRING  = { type: 'spring', stiffness: 500,  damping: 38,  mass: 0.18
 
 // ─── Component ───────────────────────────────────────────────────────────────
 export default function CustomCursor() {
+    const [isPointerFine, setIsPointerFine] = useState(false);
     const [pos,         setPos]         = useState({ x: -200, y: -200 });
     const [cursorState, setCursorState] = useState('default');
     const [visible,     setVisible]     = useState(false);
     const [clicking,    setClicking]    = useState(false);
+
+    // Only show on devices with a precise pointer (mouse). Hides on touch/tablet.
+    useEffect(() => {
+        const mq = window.matchMedia('(pointer: fine)');
+        setIsPointerFine(mq.matches);
+        const handler = (e) => setIsPointerFine(e.matches);
+        mq.addEventListener('change', handler);
+        return () => mq.removeEventListener('change', handler);
+    }, []);
 
     // Single source of truth for state resolution — runs only from mousemove.
     // mouseover is removed entirely; it was racing with the rAF-throttled
@@ -150,6 +160,8 @@ export default function CustomCursor() {
             document.removeEventListener('mouseup',    handleMouseUp);
         };
     }, [handleMouseMove, handleMouseLeave, handleMouseEnter, handleMouseDown, handleMouseUp]);
+
+    if (!isPointerFine) return null;
 
     const state     = CURSOR_STATES[cursorState] ?? CURSOR_STATES.default;
     const Icon      = state.icon;
