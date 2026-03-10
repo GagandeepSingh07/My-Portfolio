@@ -20,7 +20,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang='en' suppressHydrationWarning>
-            <body className={poppins.variable} suppressHydrationWarning>
+            <body className={`${poppins.variable} overflow-x-hidden`} suppressHydrationWarning>
                 <LenisScroll />
                 <CustomCursor />
                 {children}

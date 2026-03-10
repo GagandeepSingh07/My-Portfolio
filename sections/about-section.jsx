@@ -17,8 +17,8 @@ export default function AboutSection() {
                 transition={{ duration: 0.5 }}
             >
                 <motion.div className="flex-1 space-y-6"
-                    initial={{ x: -50, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2, type: "spring", stiffness: 320, damping: 70, mass: 1 }}
                 >
@@ -41,8 +41,8 @@ export default function AboutSection() {
                 </motion.div>
 
                 <motion.div className="flex-1 flex justify-center"
-                    initial={{ x: 50, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.3, type: "spring", stiffness: 320, damping: 70, mass: 1 }}
                 >
