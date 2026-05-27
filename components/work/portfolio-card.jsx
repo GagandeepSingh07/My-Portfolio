@@ -41,7 +41,7 @@ function WebsiteCard({ item }) {
         setIframeError(true);
     };
 
-    const showImage = iframeError || (!iframeLoaded && iframeError);
+    const showImage = iframeError;
 
     return (
         <div className="glass rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group">

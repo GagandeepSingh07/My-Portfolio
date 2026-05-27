@@ -321,7 +321,7 @@ export const portfolioData = [
     // PROGRAMMING
     // ==========================================
     {
-        title: 'Portfolio Website',
+        title: 'Portfolio Website - Gagandeep Singh',
         image: '/images/portfolio/websites/portfolio-website.png',
         category: 'programming',
         badge: 'new',
@@ -331,23 +331,23 @@ export const portfolioData = [
         tech: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion'],
     },
     {
-        title: 'Student Management System',
+        title: 'Teaching Hub Academy — Student Management System',
         image: '/images/portfolio/websites/teaching-hub-academy.png',
         category: 'programming',
         badge: 'recent',
         type: 'website',
-        siteUrl: 'https://teahinghubacademy.com/',
-        link: 'https://teahinghubacademy.com/',
+        siteUrl: 'https://teachinghubacademy.com/',
+        link: 'https://teachinghubacademy.com/',
         tech: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express.js', 'MongoDB'],
     },
-    // {
-    //     title: 'Student Management System',
-    //     image: '/images/portfolio/websites/teaching-hub-academy.png',
-    //     category: 'programming',
-    //     badge: 'recent',
-    //     type: 'website',
-    //     siteUrl: 'https://teahinghubacademy.com/',
-    //     link: 'https://teahinghubacademy.com/',
-    //     tech: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express.js', 'MongoDB'],
-    // },
+    {
+        title: 'ProctorAI — Online Exam Proctoring System',
+        image: '/images/portfolio/websites/proctor-ai.png',
+        category: 'programming',
+        badge: 'new',
+        type: 'website',
+        siteUrl: 'https://invigilo-proctoring-system.vercel.app/',
+        link: 'https://invigilo-proctoring-system.vercel.app/',
+        tech: ['Next.js', 'TypeScript', 'Python', 'Flask', 'Firebase', 'Firestore', 'MediaPipe'],
+    },
 ];
