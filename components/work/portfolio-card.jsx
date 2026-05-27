@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { Play, ExternalLink, MonitorIcon } from 'lucide-react';
-import { useState, useRef } from 'react';
 
 const badgeStyles = {
     recent: 'bg-blue-500/20 text-blue-400',
@@ -11,90 +10,23 @@ const badgeStyles = {
     old: 'bg-red-500/20 text-red-400'
 };
 
-// ── Website card with iframe preview + image fallback ────────────────────────
+// ── Website card — static screenshot + hover overlays ────────────────────────
 function WebsiteCard({ item }) {
-    const { title, image, siteUrl, link, tech = [] } = item;
-    const [iframeError, setIframeError] = useState(false);
-    const [iframeLoaded, setIframeLoaded] = useState(false);
-    const iframeRef = useRef(null);
-
-    // Some sites block iframe embedding via X-Frame-Options.
-    // We detect this by checking if the iframe loads but stays empty (load fires but no content).
-    // The simplest reliable approach: try load, set a timeout, if not loaded → show image.
-    const handleIframeLoad = () => {
-        try {
-            // If the site blocked framing, contentDocument will be null or restricted
-            const doc = iframeRef.current?.contentDocument;
-            if (!doc || doc.body?.innerHTML === '') {
-                setIframeError(true);
-            } else {
-                setIframeLoaded(true);
-            }
-        } catch {
-            // Cross-origin access error — means it DID load but is blocked
-            // The iframe itself rendered (with the site's own content), which is fine
-            setIframeLoaded(true);
-        }
-    };
-
-    const handleIframeError = () => {
-        setIframeError(true);
-    };
-
-    const showImage = iframeError;
+    const { title, image, link, tech = [] } = item;
 
     return (
         <div className="glass rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group">
             {/* ── Preview area ── */}
             <div className="relative aspect-video overflow-hidden bg-black/30">
-                {/* iframe */}
-                {!iframeError && (
-                    <iframe
-                        ref={iframeRef}
-                        src={siteUrl}
-                        title={title}
-                        onLoad={handleIframeLoad}
-                        onError={handleIframeError}
-                        className="absolute inset-0 w-full h-full"
-                        style={{
-                            border: 'none',
-                            // Scale down — iframe is rendered at full desktop width then scaled to fit
-                            width: '200%',
-                            height: '200%',
-                            transform: 'scale(0.5)',
-                            transformOrigin: 'top left',
-                            opacity: iframeLoaded ? 1 : 0,
-                            transition: 'opacity 0.4s ease',
-                            pointerEvents: 'none', // prevent interaction inside card
-                        }}
-                        loading="lazy"
-                        sandbox="allow-scripts allow-same-origin"
-                    />
-                )}
-
-                {/* Fallback image — shown when iframe errors OR while loading */}
-                <div
-                    className="absolute inset-0 transition-opacity duration-400"
-                    style={{ opacity: iframeLoaded && !iframeError ? 0 : 1 }}
-                >
-                    <Image
-                        src={image}
-                        alt={title}
-                        fill
-                        className="object-cover object-top transition-all duration-500 group-hover:scale-105"
-                    />
-                </div>
+                <Image
+                    src={image}
+                    alt={title}
+                    fill
+                    className="object-cover object-top transition-all duration-500 group-hover:scale-105"
+                />
 
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 z-10 opacity-0 group-hover:opacity-100 transition-opacity" />
-
-                {/* Live indicator — only when iframe is showing */}
-                {iframeLoaded && !iframeError && (
-                    <div className="absolute top-3 left-3 z-20 flex items-center gap-1.5 bg-black/50 backdrop-blur-sm rounded-full px-2.5 py-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                        <span className="text-[10px] font-semibold text-white/80">Live Preview</span>
-                    </div>
-                )}
 
                 {/* Tech stack overlay — slides up on hover */}
                 {tech.length > 0 && (
@@ -144,16 +76,6 @@ function WebsiteCard({ item }) {
                             {item.badge}
                         </span>
                     )}
-                    {/* <a
-                        href={link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="ml-auto text-xs text-gray-400 hover:text-white flex items-center gap-1 transition-colors"
-                        data-cursor="link"
-                    >
-                        <ExternalLink size={10} />
-                        {siteUrl?.replace(/^https?:\/\//, '')}
-                    </a> */}
                 </div>
             </div>
         </div>
